@@ -1,0 +1,133 @@
+---
+id: design
+title: Design
+---
+
+import WCAGChecklist from "@site/src/components/WCAGChecklist";
+
+# 🎨 Design System
+
+Análise visual e de interação dos critérios de acessibilidade. Esta seção documenta como validar se o site atende aos requisitos visuais da WCAG, NBR e diretrizes de acessibilidade.
+
+---
+
+## � Como documentamos aqui (instruções internas)
+
+> 🗑️ **[REMOVER NA VERSÃO FINAL - SEÇÃO INTEIRA]** Delete quando terminar.
+
+### O que vocês devem fazer nessa página
+
+Aqui você deve documentar **critérios visuais e de interação focados em design**. Isso inclui:
+
+- Contraste e legibilidade
+- Responsividade em diferentes tamanhos
+- Feedback visual e estados de componentes
+- Cores e representação de informação
+- Animações e efeitos de movimento
+
+Os items [EXEMPLO] no checklist **devem ser trocados** por critérios reais que você vai validar no design do seu projeto.
+
+### Como customizar
+
+Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 17225 ou Guia UK-BR** que seja relevante para o design do seu projeto:
+
+❌ Errado: `[EXEMPLO] Contraste de texto é 4.5:1 ou maior` (isto é apenas exemplo)
+
+✅ Certo (exemplo de como fica):
+
+- `Cores não são a única forma de comunicar informação`
+- `Elementos interativos têm área de toque mínima de 44x44px`
+- `Design responsivo funciona de 320px até desktop`
+
+**Lembrete**: Os nomes dos critérios devem vir exatamente de WCAG 2.2, NBR 17225 ou Guia UK-BR, não inventados.
+
+---
+
+## ✅ Checklist Interativo - Design
+
+<WCAGChecklist
+  items={[
+    {
+      id: "design-a1",
+      label: "[EXEMPLO] Ícones possuem rótulos textuais",
+      level: "A",
+      description: "Heurística #2 | Correspondência com mundo real",
+    },
+    {
+      id: "design-a2",
+      label: "[EXEMPLO] Layout responsivo até 320px de largura",
+      level: "A",
+      description: "WCAG 2.2 - C.S. 1.3.4 | Testar em múltiplos dispositivos",
+    },
+    {
+      id: "design-a3",
+      label: "[EXEMPLO] Foco visível ao navegar com teclado",
+      level: "A",
+      description: "WCAG 2.2 - C.S. 2.4.7 | Outline claramente perceptível",
+    },
+    {
+      id: "design-a4",
+      label: "[EXEMPLO] Espaçamento entre elementos é suficiente",
+      level: "A",
+      description: "Heurística #8 | Interface limpa e navegável",
+    },
+    {
+      id: "design-aa1",
+      label: "[EXEMPLO] Contraste de texto é 4.5:1 ou maior",
+      level: "AA",
+      description: "WCAG 2.2 - C.S. 1.4.3 | Usar verificador de contraste",
+    },
+    {
+      id: "design-aa2",
+      label: "[EXEMPLO] Botão em foco é visualmente distinguível",
+      level: "AA",
+      description: "WCAG 2.2 - C.S. 2.4.7 | Outline ou mudança de cor clara",
+    },
+    {
+      id: "design-aa3",
+      label:
+        "[EXEMPLO] Estados de componentes comunicados visualmente e por cor+ícone",
+      level: "AA",
+      description: "WCAG 2.2 - C.S. 1.4.1 | Não depender só de cor",
+    },
+    {
+      id: "design-aa4",
+      label: "[EXEMPLO] Zoom até 200% não causa perda de funcionalidade",
+      level: "AA",
+      description: "WCAG 2.2 - C.S. 1.4.4 | Testar com zoom no navegador",
+    },
+    {
+      id: "design-aaa1",
+      label: "[EXEMPLO] Contraste de texto é 7:1 ou maior (AAA)",
+      level: "AAA",
+      description:
+        "WCAG 2.2 - C.S. 1.4.6 | Contraste extra forte para melhor legibilidade",
+    },
+    {
+      id: "design-aaa2",
+      label: "[EXEMPLO] Cores foram testadas com simulador de daltonismo",
+      level: "AAA",
+      description: "WCAG 2.2 - C.S. 1.4.8 | Usar ferramentas como Coblis",
+    },
+    {
+      id: "design-aaa3",
+      label:
+        "[EXEMPLO] Animações podem ser desabilitadas via prefers-reduced-motion",
+      level: "AAA",
+      description: "WCAG 2.2 - C.S. 2.3.3 | Respeitar preferências do SO",
+    },
+  ]}
+  title="Design System - Critérios de Exemplo"
+/>
+
+---
+
+## Referências Bibliográficas
+
+[1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
+
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.
+
+[3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
+
+[4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.
