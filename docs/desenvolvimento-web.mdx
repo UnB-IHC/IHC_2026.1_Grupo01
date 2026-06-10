@@ -1,0 +1,144 @@
+---
+id: desenvolvimento-web
+title: Desenvolvimento Web
+---
+
+import WCAGChecklist from "@site/src/components/WCAGChecklist";
+
+# 🛠️ Desenvolvimento Web
+
+Análise técnica dos critérios de acessibilidade relacionados ao código, HTML, navegação e funcionalidade. Este guia estabelece os parâmetros técnicos necessários para garantir a conformidade do projeto com as normas de acessibilidade vigentes.
+
+---
+
+## 📋 Como documentamos aqui (instruções internas)
+
+> 🗑️ **[REMOVER NA VERSÃO FINAL - SEÇÃO INTEIRA]** Delete quando terminar.
+
+### O que vocês devem fazer nessa página
+
+Aqui você deve documentar **critérios técnicos focados em desenvolvimento e código**. Isso inclui:
+
+- Semântica HTML e estrutura
+- Navegação com teclado e ordem de tabulação
+- Testes com leitores de tela (ARIA quando necessário)
+- Validação de erros e mensagens
+- Performance e funcionalidade
+
+Os items [EXEMPLO] no checklist **devem ser trocados** por critérios reais que você vai validar no seu projeto.
+
+### Como customizar
+
+Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 17225 ou Guia UK-BR** que seja relevante para o desenvolvimento do seu projeto:
+
+❌ Errado: `[EXEMPLO] Indicador de foco visível em botões` (isto é apenas exemplo)
+
+✅ Certo (exemplo de como fica):
+
+- `Semântica HTML correta com ARIA quando necessário`
+- `Teclado: todos os controles interativos acessíveis`
+- `Ordem de tabulação lógica e intuitiva`
+
+**Lembrete**: Os nomes dos critérios devem vir exatamente de WCAG 2.2, NBR 17225 ou Guia UK-BR, não inventados.
+
+## ✅ Checklist Interativo - Desenvolvimento Web
+
+<WCAGChecklist
+  items={[
+    {
+      id: "devweb-a1",
+      label: "[EXEMPLO] Indicador de foco visível em botões",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 2.4.7 | Implementar outline visível no :focus",
+    },
+    {
+      id: "devweb-a2",
+      label: "[EXEMPLO] Formulários com rótulos associados programaticamente",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 3.3.2 | Usar <label for=id> para cada input",
+    },
+    {
+      id: "devweb-a3",
+      label: "[EXEMPLO] Legendas sincronizadas para vídeos com áudio",
+      level: "A",
+      description: "WCAG 2.2 - C.S. 1.2.2 | Adicionar <track kind=captions>",
+    },
+    {
+      id: "devweb-a4",
+      label:
+        "[EXEMPLO] Estrutura de headings segue ordem lógica (H1 → H2 → H3)",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 1.3.1 | Não pule níveis (ex: H1 direto para H3)",
+    },
+    {
+      id: "devweb-a5",
+      label: "[EXEMPLO] Tempo limite pode ser estendido ou desabilitado",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 2.2.1 | Permitir que o usuário aumente o timeout",
+    },
+    {
+      id: "devweb-aa1",
+      label: "[EXEMPLO] Mensagens de erro descrevem o problema",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 3.3.3 | Ex: 'Email inválido, use formato usuario@dominio.com'",
+    },
+    {
+      id: "devweb-aa2",
+      label: "[EXEMPLO] Conteúdo importante não depende apenas de cor",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 1.4.1 | Use ícones, padrões ou texto também",
+    },
+    {
+      id: "devweb-aa3",
+      label: "[EXEMPLO] Contraste de texto é 4.5:1 ou maior",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 1.4.3 | Verificar com ferramentas de contraste",
+    },
+    {
+      id: "devweb-aa4",
+      label: "[EXEMPLO] Zoom até 200% não causa perda de funcionalidade",
+      level: "AA",
+      description: "WCAG 2.2 - C.S. 1.4.4 | Testar com zoom no navegador",
+    },
+    {
+      id: "devweb-aaa1",
+      label:
+        "[EXEMPLO] Linguagem é simples e clara (nível leitura preparatória)",
+      level: "AAA",
+      description:
+        "WCAG 2.2 - C.S. 3.1.5 | Evitar jargão técnico desnecessário",
+    },
+    {
+      id: "devweb-aaa2",
+      label: "[EXEMPLO] Tempo de sessão é infinito ou pode ser prorrogado",
+      level: "AAA",
+      description: "WCAG 2.2 - C.S. 2.2.2 | Não deslogar usuário sem aviso",
+    },
+    {
+      id: "devweb-aaa3",
+      label: "[EXEMPLO] Contraste de não-texto é 3:1 ou maior",
+      level: "AAA",
+      description: "WCAG 2.2 - C.S. 1.4.11 | Bordas, ícones, gráficos visíveis",
+    },
+  ]}
+  title="Desenvolvimento Web - Critérios de Exemplo"
+/>
+
+---
+
+## Referências Bibliográficas
+
+[1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
+
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.
+
+[3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
+
+[4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.

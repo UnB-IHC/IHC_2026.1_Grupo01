@@ -1,0 +1,147 @@
+---
+id: geracao-conteudo
+title: Geração de Conteúdo
+---
+
+import WCAGChecklist from "@site/src/components/WCAGChecklist";
+
+# 📝 Geração de Conteúdo
+
+Análise dos critérios de acessibilidade relacionados a conteúdo. Esta seção documenta como validar se textos, imagens, vídeos e áudio do site atendem aos requisitos da WCAG, NBR e diretrizes.
+
+---
+
+## 📋 Como documentamos aqui (instruções internas)
+
+> 🗑️ **[REMOVER NA VERSÃO FINAL - SEÇÃO INTEIRA]** Delete quando terminar.
+
+### O que vocês devem fazer nessa página
+
+Aqui você deve documentar **critérios de conteúdo focados em textos, imagens, vídeos e áudio**. Isso inclui:
+
+- Alt text para imagens e gráficos
+- Legendas e transcrições para mídia
+- Estrutura de textos e headings
+- Linguagem clara e acessível
+- Dados em tabelas com acessibilidade
+
+Os items [EXEMPLO] no checklist **devem ser trocados** por critérios reais que você vai validar no conteúdo do seu projeto.
+
+### Como customizar
+
+Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 17225 ou Guia UK-BR** que seja relevante para o conteúdo do seu projeto:
+
+❌ Errado: `[EXEMPLO] Todas as imagens com alt text descritivo` (isto é apenas exemplo)
+
+✅ Certo (exemplo de como fica):
+
+- `Alt text descreve função/conteúdo sem ser repetitivo`
+- `Vídeos com legendas sincronizadas (open captions ou closed)`
+- `Transcrições incluem identificação de locutores`
+
+**Lembrete**: Os nomes dos critérios devem vir exatamente de WCAG 2.2, NBR 17225 ou Guia UK-BR, não inventados.
+
+---
+
+## ✅ Checklist Interativo - Geração de Conteúdo
+
+<WCAGChecklist
+  items={[
+    {
+      id: "content-a1",
+      label: "[EXEMPLO] Texto evita jargão técnico excessivo",
+      level: "A",
+      description: "WCAG 2.2 - C.S. 3.1.3 | Pedir feedback de terceiro",
+    },
+    {
+      id: "content-a2",
+      label: "[EXEMPLO] Todas as imagens com alt text descritivo",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 1.1.1 | Máximo 125 caracteres, descreve o essencial",
+    },
+    {
+      id: "content-a3",
+      label: "[EXEMPLO] Vídeos com legendas sincronizadas",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 1.2.2 | Incluir sons não-verbais: [carro buzina], [risada]",
+    },
+    {
+      id: "content-a4",
+      label: "[EXEMPLO] Estrutura de headings segue ordem lógica",
+      level: "A",
+      description: "WCAG 2.2 - C.S. 1.3.1 | Não pular níveis",
+    },
+    {
+      id: "content-a5",
+      label: "[EXEMPLO] Tabelas possuem cabeçalhos e associação com dados",
+      level: "A",
+      description: "WCAG 2.2 - C.S. 1.3.1 | Usar <th> e <caption>",
+    },
+    {
+      id: "content-aa1",
+      label:
+        "[EXEMPLO] Audiodescrição para vídeos com conteúdo visual essencial",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 1.2.5 | Descrever ações, cenários, textos na tela",
+    },
+    {
+      id: "content-aa2",
+      label: "[EXEMPLO] Gráficos acompanhados de tabela ou descrição textual",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 1.1.1 | Dados não ficam presos só no gráfico",
+    },
+    {
+      id: "content-aa3",
+      label:
+        "[EXEMPLO] Espaçamento entre linhas de pelo menos 1.5x a altura da fonte",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 1.4.12 | Facilita leitura para dislexia e baixa visão",
+    },
+    {
+      id: "content-aa4",
+      label: "[EXEMPLO] Transcrição completa disponível para conteúdo de áudio",
+      level: "AA",
+      description: "WCAG 2.2 - C.S. 1.2.3 | Incluir identificação de locutores",
+    },
+    {
+      id: "content-aaa1",
+      label:
+        "[EXEMPLO] Linguagem é simples e clara (nível leitura preparatória)",
+      level: "AAA",
+      description:
+        "WCAG 2.2 - C.S. 3.1.5 | Evitar frases complexas e termos técnicos",
+    },
+    {
+      id: "content-aaa2",
+      label: "[EXEMPLO] Glossário de termos técnicos disponível",
+      level: "AAA",
+      description:
+        "WCAG 2.2 - C.S. 3.1.4 | Ajudar usuários a entender palavras raras",
+    },
+    {
+      id: "content-aaa3",
+      label: "[EXEMPLO] Vídeos possuem audiodescrição completa",
+      level: "AAA",
+      description:
+        "WCAG 2.2 - C.S. 1.2.6 | Descrever TODOS os detalhes visuais",
+    },
+  ]}
+  title="Geração de Conteúdo - Critérios de Exemplo"
+/>
+
+---
+
+## Referências Bibliográficas
+
+[1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
+
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.
+
+[3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
+
+[4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.
