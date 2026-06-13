@@ -3,7 +3,7 @@ id: heuristicas
 title: Heurísticas de Nielsen
 ---
 
-import WCAGChecklist from "@site/src/components/WCAGChecklist";
+import SimpleChecklist from "@site/src/components/SimpleChecklist";
 
 # 🎯 Heurísticas de Usabilidade de Nielsen
 
@@ -257,98 +257,178 @@ Enquanto as normas de acessibilidade focam em garantir que pessoas com diferente
 
 Use o componente interativo abaixo para validar as heurísticas no seu projeto:
 
-<WCAGChecklist
+<SimpleChecklist
   items={[
+    // Heurística 1: Visibilidade do Estado do Sistema
     {
-      id: "h1-a1",
+      id: "h1-1",
       label: "Indicadores de carregamento e feedback visual",
-      level: "A",
-      description: "O sistema comunica o status das ações ao usuário",
+      description: "O sistema comunica o status das ações ao usuário em tempo real",
     },
     {
-      id: "h2-a1",
+      id: "h1-2",
+      label: "Mensagens de status (Carregando, Salvando, Enviando)",
+      description: "Mensagens claras indicam o que está acontecendo",
+    },
+    {
+      id: "h1-3",
+      label: "Passos destacados em formulários multi-etapas",
+      description: "Usuário sabe em que etapa está e o que falta",
+    },
+
+    // Heurística 2: Correspondência entre Sistema e Mundo Real
+    {
+      id: "h2-1",
       label: "Linguagem clara do usuário, não jargão técnico",
-      level: "A",
       description: "Interface usa termos familiares e compreensíveis",
     },
     {
-      id: "h3-a1",
+      id: "h2-2",
+      label: "Ícones intuitivos e metáforas reconhecíveis",
+      description: "🗑️ lixeira para excluir, 🔍 lupa para buscar, etc",
+    },
+    {
+      id: "h2-3",
+      label: "Formatos localizados (datas, horários, moedas)",
+      description: "Informações no formato que o público-alvo entende",
+    },
+
+    // Heurística 3: Controle e Liberdade do Usuário
+    {
+      id: "h3-1",
       label: "Botões Cancelar, Voltar, Desfazer visíveis",
-      level: "A",
       description: "Usuário consegue se recuperar facilmente de erros",
     },
     {
-      id: "h4-a1",
-      label: "Consistência de cores, estilos e comportamentos",
-      level: "A",
-      description: "Mesmos elementos têm mesmo comportamento em toda interface",
+      id: "h3-2",
+      label: "Confirmação para ações destrutivas",
+      description: "Confirmação antes de excluir, enviar ou operações irreversíveis",
     },
     {
-      id: "h5-a1",
-      label: "Prevenção de erros (desabilitar, mascaras, validação)",
-      level: "A",
-      description: "Sistema evita erros antes que aconteçam",
+      id: "h3-3",
+      label: "Possibilidade de editar dados antes de enviar",
+      description: "Usuário não é punido por pequenos erros",
+    },
+
+    // Heurística 4: Consistência e Padrões
+    {
+      id: "h4-1",
+      label: "Consistência de cores e estilos",
+      description: "Botões primários sempre com mesma cor e aparência",
     },
     {
-      id: "h6-a1",
-      label: "Opções visíveis e reconhecíveis",
-      level: "A",
-      description: "Usuário não precisa memorizar informações de outra tela",
+      id: "h4-2",
+      label: "Mesmo comportamento para elementos iguais",
+      description: "Elementos visualmente iguais fazem a mesma coisa",
     },
     {
-      id: "h7-aa1",
+      id: "h4-3",
+      label: "Padrões conhecidos da plataforma",
+      description: "Segue convenções do Android, iOS ou web conforme esperado",
+    },
+
+    // Heurística 5: Prevenção de Erros
+    {
+      id: "h5-1",
+      label: "Máscaras de entrada para dados (CPF, telefone, data)",
+      description: "Sistema valida enquanto usuário digita",
+    },
+    {
+      id: "h5-2",
+      label: "Botão Enviar desabilitado com campos obrigatórios vazios",
+      description: "Impossível enviar formulário incompleto",
+    },
+    {
+      id: "h5-3",
+      label: "Listas suspensas em vez de texto livre quando apropriado",
+      description: "Reduz possibilidade de erros",
+    },
+
+    // Heurística 6: Reconhecimento em vez de Memorização
+    {
+      id: "h6-1",
+      label: "Menus e opções visíveis, não escondidos",
+      description: "Opções importantes não ficam atrás de muitos cliques",
+    },
+    {
+      id: "h6-2",
+      label: "Filtros ativos e resultados exibidos claramente",
+      description: "Usuário vê o que foi aplicado e os resultados",
+    },
+    {
+      id: "h6-3",
+      label: "Rótulos descritivos em botões",
+      description: "Botões dizem 'Salvar rascunho' em vez de só 'OK'",
+    },
+
+    // Heurística 7: Flexibilidade e Eficiência de Uso
+    {
+      id: "h7-1",
+      label: "Interface clara para iniciantes",
+      description: "Caminho simples para tarefas básicas",
+    },
+    {
+      id: "h7-2",
       label: "Atalhos de teclado para usuários experientes",
-      level: "AA",
-      description: "Sistema atende iniciantes e experts",
+      description: "Ctrl+S, Ctrl+Z, etc para agilizar fluxos",
     },
     {
-      id: "h8-a1",
-      label: "Interface limpa e minimalista",
-      level: "A",
-      description: "Sem excesso de elementos que distraem",
+      id: "h7-3",
+      label: "Sugestões baseadas em uso recente",
+      description: "Sistema aprende padrões do usuário",
+    },
+
+    // Heurística 8: Estética e Design Minimalista
+    {
+      id: "h8-1",
+      label: "Interface sem textos redundantes",
+      description: "Remove instruções óbvias e informações desnecessárias",
     },
     {
-      id: "h9-a1",
-      label: "Mensagens de erro claras e com soluções",
-      level: "A",
+      id: "h8-2",
+      label: "Número limitado de cores e estilos",
+      description: "Sem excesso que compete visualmente pelo foco",
+    },
+    {
+      id: "h8-3",
+      label: "Destaque apenas do essencial para a tarefa",
+      description: "Elementos secundários discretos e não distraem",
+    },
+
+    // Heurística 9: Ajudar Usuários a Reconhecer, Diagnosticar e Recuperar-se de Erros
+    {
+      id: "h9-1",
+      label: "Mensagens de erro claras em linguagem simples",
       description: "Erros indicam o problema e como corrigir",
     },
     {
-      id: "h10-aa1",
-      label: "Ajuda e documentação acessível",
-      level: "AA",
-      description: "FAQ, tutoriais e dicas contextuais disponíveis",
+      id: "h9-2",
+      label: "Mensagens de erro destacadas e visíveis",
+      description: "Não é só texto pequeno, destaca a presença do erro",
     },
     {
-      id: "h1-aa1",
-      label: "Feedback em tempo real para operações assíncronas",
-      level: "AA",
-      description: "Indicadores contínuos para processos longos",
+      id: "h9-3",
+      label: "Sugestões de solução incluídas na mensagem",
+      description: "Usuário sabe exatamente o que fazer para corrigir",
+    },
+
+    // Heurística 10: Ajuda e Documentação
+    {
+      id: "h10-1",
+      label: "FAQ organizado e fácil de encontrar",
+      description: "Perguntas frequentes estruturadas por temas",
     },
     {
-      id: "h3-aa1",
-      label: "Histórico de ações disponível para desfazer múltiplos passos",
-      level: "AA",
-      description: "Desfazer com múltiplos níveis quando aplicável",
+      id: "h10-2",
+      label: "Tutoriais rápidos ou tours guiados",
+      description: "Orientação passo a passo para funcionalidades complexas",
     },
     {
-      id: "h1-aaa1",
-      label: "Notificações podem ser desabilitadas ou personalizadas",
-      level: "AAA",
-      description: "Usuário tem controle total sobre feedback",
+      id: "h10-3",
+      label: "Dicas contextuais próximas a campos complexos",
+      description: "Ajuda integrada sem sair do fluxo principal",
     },
-    {
-      id: "h4-aaa1",
-      label: "Padrões seguem guias de design amplamente reconhecidos",
-      level: "AAA",
-      description: "Consistência vai além da interface",
-    },
-    {
-      id: "h10-aaa1",
-      label: "Documentação inclui vídeos e exemplos interativos",
-      level: "AAA",
-      description: "Múltiplos formatos de ajuda disponíveis",
-    },
-  ]}
-  title="Validação das 10 Heurísticas de Nielsen"
+
+]}
+title="Validação das 10 Heurísticas de Usabilidade de Nielsen"
 />

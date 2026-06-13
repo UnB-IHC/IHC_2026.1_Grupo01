@@ -141,7 +141,7 @@
   align-items: flex-start;
 }
 
-.checklist-item input[type='checkbox'] {
+.checklist-item input[type="checkbox"] {
   width: 1.25rem;
   height: 1.25rem;
   margin-top: 0.25rem;
@@ -151,12 +151,12 @@
   border-radius: 0.25rem;
 }
 
-.checklist-item input[type='checkbox']:focus-visible {
+.checklist-item input[type="checkbox"]:focus-visible {
   outline: 2px solid var(--ifm-color-primary);
   outline-offset: 2px;
 }
 
-.checklist-item input[type='checkbox']:hover {
+.checklist-item input[type="checkbox"]:hover {
   box-shadow: 0 0 0 3px rgba(31, 58, 147, 0.1);
 }
 
@@ -176,8 +176,9 @@
 .item-description {
   margin: 0.5rem 0 0 0;
   font-size: 0.875rem;
-  color: var(--ifm-text-color-secondary);
+  color: #555;
   line-height: 1.5;
+  font-weight: 400;
 }
 
 /* Estado checado */
@@ -189,7 +190,7 @@
 .checklist-item.checked strong,
 .checklist-item.checked label {
   text-decoration: line-through;
-  color: var(--ifm-text-color-secondary);
+  color: #888;
 }
 
 /* Gráficos */
@@ -232,8 +233,9 @@
 
 .stat-label {
   font-size: 0.875rem;
-  color: var(--ifm-text-color-secondary);
+  color: #666;
   margin-top: 0.25rem;
+  font-weight: 500;
 }
 
 .stat-percentage {
@@ -244,20 +246,37 @@
 }
 
 /* Modo escuro */
-[data-theme='dark'] .checklist-item,
-[data-theme='dark'] .summary-item,
-[data-theme='dark'] .chart-container {
+[data-theme="dark"] .checklist-item,
+[data-theme="dark"] .summary-item,
+[data-theme="dark"] .chart-container {
   background-color: #161b22;
   border-color: rgba(127, 168, 245, 0.2);
 }
 
-[data-theme='dark'] .checklist-item {
+[data-theme="dark"] .checklist-item {
   border-left-color: transparent;
 }
 
-[data-theme='dark'] .checklist-item.checked {
+[data-theme="dark"] .checklist-item.checked {
   border-left-color: var(--ifm-color-success);
   background-color: rgba(78, 205, 196, 0.12);
+}
+
+/* Dark mode - melhor contraste */
+[data-theme="dark"] .item-description {
+  color: #d0d0d0;
+}
+
+[data-theme="dark"] .stat-label {
+  color: #d0d0d0;
+}
+
+[data-theme="dark"] .checklist-item strong {
+  color: #f5f5f5;
+}
+
+[data-theme="dark"] .checklist-item.checked strong {
+  color: #b0b0b0;
 }
 
 /* Responsividade */
@@ -280,7 +299,7 @@
     gap: 0.75rem;
   }
 
-  .checklist-item input[type='checkbox'] {
+  .checklist-item input[type="checkbox"] {
     width: 1.1rem;
     height: 1.1rem;
   }
