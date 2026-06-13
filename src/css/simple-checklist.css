@@ -1,0 +1,242 @@
+.simple-checklist {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border-left: 4px solid #4ecdc4;
+}
+
+.simple-checklist h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Gráfico */
+.chart-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  height: 300px;
+}
+
+.chart-stats {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4ecdc4;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.stat-percentage {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 0.5rem;
+}
+
+/* Lista de Critérios */
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.checklist-item:hover {
+  border-color: #4ecdc4;
+  box-shadow: 0 2px 8px rgba(78, 205, 196, 0.1);
+}
+
+.checklist-item.checked {
+  background-color: #f0fffe;
+  border-color: #4ecdc4;
+}
+
+.checklist-item input[type="checkbox"] {
+  margin-top: 0.35rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #4ecdc4;
+  flex-shrink: 0;
+}
+
+.checklist-item label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+  flex: 1;
+}
+
+.item-label {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.checklist-item.checked .item-label {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.item-description {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.checklist-item.checked .item-description {
+  color: #888;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .simple-checklist {
+    background-color: #1a1a1a;
+    border-left-color: #4ecdc4;
+  }
+
+  .simple-checklist h2 {
+    color: #f5f5f5;
+  }
+
+  .stat-label {
+    color: #e0e0e0;
+  }
+
+  .stat-percentage {
+    color: #f5f5f5;
+  }
+
+  .checklist-item {
+    background-color: #2d2d2d;
+    border-color: #404040;
+  }
+
+  .checklist-item:hover {
+    border-color: #4ecdc4;
+    box-shadow: 0 2px 8px rgba(78, 205, 196, 0.2);
+  }
+
+  .checklist-item.checked {
+    background-color: #1f3a3a;
+    border-color: #4ecdc4;
+  }
+
+  .item-label {
+    color: #f5f5f5;
+  }
+
+  .checklist-item.checked .item-label {
+    color: #c0c0c0;
+  }
+
+  .item-description {
+    color: #e0e0e0;
+  }
+
+  .checklist-item.checked .item-description {
+    color: #b0b0b0;
+  }
+}
+
+/* Docusaurus Dark Mode (data-theme attribute) */
+[data-theme="dark"] .simple-checklist {
+  background-color: #1a1a1a;
+  border-left-color: #4ecdc4;
+}
+
+[data-theme="dark"] .simple-checklist h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .stat-label {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .stat-percentage {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .stat-number {
+  color: #4ecdc4;
+}
+
+[data-theme="dark"] .checklist-item {
+  background-color: #2d2d2d;
+  border-color: #404040;
+}
+
+[data-theme="dark"] .checklist-item:hover {
+  border-color: #4ecdc4;
+  box-shadow: 0 2px 8px rgba(78, 205, 196, 0.2);
+}
+
+[data-theme="dark"] .checklist-item.checked {
+  background-color: #1f3a3a;
+  border-color: #4ecdc4;
+}
+
+[data-theme="dark"] .item-label {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .checklist-item.checked .item-label {
+  color: #d0d0d0;
+}
+
+[data-theme="dark"] .item-description {
+  color: #e0e0e0;
+}
+
+[data-theme="dark"] .checklist-item.checked .item-description {
+  color: #c0c0c0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .simple-checklist {
+    padding: 1.5rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-percentage {
+    font-size: 1.1rem;
+  }
+}
