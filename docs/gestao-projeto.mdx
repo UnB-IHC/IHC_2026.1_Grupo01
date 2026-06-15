@@ -3,11 +3,13 @@ id: gestao-projeto
 title: Gestão do Projeto
 ---
 
-import SimpleChecklist from "@site/src/components/SimpleChecklist";
+import WCAGChecklist from "@site/src/components/WCAGChecklist";
 
 # 📊 Gestão de Projetos
 
 Este guia estabelece os parâmetros de governança necessários para garantir a conformidade do projeto com as normas de acessibilidade vigentes. Ele orienta a validação estratégica através de testes híbridos e da inclusão de pessoas com deficiência, assegurando que o produto final atenda aos requisitos legais e de qualidade da ABNT NBR 17225 e WCAG 2.2.
+
+A acessibilidade no projeto é distribuída em cinco fases críticas: **iniciação, planejamento, execução, monitoramento e encerramento**.
 
 ---
 
@@ -41,8 +43,20 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
 
 **Lembrete**: Os nomes dos critérios devem vir exatamente de WCAG 2.2, NBR 17225 ou Guia UK-BR, não inventados.
 
+## 1. Iniciação
+
+O documento de apoio ***Stories of Web Users* / Histórias de Utilizadores Web** da W3C define as suas personas oficiais com deficiência, desenvolvidas como referências globais detalhando diferentes tipos de deficiências e as eventuais adaptações de que usuários com elas possam vir a precisar para o desenvolvedor leitor:
+* **Ade**: repórter, representando **deficiente físico** dos braços que depende do **uso** frequentemente **exclusivo do teclado** para navegação no computador;
+* **Ian**, auxiliar de dados, representando **autista** que tem **dificuldade em compreender** conteúdo com **elementos alterando-se frequentemente**;
+* **Lakshmi**, contadora sênior **cega (deficiente visual)** que depende do **leitor de tela** para interação com conteúdo tanto no computador como no dispositivo móvel;
+* **Lexie**, consumidora *online* **daltônica**, portanto, que apresenta dificuldade em discernir elementos de certas cores (ex. vermelho, verde, laranja e marrom);
+* **Sophie**, usuária representando a **síndrome de Dawn**, portanto tendo **dificuldade em compreender conteúdos (mais) complexos**, especialmente siglas, abreviações e termos afins menos familiares a ela;
+* **Dhruv**, estudante **surdo (deficiente auditivo)**, dependente de **legendas ou transcrições** para assistir vídeos ou ouvir áudio em geral *online*;
+* **Marta**, assistente de *marketing*, **surda e cega**, 
+
 ## ✅ Checklist Interativo - Gestão do Projeto
 
+{/*
 <SimpleChecklist
   items={[
     {
@@ -124,11 +138,28 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
   ]}
   title="Gestão do Projeto - Critérios de Exemplo"
 />
+  */}
+
+<WCAGChecklist
+  items = {[
+    {
+      // Nível A da WCAG
+
+      //
+      id: "gestao-projeto-a1",
+      label: "Teste",
+      level: "A",
+      description: "teste"
+    },
+  ]}
+  title = "Gestão de Projeto - Critérios"
+/>
 
 ---
 
 ## Referências Bibliográficas
 
+{/*
 ### EXEMPLO DE PREENCHIMENTO DAS REFERENCIAS! TROQUEM OS LINKS E A INFORMAÇÃO QUE VOCÊ QUER.
 
 [1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
@@ -138,3 +169,6 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
 [3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
 
 [4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.
+  */}
+
+[1] W3C. **Histórias de Usuários Web**. Disponível em: https://www.w3.org/WAI/people-use-web/user-stories/pt-BR. Acesso em: 15 jun. 2026.
