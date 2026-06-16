@@ -3,7 +3,7 @@ id: gestao-projeto
 title: Gestão do Projeto
 ---
 
-import SimpleChecklist from "@site/src/components/SimpleChecklist";
+import WCAGChecklist from "@site/src/components/WCAGChecklist";
 
 # 📊 Gestão de Projetos
 
@@ -43,6 +43,7 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
 
 ## ✅ Checklist Interativo - Gestão do Projeto
 
+{/*
 <SimpleChecklist
   items={[
     {
@@ -123,6 +124,46 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
     },
   ]}
   title="Gestão do Projeto - Critérios de Exemplo"
+/>
+  */}
+
+<WCAGChecklist
+  items = {[
+    // Nível A da WCAG
+
+    //
+    {
+      id: "gestao-projeto-a1",
+      label: "Validar a acessibilidade e operabilidade de todos os elementos da interface via teclado",
+      level: "A",
+      description: "WCAG 2.2 – 2.1.1 Teclado; Testes híbridos"
+    },
+    {
+      id: "gestao-projeto-a2",
+      label: "Atribuir à equipe de design a definição e documentação das alternativas textuais para todos os conteúdos não textuais",
+      level: "A",
+      description: "WCAG 2.2 – 1.1.1 Conteúdo Não Textual; Atribuição de responsabilidades"
+    },
+    {
+      id: "gestao-projeto-a3",
+      label: "Reservar tempo para mapear e documentar o fluxo lógico do foco do teclado nos protótipos antes das etapas de desenvolvimento de interface",
+      level: "A",
+      description: "WCAG 2.2 – 2.4.3 Ordem do Foco; Alocação de recursos e tempo"
+    },
+    {
+      id: "gestao-projeto-a4",
+      label: "Incluir usuários reais com deficiência nos testes de usabilidade",
+      level: "A",
+      description: "WCAG 2.2 – 3.2.6 Ajuda Consistente; Envolvimento de pessoas com deficiência"
+    },
+    {
+      id: "gestao-projeto-a5",
+      label: "Auditar os formulários para garantir que informações já fornecidas sejam preenchidas automaticamente ou fiquem disponíveis para seleção",
+      level: "A",
+      description: "WCAG 2.2 – 3.3.7 Entrada Redundante; Conformidade com níveis de acessibilidade"
+    },
+  ]}
+  title = "Gestão de Projeto - Critérios"
 />
 
 ---
