@@ -3,7 +3,7 @@ id: gestao-projeto
 title: Gestão do Projeto
 ---
 
-import WCAGChecklist from "@site/src/components/WCAGChecklist";
+import SimpleChecklist from "@site/src/components/SimpleChecklist";
 
 # 📊 Gestão de Projetos
 
@@ -127,62 +127,61 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
 />
   */}
 
-<WCAGChecklist
+<SimpleChecklist
   items = {[
-    // Nível A da WCAG
-
-    //
     {
       id: "gestao-projeto-a1",
       label: "Validar a acessibilidade e operabilidade de todos os elementos da interface via teclado",
-      level: "A",
+      //level: "A",
       description: "WCAG 2.2 – 2.1.1 Teclado; Testes híbridos"
     },
     {
       id: "gestao-projeto-a2",
       label: "Atribuir à equipe de design a definição e documentação das alternativas textuais para todos os conteúdos não textuais",
-      level: "A",
+      //level: "A",
       description: "WCAG 2.2 – 1.1.1 Conteúdo Não Textual; Atribuição de responsabilidades"
     },
     {
       id: "gestao-projeto-a3",
       label: "Reservar tempo para mapear e documentar o fluxo lógico do foco do teclado nos protótipos antes das etapas de desenvolvimento de interface",
-      level: "A",
+      //level: "A",
       description: "WCAG 2.2 – 2.4.3 Ordem do Foco; Alocação de recursos e tempo"
     },
     {
       id: "gestao-projeto-a4",
       label: "Incluir usuários reais com deficiência nos testes de usabilidade de mecanismos de ajuda",
-      level: "A",
+      //level: "A",
       description: "WCAG 2.2 – 3.2.6 Ajuda Consistente; Envolvimento de pessoas com deficiência"
     },
     {
       id: "gestao-projeto-a5",
       label: "Auditar os formulários para garantir que informações já fornecidas sejam preenchidas automaticamente ou fiquem disponíveis para seleção",
-      level: "A",
+      //level: "A",
       description: "WCAG 2.2 – 3.3.7 Entrada Redundante; Conformidade com níveis de acessibilidade"
     },
-
-    // Nível AA da WCAG
-
-    //
     {
       id: "gestao-projeto-aa1",
       label: "Executar testes automatizados no código para validar o contraste mínimo em textos e imagens de texto com fundos homogêneos/simples",
-      level: "AA",
+      //level: "AA",
       description: "WCAG 2.2 – 1.4.3 Contraste (Mínimo); Testes híbridos"
     },
     {
       id: "gestao-projeto-aa2",
       label: "Preferir testes manuais e/ou com usuários reais para validar o contraste mínimo em textos e imagens de texto com fundos heterogêneos/complexos",
-      level: "AA",
+      //level: "AA",
       description: "WCAG 2.2 – 1.4.3 Contraste (Mínimo); Testes híbridos"
     },
     {
       id: "gestao-projeto-aa3",
       label: "Garantir alinhamento vertical sem barra de rolagem horizontal na ampliação já durante desenvolvimento de front-end",
-      level: "AAA",
+      //level: "AA",
       description: "WCAG 2.2 – 1.4.10 Realinhar; Alocação de recursos e tempo"
+    },
+    {
+      id: "gestao-projeto-aa4",
+      label: "Auditar telas de transações por existência de mecanismos de confirmação, correção ou reversão de dados",
+      //level: "AA",
+      description: "WCAG 2.2 – 3.3.4 Prevenção de erros (Legal, Financeiro, Dados); Conformidade com níveis de acessibilidade"
     },
   ]}
   title = "Gestão de Projeto - Critérios"
