@@ -7,7 +7,7 @@ import SimpleChecklist from "@site/src/components/SimpleChecklist";
 
 # 📝 Geração de Conteúdo
 
-Análise dos critérios de acessibilidade relacionados a conteúdo. Esta seção documenta como validar se textos, imagens, vídeos e áudio do site atendem aos requisitos da WCAG, NBR e diretrizes.
+Análise dos critérios de acessibilidade relacionados a conteúdo. Esta seção documenta como validar se textos, imagens, vídeos e áudio do site atendem aos requisitos da WCAG, NBR 17225 e diretrizes.
 
 ---
 
@@ -20,25 +20,29 @@ Abaixo estão definidos os principais pontos, definidos pelo autor, em relação
 
 ### Alinhamento
 
-De acordo com a NBR 17225, seção 5.12.5, todos os blocos de texto devem estar alinhados à esquerda. As exceções são apenas para textos em idiomas lidos da direita para esquerda ou em situações em que, por alguma razão, o alinhamento é essêncial para a compreensão do conteúdo, como códigos-fonte, poemas e diagramas textuais, por exemplo. a WCAG 2.2 apenas estabelece que o bloco de texto não deve ser justificado.
+De acordo com a NBR 17225, todos os blocos de texto devem estar alinhados à esquerda. As exceções são apenas para textos em idiomas lidos da direita para esquerda ou em situações em que, por alguma razão, o alinhamento é essencial para a compreensão do conteúdo, como códigos-fonte, poemas e diagramas textuais, por exemplo. A WCAG 2.2 apenas estabelece que o bloco de texto não deve ser justificado.
 
 ### Espaçamento
 
-Ambas NBR 17225 e WCAG 2.2 concordam em valores ideais para espaçamento de textos, que estão descritas abaixo:
+Tanto a NBR 17225 quanto a WCAG 2.2 concordam em valores ideais para espaçamento de textos, que estão descritas abaixo:
 - **Espaçamento entre as linhas**: pelo menos 1,5 vez o tamanho da fonte
-- **Espaçamento entre os paragrafos**: pelo menos 2 vezes o tamanho da fonte
+- **Espaçamento entre os parágrafos**: pelo menos 2 vezes o tamanho da fonte
 - **Espaçamento entre letras**: pelo menos 0,12 vez o tamanho da fonte
 - **Espaçamento entre palavras**: pelo menos 0,16 vez o tamanho da fonte
 
 A NBR ainda propõe uma adição a cada tipo de espaçamento quando cada critério acima é cumprido: a existência de um mecanismo para configurar o espaçamento sem a perda de conteúdo ou funcionalidade. 
 
+### Linguagem simplificada
+
+Todo o conteúdo do texto deve ser explicado em linguagem simples e clara ou deve haver um conteúdo suplementar para resumir, simplificar ou esclarecer as informações. O guia de boas práticas para acessibilidade digital indica o uso de ordem direta nas orações para facilitar o entendimento e evitar mal-entendidos.
+
 ### Largura dos blocos
 
-A NBR 17225 define que os blocos de texto não devem ultrapassar 80 caracteres de largura ou deve existir um mecanismo para configurar a largura dos blocos para alcançar esse resultado. 
+Os blocos de texto não devem ultrapassar 80 caracteres de largura ou deve existir um mecanismo para configurar a largura dos blocos para alcançar esse resultado. 
 
 ### Redimensionamento
 
-Ambas NBR 17225 e WCAG 2.2 concordam que deve ser possível que o texto pode ser redimensionado em até 200% sem que haja perda de conteúdo e que o usuário não precise rolar horizontalmente para ler uma linha de texto em uma janela de tela inteira.
+Deve ser possível que o texto seja redimensionado em até 200% sem que haja perda de conteúdo e que o usuário não precise rolar horizontalmente para ler uma linha de texto em uma janela de tela inteira.
 
 ---
 
@@ -68,13 +72,13 @@ Fonte: Elaborado pelo autor (2026).
 
 Figura 3: Exemplo de uma imagem complexa com indicação para outra página
 
-![Exemplo de uma imagem complexa. A imagem de uma gráfico possui uma seção abaixo com um link para uma explicação longa associada à imagem](../static/img/imagem_complexa.png)
+![Exemplo de uma imagem complexa. A imagem de um gráfico possui uma seção abaixo com um link para uma explicação longa associada à imagem](../static/img/imagem_complexa.png)
 
 Fonte: W3C (2019).
 
 - Se a imagem for meramente **decorativa**, não deve haver texto alternativo ou o texto alternativo deve ser ignorado pelas tecnologias assistivas, como leitores de tela. 
 
-Figura 4: Exemplo de uma imagem decorativa que serve apenas como uma borda 
+Figura 4: Exemplo de uma imagem decorativa que serve apenas como uma borda
 
 ![Exemplo de uma imagem Decorativa. A imagem de uma barra usada como borda e como ficaria o seu código](../static/img/imagem_decorativa.png)
 
@@ -82,47 +86,34 @@ Fonte: W3C (2019).
 
 ### Texto em imagem
 
-Imagens que representam textos não são capazes de serem lidas por leitores de tela e não são acessíveis. Dado esse fato, a NBR 17225 define que não haja imagens de texto. Caso a imagem com texto seja essencial, o texto alternativo deve possuir o mesmo conteúdo representado na imagem.
-
-## Vídeos
-
-
-
-
-
-## Áudio
+Imagens que representam textos não são capazes de serem lidas por leitores de tela e não são acessíveis. Dado esse fato, não deve haver imagens de texto. Caso a imagem com texto seja essencial, o texto alternativo deve possuir o mesmo conteúdo representado na imagem.
 
 ---
 
-## 📋 Como documentamos aqui (instruções internas)
+## Vídeos
 
-> 🗑️ **[REMOVER NA VERSÃO FINAL - SEÇÃO INTEIRA]** Delete quando terminar.
+### Legendas descritivas para vídeo
 
-### O que vocês devem fazer nessa página
+Para todo vídeo pré-gravado, devem haver legendas descritivas disponíveis e equivalentes ao seu conteúdo. Se um vídeo for uma alternativa a um texto ou vídeo sem áudio, o vídeo pré-gravado deve estar claramente identificado como tal.
 
-Aqui você deve documentar **critérios de conteúdo focados em textos, imagens, vídeos e áudio**. Isso inclui:
+### Áudiodescrição para vídeo
 
-- Alt text para imagens e gráficos
-- Legendas e transcrições para mídia
-- Estrutura de textos e headings
-- Linguagem clara e acessível
-- Dados em tabelas com acessibilidade
+Todos os vídeos pré-gravados têm audiodescrição para todo o conteúdo visual, a não ser que o áudio original seja suficiente para a compreensão do conteúdo do vídeo.
 
-Os items [EXEMPLO] no checklist **devem ser trocados** por critérios reais que você vai validar no conteúdo do seu projeto.
+### Janela de Libras
 
-### Como customizar
+Existe uma janela de Libras disponível em todo o conteúdo de vídeo com áudio.
 
-Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 17225 ou Guia UK-BR** que seja relevante para o conteúdo do seu projeto:
+---
 
-❌ Errado: `[EXEMPLO] Todas as imagens com alt text descritivo` (isto é apenas exemplo)
+## Áudio
 
-✅ Certo (exemplo de como fica):
+### Alternativa em texto
 
-- `Alt text descreve função/conteúdo sem ser repetitivo`
-- `Vídeos com legendas sincronizadas (open captions ou closed)`
-- `Transcrições incluem identificação de locutores`
+Para todo áudio pré-gravado, deve haver um texto como alternativa que transcreve o seu conteúdo. Se um áudio for uma alternativa a um texto ou vídeo pré-gravado, o áudio deve estar claramente identificado como tal.
 
-**Lembrete**: Os nomes dos critérios devem vir exatamente de WCAG 2.2, NBR 17225 ou Guia UK-BR, não inventados.
+### Controle de áudio
+Nenhum áudio que toca automaticamente dura mais de 3 segundos. Caso contrário, existe um mecanismo para pausar, silenciar ou ajustar o volume sem afetar o volume do sistema.
 
 ---
 
@@ -132,77 +123,126 @@ Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 172
   items={[
     {
       id: "content-1",
-      label: "[EXEMPLO] Texto evita jargão técnico excessivo",
-      description: "WCAG 2.2 - C.S. 3.1.3 | Pedir feedback de terceiro",
+      label: "Blocos de texto alinhados à esquerda",
+      description:
+        "NBR 17225 - 5.12.5 | Exceto para idiomas RTL ou quando o alinhamento for essencial para compreensão do conteúdo",
     },
     {
       id: "content-2",
-      label: "[EXEMPLO] Todas as imagens com alt text descritivo",
+      label: "Espaçamento entre linhas de pelo menos 1,5 vez o tamanho da fonte",
       description:
-        "WCAG 2.2 - C.S. 1.1.1 | Máximo 125 caracteres, descreve o essencial",
+        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-3",
-      label: "[EXEMPLO] Vídeos com legendas sincronizadas",
+      label: "Espaçamento entre parágrafos de pelo menos 2 vezes o tamanho da fonte",
       description:
-        "WCAG 2.2 - C.S. 1.2.2 | Incluir sons não-verbais: [carro buzina], [risada]",
+        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-4",
-      label: "[EXEMPLO] Estrutura de headings segue ordem lógica",
-      description: "WCAG 2.2 - C.S. 1.3.1 | Não pular níveis",
+      label: "Espaçamento entre letras de pelo menos 0,12 vez o tamanho da fonte",
+      description:
+        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-5",
-      label: "[EXEMPLO] Tabelas possuem cabeçalhos e associação com dados",
-      description: "WCAG 2.2 - C.S. 1.3.1 | Usar <th> e <caption>",
+      label: "Espaçamento entre palavras de pelo menos 0,16 vez o tamanho da fonte",
+      description:
+        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-6",
-      label:
-        "[EXEMPLO] Audiodescrição para vídeos com conteúdo visual essencial",
+      label: "Texto escrito em linguagem simples e clara",
       description:
-        "WCAG 2.2 - C.S. 1.2.5 | Descrever ações, cenários, textos na tela",
+        "NBR 17225 - 5.2.1 | Ou existência de conteúdo suplementar para auxiliar a compreensão",
     },
     {
       id: "content-7",
-      label: "[EXEMPLO] Gráficos acompanhados de tabela ou descrição textual",
+      label: "Blocos de texto com largura máxima de 80 caracteres",
       description:
-        "WCAG 2.2 - C.S. 1.1.1 | Dados não ficam presos só no gráfico",
+        "NBR 17225 - 5.12.7 | Ou existência de mecanismo para ajuste da largura",
     },
     {
       id: "content-8",
-      label:
-        "[EXEMPLO] Espaçamento entre linhas de pelo menos 1.5x a altura da fonte",
+      label: "Texto pode ser redimensionado em até 200%",
       description:
-        "WCAG 2.2 - C.S. 1.4.12 | Facilita leitura para dislexia e baixa visão",
+        "NBR 17225 - 5.12.1 | Sem perda de conteúdo ou funcionalidade",
     },
     {
       id: "content-9",
-      label: "[EXEMPLO] Transcrição completa disponível para conteúdo de áudio",
-      description: "WCAG 2.2 - C.S. 1.2.3 | Incluir identificação de locutores",
+      label: "Texto continua legível sem rolagem horizontal",
+      description:
+        "NBR 17225 - 5.12.2 | Considerando uma janela em tela cheia",
     },
     {
       id: "content-10",
-      label:
-        "[EXEMPLO] Linguagem é simples e clara (nível leitura preparatória)",
+      label: "Imagens informativas possuem texto alternativo equivalente",
       description:
-        "WCAG 2.2 - C.S. 3.1.5 | Evitar frases complexas e termos técnicos",
+        "NBR 17225 - 5.2.2 | O texto alternativo transmite o mesmo conteúdo da imagem",
     },
     {
       id: "content-11",
-      label: "[EXEMPLO] Glossário de termos técnicos disponível",
+      label: "Imagens funcionais possuem texto alternativo que descreve sua função",
       description:
-        "WCAG 2.2 - C.S. 3.1.4 | Ajudar usuários a entender palavras raras",
+        "NBR 17225 - 5.2.2 | Não descrever a aparência da imagem",
     },
     {
       id: "content-12",
-      label: "[EXEMPLO] Vídeos possuem audiodescrição completa",
+      label: "Imagens complexas possuem descrição detalhada",
       description:
-        "WCAG 2.2 - C.S. 1.2.6 | Descrever TODOS os detalhes visuais",
+        "NBR 17225 - 5.2.2 | Descrição próxima à imagem ou em página associada",
+    },
+    {
+      id: "content-13",
+      label: "Imagens decorativas são ignoradas por tecnologias assistivas",
+      description:
+        "NBR 17225 - 5.2.2 | Não transmitem conteúdo nem funcionalidade",
+    },
+    {
+      id: "content-14",
+      label: "Imagens de texto são evitadas",
+      description:
+        "NBR 17225 - 5.2.2 | Quando essenciais, possuem alternativa textual equivalente",
+    },
+    {
+      id: "content-15",
+      label: "Vídeos pré-gravados possuem legendas descritivas equivalentes",
+      description:
+        "NBR 17225 - 5.14.2 | Incluindo informações sonoras relevantes",
+    },
+    {
+      id: "content-16",
+      label: "Vídeos pré-gravados possuem audiodescrição quando necessária",
+      description:
+        "NBR 17225 - 5.14.4 | Para informações visuais não transmitidas pelo áudio",
+    },
+    {
+      id: "content-17",
+      label: "Conteúdo de áudio em mídia sincronizada possui janela de Libras",
+      description:
+        "NBR 17225 - 5.14.6 | Aplicável a vídeos com conteúdo sonoro sincronizado",
+    },
+    {
+      id: "content-18",
+      label: "Áudios pré-gravados possuem transcrição textual equivalente",
+      description:
+        "NBR 17225 - 5.14.1 | A transcrição reproduz o conteúdo do áudio",
+    },
+    {
+      id: "content-19",
+      label: "Conteúdos alternativos estão claramente identificados",
+      description:
+        "NBR 17225 - 5.2.1 | Quando áudio ou vídeo são alternativas a outro conteúdo",
+    },
+    {
+      id: "content-20",
+      label: "Áudios reproduzidos automaticamente possuem controle",
+      description:
+        "NBR 17225 - 5.14.7 | Pausar, silenciar ou ajustar volume quando excedem 3 segundos",
     },
   ]}
-  title="Geração de Conteúdo - Critérios de Exemplo"
+  title="Geração de Conteúdo - Checklist de Acessibilidade"
 />
 
 ---
