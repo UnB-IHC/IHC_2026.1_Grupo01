@@ -4,135 +4,127 @@ title: Ferramentas
 ---
 
 ## Frameworks e Ferramentas de Testes Automatizados
- 
-**WAVE – Web Accessibility Evaluation Tool**
+
+### WAVE – Web Accessibility Evaluation Tool
+
 <details>
 <summary>WAVE – Web Accessibility Evaluation Tool</summary>
+
 O WAVE é um conjunto de ferramentas de avaliação que auxilia autores a tornar o conteúdo de suas páginas mais acessível a pessoas com deficiência. Ele é capaz de identificar erros de acessibilidade e violações das Diretrizes de Acessibilidade para Conteúdo Web (WCAG), além de facilitar a avaliação humana do conteúdo.
- 
+
 O que o diferencia de outras ferramentas é a forma como apresenta os resultados: em vez de listar problemas em um painel separado, o WAVE injeta ícones e indicadores visuais diretamente sobre a página avaliada, permitindo identificar exatamente onde cada problema ocorre no contexto real do conteúdo. Os resultados são organizados em categorias com codificação por cores:
- 
+
 - **Erros** (ícones vermelhos): problemas de acessibilidade confirmados que precisam ser corrigidos.
 - **Erros de contraste**: textos sem contraste de cor suficiente em relação ao fundo.
 - **Alertas** (ícones amarelos): elementos que podem representar barreiras e exigem revisão manual.
 - **Funcionalidades** (ícones verdes): elementos que favorecem a acessibilidade.
 - **Elementos estruturais** (ícones azuis): revelam a estrutura da página — como cabeçalhos, links e regiões.
 - **ARIA** (ícones roxos): indica o uso de atributos ARIA na página, que devem ser verificados com atenção, pois uma implementação incorreta pode criar barreiras adicionais.
+
 Além disso, o WAVE disponibiliza duas funcionalidades especialmente úteis: o botão **"Styles"** remove todo o CSS da página, revelando a estrutura bruta do documento e a ordem de leitura exatamente como um leitor de tela a encontraria; e o painel **"Navigation Order"** exibe a sequência de tabulação para usuários que navegam apenas pelo teclado, listando cada elemento focalizável, seu papel ARIA e seu nome acessível.
- 
-A ferramenta pode ser acessada pelo site [wave.webaim.org](https://wave.webaim.org/) ou instalada como extensão para Chrome, Firefox e Edge. A extensão executa toda a análise dentro do próprio navegador, sem enviar nenhuma informação ao servidor do WAVE, garantindo avaliações seguras e privadas — inclusive para páginas protegidas por senha, intranets ou conteúdos gerados dinamicamente por scripts. Por essa razão, recomenda-se o uso da extensão em vez do site, pois o site pode apresentar limitações ao tentar ler determinadas páginas.
- 
+
+A ferramenta pode ser acessada pelo site [wave.webaim.org](https://wave.webaim.org/) ou instalada como extensão para Chrome, Firefox e Edge. A extensão executa toda a análise dentro do próprio navegador, sem enviar nenhuma informação ao servidor do WAVE, garantindo avaliações seguras e privadas.
+
 ![WAVE sendo utilizado na extensão do Chrome sobre o site PCPartPicker](/img/ferramentas/WAVE1.jpg)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+_Fonte: Elaborado pelo autor (2026)._
+
 ![Resultado da avaliação WAVE no site PCPartPicker](/img/ferramentas/WAVE2.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+_Fonte: Elaborado pelo autor (2026)._
+
 ![Página inicial do site WAVE com campo para inserir URL](/img/ferramentas/WAVE3.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+_Fonte: Elaborado pelo autor (2026)._
+
 </details>
----
- 
-**Lighthouse – Google**
+
+### Lighthouse – Google
+
 <details>
 <summary>Lighthouse – Google</summary>
+
 O Google Lighthouse é uma ferramenta automatizada de código aberto desenvolvida pelo Google para avaliar e melhorar a qualidade das páginas web. Ela realiza auditorias em cinco categorias principais: desempenho, acessibilidade, boas práticas, SEO e Progressive Web App (PWA).
- 
-O Lighthouse pode ser acessado via [pagespeed.web.dev](https://pagespeed.web.dev/?hl=pt-br) ou diretamente pelo Chrome DevTools (F12). Basta inserir a URL do site desejado e aguardar o relatório. Para cada categoria avaliada, a ferramenta atribui uma pontuação de 0 a 100, sendo 100 o resultado ideal.
- 
-Do ponto de vista da acessibilidade, o Lighthouse avalia fatores como a estrutura HTML adequada, o uso de texto alternativo em imagens, o suporte à navegação por teclado e a aderência às normas WCAG. Ao final, fornece informações sobre o estado de acessibilidade do site e sugestões de melhorias para garantir maior inclusão.
- 
+
+O Lighthouse pode ser acessado via [pagespeed.web.dev](https://pagespeed.web.dev/?hl=pt-br) ou diretamente pelo Chrome DevTools (F12).
+
+Do ponto de vista da acessibilidade, o Lighthouse avalia fatores como a estrutura HTML adequada, o uso de texto alternativo em imagens, o suporte à navegação por teclado e a aderência às normas WCAG.
+
 Quanto ao desempenho, o relatório analisa métricas como:
- 
+
 - **LCP** (Largest Contentful Paint): tempo até o maior elemento visível ser carregado.
 - **FID** (First Input Delay): tempo entre a primeira interação do usuário e a resposta do navegador.
 - **CLS** (Cumulative Layout Shift): instabilidade visual durante o carregamento da página.
-O relatório também verifica boas práticas de segurança, uso de HTTPS, e aspectos de SEO como meta tags e estrutura de URLs.
- 
-Um ponto importante é que o Lighthouse avalia uma página por vez. Para uma análise mais abrangente do site como um todo, pode ser complementado com ferramentas como o Google Search Console.
- 
+
 ![Página inicial do PageSpeed Insights com campo para inserir a URL do site](/img/ferramentas/Light1.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
-![Resultado do Lighthouse para o PCPartPicker mostrando pontuações de desempenho, acessibilidade, práticas recomendadas e SEO](/img/ferramentas/Light2.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+_Fonte: Elaborado pelo autor (2026)._
+
+![Resultado do Lighthouse para o PCPartPicker](/img/ferramentas/Light2.png)
+
+_Fonte: Elaborado pelo autor (2026)._
+
 </details>
----
- 
+
 ## Verificadores Visuais e Contrast Checkers
- 
-**Color Oracle**
+
+### Color Oracle
+
 <details>
 <summary>Color Oracle</summary>
-O Color Oracle é um aplicativo disponível para Mac, Windows e Linux que simula, em tela cheia e com um simples atalho, como a interface seria percebida por uma pessoa com daltonismo. Trata-se de um recurso valioso para designers e desenvolvedores que desejam verificar se as escolhas de cores de uma interface são acessíveis a pessoas com diferentes deficiências cromáticas.
- 
+
+O Color Oracle é um aplicativo disponível para Mac, Windows e Linux que simula, em tela cheia, como a interface seria percebida por uma pessoa com daltonismo.
+
 Com o Color Oracle, é possível realizar simulações dos seguintes tipos de daltonismo:
- 
-- **Deuteranopia**: ausência de cones receptores do verde (tipo mais comum).
+
+- **Deuteranopia**: ausência de cones receptores do verde.
 - **Protanopia**: ausência de cones receptores do vermelho.
-- **Tritanopia**: ausência de cones receptores do azul (muito rara).
+- **Tritanopia**: ausência de cones receptores do azul.
 - **Acromatopsia**: visão em escala de cinza completa.
-O aplicativo pode ser baixado gratuitamente em [colororacle.org](https://colororacle.org/).
- 
-![Interface do Color Oracle exibindo o menu de tipos de daltonismo disponíveis para simulação](/img/ferramentas/ColorOracle1.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+![Interface do Color Oracle](/img/ferramentas/ColorOracle1.png)
+
+_Fonte: Elaborado pelo autor (2026)._
+
 </details>
----
- 
-**WCAG Contrast Checker**
+
+### WCAG Contrast Checker
+
 <details>
 <summary>WCAG Contrast Checker</summary>
-O WCAG Contrast Checker é uma extensão do Chrome voltada especificamente para a verificação de contraste de cores entre texto e fundo, com base nos critérios estabelecidos pela WCAG. Ela pode ser instalada pelo [Chrome Web Store](https://chromewebstore.google.com/detail/wcag-contrast-checker/moeekkcjabmojhnfljngmohaaigchpbf).
- 
-A extensão permite verificar os níveis de contraste, luminosidade e brilho das combinações de cores dos conteúdos em texto. Para utilizá-la, basta clicar com o botão direito em qualquer parte da página e selecionar a opção correspondente, ou acionar o atalho **Alt+C**.
- 
-![Extensão WCAG Contrast Checker em uso no site PCPartPicker, exibindo as taxas de contraste de cada elemento](/img/ferramentas/WCAGChecker1.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+O WCAG Contrast Checker é uma extensão do Chrome voltada para a verificação de contraste de cores.
+
+A extensão permite verificar os níveis de contraste, luminosidade e brilho das combinações de cores. Para utilizá-la, basta clicar com o botão direito em qualquer parte da página e selecionar a opção correspondente, ou acionar o atalho **Alt+C**.
+
+![Extensão WCAG Contrast Checker](/img/ferramentas/WCAGChecker1.png)
+
+_Fonte: Elaborado pelo autor (2026)._
+
 </details>
----
- 
+
 ## Ferramentas de Análise de Conteúdo e Navegação
- 
-**Accessibility Insights (Microsoft)**
+
+### Accessibility Insights (Microsoft)
+
 <details>
 <summary>Accessibility Insights (Microsoft)</summary>
-O Accessibility Insights for Web é uma extensão de navegador para Chrome e Microsoft Edge desenvolvida pela Microsoft, projetada para ajudar desenvolvedores a identificar e resolver problemas de acessibilidade rapidamente. Pode ser baixada em [accessibilityinsights.io/downloads](https://accessibilityinsights.io/downloads/).
- 
-A extensão oferece dois modos de uso principais:
- 
-- **FastPass**: um processo leve que ajuda a identificar os problemas de acessibilidade mais comuns e de alto impacto em aproximadamente cinco minutos.
-- **Assessment**: um fluxo mais detalhado que, por meio de mais de 20 verificações manuais, assistidas e automatizadas, permite verificar a conformidade da página com os critérios de nível AA da WCAG 2.1.
-As verificações automatizadas analisam a conformidade com aproximadamente 50 requisitos de acessibilidade. Já os testes manuais fornecem instruções passo a passo, exemplos e orientações sobre como corrigir os problemas encontrados — muitos deles sendo "assistidos", o que significa que a ferramenta identifica as instâncias ou oferece um auxílio visual para facilitar a análise.
- 
-Recomenda-se o uso da extensão no Chrome por ser mais prática para a avaliação direta de sites. A combinação do modo automatizado com as checklists manuais resulta em uma avaliação mais completa e alinhada às diretrizes de acessibilidade.
- 
-![Painel do Accessibility Insights exibindo as verificações automatizadas com falhas encontradas no PCPartPicker](/img/ferramentas/Insights1.png)
- 
-*Fonte: Elaborado pelo autor (2026).*
- 
+
+O Accessibility Insights for Web é uma extensão de navegador desenvolvida pela Microsoft. A extensão oferece dois modos de uso principais:
+
+- **FastPass**: um processo leve que ajuda a identificar os problemas de acessibilidade mais comuns.
+- **Assessment**: um fluxo mais detalhado que, por meio de mais de 20 verificações manuais, permite verificar a conformidade com critérios WCAG.
+
+![Painel do Accessibility Insights](/img/ferramentas/Insights1.png)
+
+_Fonte: Elaborado pelo autor (2026)._
+
 </details>
 
 ## Referências Bibliográficas
- 
+
 WEBAIM. **WAVE Web Accessibility Evaluation Tool**. Disponível em: https://wave.webaim.org/. Acesso em: 24 jun. 2026.
- 
-WEBAIM. **WAVE Evaluation Tool – Chrome Web Store**. Disponível em: https://chromewebstore.google.com/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh. Acesso em: 24 jun. 2026.
- 
 GOOGLE. **PageSpeed Insights**. Disponível em: https://pagespeed.web.dev/. Acesso em: 24 jun. 2026.
- 
-JENNY KNOWLTON. **Color Oracle – Color Blindness Simulator**. Disponível em: https://colororacle.org/. Acesso em: 24 jun. 2026.
- 
-ROMILLY COCKING. **WCAG Contrast Checker – Chrome Web Store**. Disponível em: https://chromewebstore.google.com/detail/wcag-contrast-checker/moeekkcjabmojhnfljngmohaaigchpbf. Acesso em: 24 jun. 2026.
- 
-MICROSOFT. **Accessibility Insights for Web**. Disponível em: https://accessibilityinsights.io/downloads/. Acesso em: 24 jun. 2026.
+JENNY KNOWLTON. **Color Oracle**. Disponível em: https://colororacle.org/. Acesso em: 24 jun. 2026.
+ROMILLY COCKING. **WCAG Contrast Checker**. Disponível em: https://chromewebstore.google.com/detail/wcag-contrast-checker/moeekkcjabmojhnfljngmohaaigchpbf.
+MICROSOFT. **Accessibility Insights for Web**. Disponível em: https://accessibilityinsights.io/downloads/.

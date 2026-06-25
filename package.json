@@ -2,6 +2,7 @@
   "name": "docs",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://unb-ihc.github.io/IHC_2026.1_Grupo01/",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

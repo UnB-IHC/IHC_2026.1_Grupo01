@@ -7,16 +7,19 @@ const config: Config = {
   tagline: "Guia de Acessibilidade e Usabilidade: Desenvolvimento Web",
   favicon: "img/favicon.ico",
 
+  onBrokenLinks: "throw",
+  onBrokenAnchors: "ignore",
+
   future: {
     v4: true,
   },
 
   url: "https://unb-ihc.github.io",
-  baseUrl: "/",
+  baseUrl: "/IHC_2026.1_Grupo01/",
+  trailingSlash: false,
+
   organizationName: "UnB-IHC",
   projectName: "IHC_2026.1_Grupo01",
-
-  onBrokenLinks: "warn",
 
   i18n: {
     defaultLocale: "en",
@@ -29,6 +32,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
+          routeBasePath: "/", // ← Importante
           editUrl: "https://github.com/UnB-IHC/IHC_2026.1_Grupo01/tree/main/",
         },
         blog: {
@@ -63,12 +67,12 @@ const config: Config = {
         {
           title: "Documentação",
           items: [
-            { label: "Início", to: "/docs/inicio" },
-            { label: "Desenvolvimento Web", to: "/docs/desenvolvimento-web" },
-            { label: "Design", to: "/docs/design" },
-            { label: "Geração de Conteúdo", to: "/docs/geracao-conteudo" },
-            { label: "Gestão do Projeto", to: "/docs/gestao-projeto" },
-            { label: "Ferramentas", to: "/docs/ferramentas" },
+            { label: "Início", to: "/inicio" },
+            { label: "Desenvolvimento Web", to: "/desenvolvimento-web" },
+            { label: "Design", to: "/design" },
+            { label: "Geração de Conteúdo", to: "/geracao-conteudo" },
+            { label: "Gestão do Projeto", to: "/gestao-projeto" },
+            { label: "Ferramentas", to: "/ferramentas" },
           ],
         },
         {

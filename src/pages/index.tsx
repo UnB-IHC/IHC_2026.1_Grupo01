@@ -1,12 +1,6 @@
-import React, { useEffect } from "react";
-import { useHistory } from "@docusaurus/router"; // Importe o roteador do docusaurus
+import React from "react";
+import { Redirect } from "@docusaurus/router";
 
 export default function Home() {
-  const history = useHistory();
-
-  useEffect(() => {
-    history.push("/docs/inicio");
-  }, [history]);
-
-  return <div>Redirecionando...</div>;
+  return <Redirect to="/IHC_2026.1_Grupo01/inicio" />;
 }
