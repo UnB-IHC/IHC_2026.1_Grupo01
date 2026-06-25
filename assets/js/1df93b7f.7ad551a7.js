@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([["452"],{5146(r,s,u){u.r(s),u.d(s,{default:()=>n});var c=u(4848);u(6540);var e=u(6347);function n(){return(0,c.jsx)(e.rd,{to:"/IHC_2026.1_Grupo01/inicio"})}}}]);
