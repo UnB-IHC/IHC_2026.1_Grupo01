@@ -33,7 +33,6 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           routeBasePath: "/", // ← Importante
-          editUrl: "https://github.com/UnB-IHC/IHC_2026.1_Grupo01/tree/main/",
         },
         blog: {
           showReadingTime: true,

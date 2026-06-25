@@ -29,7 +29,7 @@ Este é um trabalho em grupo desenvolvido para avaliar competências em:
 
 ### Versão Online
 
-Acesse a documentação publicada em: **[https://unb-ihc.github.io](https://unb-ihc.github.io)**
+Acesse a documentação publicada em: **[https://unb-ihc.github.io/IHC_2026.1_Grupo01/inicio](https://unb-ihc.github.io/IHC_2026.1_Grupo01/inicio)**
 
 ### Localmente
 
@@ -47,12 +47,20 @@ cd IHC_2026.1_Grupo01
 
 # Instale as dependências
 yarn
+
+#ou
+
+npm install
 ```
 
 #### Desenvolvimento
 
 ```bash
 yarn start
+
+#ou
+
+npm run start
 ```
 
 Isso inicia um servidor local em `http://localhost:3000` com hot reload. Alterações no código são refletidas em tempo real.
