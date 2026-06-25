@@ -5,7 +5,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 const config: Config = {
   title: "IHC 2026.1 - Grupo 01",
   tagline: "Guia de Acessibilidade e Usabilidade: Desenvolvimento Web",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.png",
 
   onBrokenLinks: "throw",
   onBrokenAnchors: "ignore",
@@ -51,7 +51,7 @@ const config: Config = {
       title: "IHC 2026.1 - Grupo 01",
       logo: {
         alt: "IHC Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
       items: [
         {
