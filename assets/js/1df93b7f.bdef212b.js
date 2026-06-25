@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([["452"],{5146(e,c,s){s.r(c),s.d(c,{default:()=>u});var d=s(4848),i=s(6540),n=s(6347);function u(){let e=(0,n.W6)();return(0,i.useEffect)(()=>{e.push("/docs/inicio")},[e]),(0,d.jsx)("div",{children:"Redirecionando..."})}}}]);
