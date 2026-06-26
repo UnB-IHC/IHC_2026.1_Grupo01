@@ -13,8 +13,7 @@ A análise visual e de interação tem como objetivo verificar se uma interface 
 
 Essa avaliação é baseada em diretrizes internacionais de acessibilidade, como a **WCAG 2.2 (Web Content Accessibility Guidelines)**, nas normas brasileiras de acessibilidade digital e em boas práticas de design inclusivo.
 
-Seu propósito é identificar barreiras que dificultem a percepção, compreensão e interação com o sistema.
----
+## Seu propósito é identificar barreiras que dificultem a percepção, compreensão e interação com o sistema.
 
 ## 1. Contraste e Legibilidade
 
@@ -39,6 +38,7 @@ Se ignorado, há risco de:
 - Dificuldade de leitura;
 - Cansaço visual;
 - Exclusão de pessoas com baixa visão ou daltonismo.
+
 ---
 
 ## 2. Responsividade e Adaptação de Tela
@@ -64,6 +64,7 @@ Se ignorado, risco de:
 - Perda de informações;
 - Navegação difícil em dispositivos móveis;
 - Barreiras para pessoas que utilizam ampliação de tela.
+
 ---
 
 ## 3. Feedback Visual e Estados dos Componentes
@@ -89,6 +90,7 @@ Se ignorado, risco de:
 - Perda de contexto durante a navegação;
 - Erros de interação;
 - Dificuldade para usuários que dependem de navegação por teclado.
+
 ---
 
 ## 4. Uso de Cores e Representação de Informação
@@ -113,6 +115,7 @@ Se ignorado, risco de:
 - Perda de informações importantes;
 - Dificuldade de interpretação;
 - Exclusão de usuários com deficiência visual relacionada à percepção de cores (como daltonismo).
+
 ---
 
 ## 5. Animações e Efeitos de Movimento
@@ -138,6 +141,7 @@ Se ignorado, risco de:
 - Sobrecarga cognitiva;
 - Náusea ou desconforto;
 - Dificuldade de concentração e navegação.
+
 ---
 
 ## 6. Consistência Visual e Navegação
@@ -164,148 +168,171 @@ Se ignorado, risco de:
 
 ---
 
-## Checklist Interativo - Design
+## ✅ Checklist Interativo - Design
 
 <WCAGChecklist
   items={[
-          {
-        id: "design-a1",
-        label: "O sistema funciona em modo retrato e paisagem quando aplicável",
-        level: "A",
-        description: "1.3.4 Orientation",
-      },
-      {
-        id: "design-a2",
-        label: "Mensagens de erro são identificadas",
-        level: "A",
-        description: "3.3.1 Error Identification",
-      },
-      {
-        id: "design-a3",
-        label: "Campos possuem rótulos e instruções",
-        level: "A",
-        description: "3.3.2 Labels or Instructions",
-      },
-      {
-        id: "design-a4",
-        label: "Cor não é o único meio de transmitir informação",
-        level: "A",
-        description: "1.4.1 Use of Color",
-      },
-      {
-        id: "design-a5",
-        label: "Indicadores possuem texto, ícone ou outro recurso complementar",
-        level: "A",
-        description: "1.4.1 Use of Color",
-      },
-      {
-        id: "design-a6",
-        label: "Conteúdo em movimento pode ser pausado ou interrompido",
-        level: "A",
-        description: "2.2.2 Pause, Stop, Hide",
-      },
-      {
-        id: "design-a7",
-        label: "Não existem flashes que possam causar convulsões",
-        level: "A",
-        description: "2.3.1 Three Flashes or Below Threshold",
-      },
-      {
-        id: "design-a8",
-        label: "Mudanças de estado são comunicadas ao usuário",
-        level: "A",
-        description: "4.1.3 Status Messages",
-      },
-      {
-        id: "design-aa1",
-        label: "Contraste adequado entre texto e fundo",
-        level: "AA",
-        description: "1.4.3 Contrast (Minimum)",
-      },
-      {
-        id: "design-aa2",
-        label: "Possibilidade de redimensionar texto sem perda de conteúdo",
-        level: "AA",
-        description: "1.4.4 Resize Text",
-      },
-      {
-        id: "design-aa3",
-        label: "Evitar imagens de texto quando possível",
-        level: "AA",
-        description: "1.4.5 Images of Text",
-      },
-      {
-        id: "design-aa4",
-        label: "Conteúdo permanece legível sem exigir rolagem em duas dimensões",
-        level: "AA",
-        description: "1.4.10 Reflow",
-      },
-      {
-        id: "design-aa5",
-        label: "Conteúdo se adapta a diferentes larguras de tela",
-        level: "AA",
-        description: "1.4.10 Reflow",
-      },
-      {
-        id: "design-aa6",
-        label: "Interface funciona com ampliação de até 400%",
-        level: "AA",
-        description: "1.4.10 Reflow",
-      },
-      {
-        id: "design-aa7",
-        label: "Contraste de componentes visuais e controles",
-        level: "AA",
-        description: "1.4.11 Non-text Contrast",
-      },
-      {
-        id: "design-aa8",
-        label: "Componentes possuem contraste adequado",
-        level: "AA",
-        description: "1.4.11 Non-text Contrast",
-      },
-      {
-        id: "design-aa9",
-        label: "Espaçamento de texto não compromete a leitura",
-        level: "AA",
-        description: "1.4.12 Text Spacing",
-      },
-      {
-        id: "design-aa10",
-        label: "Foco do teclado é visível",
-        level: "AA",
-        description: "2.4.7 Focus Visible",
-      },
-      {
-        id: "design-aa11",
-        label: "Animações acionadas por interação podem ser desativadas",
-        level: "AA",
-        description: "2.3.3 Animation from Interactions",
-      },
-      {
-        id: "design-aa12",
-        label: "Movimento não essencial pode ser reduzido",
-        level: "AA",
-        description: "2.3.3 Animation from Interactions",
-      },
-      {
-        id: "design-aa13",
-        label: "Indicador de foco possui contraste adequado",
-        level: "AA",
-        description: "2.4.11 Focus Appearance (Minimum)",
-      },
-      {
-        id: "design-aaa1",
-        label: "Contraste aprimorado entre texto e fundo",
-        level: "AAA",
-        description: "1.4.6 Contrast (Enhanced)",
-      },
-      {
-        id: "design-aaa2",
-        label: "Imagens de texto são evitadas completamente",
-        level: "AAA",
-        description: "1.4.9 Images of Text (No Exception)",
-      },
+    {
+      id: "design-a1",
+      label: "O sistema funciona em modo retrato e paisagem quando aplicável",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#orientation" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.3.4 | Orientation</a>',
+    },
+    {
+      id: "design-a2",
+      label: "Mensagens de erro são identificadas",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#error-identification" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.3.1 | Error Identification</a>',
+    },
+    {
+      id: "design-a3",
+      label: "Campos possuem rótulos e instruções",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#labels-or-instructions" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.3.2 | Labels or Instructions</a>',
+    },
+    {
+      id: "design-a4",
+      label: "Cor não é o único meio de transmitir informação",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#use-of-color" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.1 | Use of Color</a>',
+    },
+    {
+      id: "design-a5",
+      label: "Indicadores possuem texto, ícone ou outro recurso complementar",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#use-of-color" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.1 | Use of Color</a>',
+    },
+    {
+      id: "design-a6",
+      label: "Conteúdo em movimento pode ser pausado ou interrompido",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#pause-stop-hide" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.2.2 | Pause, Stop, Hide</a>',
+    },
+    {
+      id: "design-a7",
+      label: "Não existem flashes que possam causar convulsões",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.3.1 | Three Flashes or Below Threshold</a>',
+    },
+    {
+      id: "design-a8",
+      label: "Mudanças de estado são comunicadas ao usuário",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#status-messages" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 4.1.3 | Status Messages</a>',
+    },
+    {
+      id: "design-aa1",
+      label: "Contraste adequado entre texto e fundo",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#contrast-minimum" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.3 | Contrast (Minimum)</a>',
+    },
+    {
+      id: "design-aa2",
+      label: "Possibilidade de redimensionar texto sem perda de conteúdo",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#resize-text" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.4 | Resize Text</a>',
+    },
+    {
+      id: "design-aa3",
+      label: "Evitar imagens de texto quando possível",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#images-of-text" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.5 | Images of Text</a>',
+    },
+    {
+      id: "design-aa4",
+      label: "Conteúdo permanece legível sem exigir rolagem em duas dimensões",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#reflow" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.10 | Reflow</a>',
+    },
+    {
+      id: "design-aa5",
+      label: "Conteúdo se adapta a diferentes larguras de tela",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#reflow" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.10 | Reflow</a>',
+    },
+    {
+      id: "design-aa6",
+      label: "Interface funciona com ampliação de até 400%",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#reflow" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.10 | Reflow</a>',
+    },
+    {
+      id: "design-aa7",
+      label: "Contraste de componentes visuais e controles",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#non-text-contrast" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.11 | Non-text Contrast</a>',
+    },
+    {
+      id: "design-aa8",
+      label: "Componentes possuem contraste adequado",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#non-text-contrast" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.11 | Non-text Contrast</a>',
+    },
+    {
+      id: "design-aa9",
+      label: "Espaçamento de texto não compromete a leitura",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#text-spacing" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.12 | Text Spacing</a>',
+    },
+    {
+      id: "design-aa10",
+      label: "Foco do teclado é visível",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#focus-visible" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.4.7 | Focus Visible</a>',
+    },
+    {
+      id: "design-aa11",
+      label: "Animações acionadas por interação podem ser desativadas",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#animation-from-interactions" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.3.3 | Animation from Interactions</a>',
+    },
+    {
+      id: "design-aa12",
+      label: "Movimento não essencial pode ser reduzido",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#animation-from-interactions" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.3.3 | Animation from Interactions</a>',
+    },
+    {
+      id: "design-aa13",
+      label: "Indicador de foco possui contraste adequado",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#focus-not-obscured-minimum" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.4.11 | Focus Appearance (Minimum)</a>',
+    },
+    {
+      id: "design-aaa1",
+      label: "Contraste aprimorado entre texto e fundo",
+      level: "AAA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#contrast-enhanced" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.6 | Contrast (Enhanced)</a>',
+    },
+    {
+      id: "design-aaa2",
+      label: "Imagens de texto são evitadas completamente",
+      level: "AAA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#images-of-text-no-exception" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.9 | Images of Text (No Exception)</a>',
+    },
   ]}
   title="Design System - Critérios de Exemplo"
 />
@@ -316,7 +343,7 @@ Se ignorado, risco de:
 
 [1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
 
-[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025. Disponível em: https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
 
 [3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
 

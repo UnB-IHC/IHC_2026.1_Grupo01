@@ -148,124 +148,134 @@ Se ignorado, há risco de:
 ## ✅ Checklist Interativo - Desenvolvimento Web
 
 <WCAGChecklist
-    items={[
-        {
-            id: "devweb-a1",
-            label: "Todo o layout da página deve ser envelopado em tags semânticas estruturais únicas",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 1.3.1 | Info and Relationships",
-        },
-        {
-            id: "devweb-a2",
-            label: "Os títulos devem seguir uma ordem estritamente lógica e sequencial baseada na importância",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 1.3.1 | Info and Relationships",
-        },
-        {
-            id: "devweb-a3",
-            label: "Dados organizados em grades ou sequências precisam de código equivalente",
-            level: "A",
-            description:
-                "NBR 17225 - Seção 5.5 & 5.6 | Listas & Tabelas",
-        },
-        {
-            id: "devweb-a4",
-            label: "Todas as funcionalidades devem ser executáveis via teclado",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 2.1.1 | Keyboard",
-        },
-        {
-            id: "devweb-a5",
-            label: "Permitir que usuários de teclado pulem menus repetitivos diretamente para o conteúdo",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 2.4.1 | Bypass Blocks",
-        },
-        {
-            id: "devweb-a6",
-            label: "O sistema precisa avisar onde está o erro e como corrigi-lo textualmente",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 3.3.1 | Error Identification",
-        },
-        {
-            id: "devweb-a7",
-            label: "Todo elemento de input precisa de um rótulo associado de forma programática",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 3.3.2 | Labels or Instructions",
-        },
-        {
-            id: "devweb-a8",
-            label: "Informações já preenchidas pelo usuário no mesmo fluxo devem ser auto-preenchidas ou selecionáveis",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 3.3.7 | Redundant Entry",
-        },
-        {
-            id: "devweb-a9",
-            label: "Componentes customizados Javascript precisam expor seus estados para as tecnologias assistivas",
-            level: "A",
-            description:
-                "WCAG 2.2 - C.S. 4.1.2 | Name, Role, Value",
-        },
-        {
-            id: "devweb-aa1",
-            label: "O usuário que navega por teclado precisa saber onde o cursor está posicionado",
-            level: "AA",
-            description:
-                "WCAG 2.2 - C.S. 2.4.7 | Focus Visible",
-        },
-        {
-            id: "devweb-aa2",
-            label: "Os mecanismos de navegação que são repetidos em várias páginas devem aparecer na mesma ordem relativa sempre que forem repetidos, a menos que uma alteração seja iniciada pelo usuário.",
-            level: "AA",
-            description:
-                "WCAG 2.2 - C.S. 3.2.3 | Consistent Navigation",
-        },
-        {
-            id: "devweb-aa3",
-            label: "Os componentes de interface que possuem a mesma funcionalidade dentro de um conjunto de páginas devem ser identificados de forma consistente.",
-            level: "AA",
-            description:
-                "WCAG 2.2 - C.S. 3.2.4 | Consistent Identification",
-        },
-        {
-            id: "devweb-aa4",
-            label: "Notificações na tela que aparecem sem recarregar a página devem ser anunciadas",
-            level: "AA",
-            description:
-                "WCAG 2.2 - C.S. 4.1.3 | Status Messages",
-        },
-        {
-            id: "devweb-aaa1",
-            label:
-                "Toda as funcionalidades devem ser operáveis através de uma interface de teclado sem exigir o pressionamento de teclas individuais em tempos específicos",
-            level: "AAA",
-            description:
-                "WCAG 2.2 - C.S. 2.1.3 | Keyboard (No Exception)",
-        },
-        {
-            id: "devweb-aaa2",
-            label:
-                "Permitir que o propósito de cada link possa ser identificado apenas a partir do texto do link",
-            level: "AAA",
-            description:
-                "WCAG 2.2 - C.S. 2.4.9 | Link Purpose (Link Only)",
-        },
-        {
-            id: "devweb-aaa3",
-            label:
-                "Deve estar disponível ajuda ao contexto para todos os campos e fluxos que exigem entrada de dados do usuário",
-            level: "AAA",
-            description:
-                "WCAG 2.2 - C.S. 3.3.5 | Help",
-        },
-    ]}
-    title="Desenvolvimento Web - Critérios de Exemplo"
+  items={[
+    {
+      id: "devweb-a1",
+      label:
+        "Todo o layout da página deve ser envelopado em tags semânticas estruturais únicas",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#info-and-relationships" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.3.1 - Info and Relationships</a>',
+    },
+    {
+      id: "devweb-a2",
+      label:
+        "Os títulos devem seguir uma ordem estritamente lógica e sequencial baseada na importância",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#info-and-relationships" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.3.1 - Info and Relationships</a>',
+    },
+    {
+      id: "devweb-a3",
+      label:
+        "Dados organizados em grades ou sequências precisam de código equivalente",
+      level: "A",
+      description: "NBR 17225 2025 - C.S. 5.5 & 5.6 - Listas & Tabelas",
+    },
+    {
+      id: "devweb-a4",
+      label: "Todas as funcionalidades devem ser executáveis via teclado",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#keyboard" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.1.1 - Keyboard</a>',
+    },
+    {
+      id: "devweb-a5",
+      label:
+        "Permitir que usuários de teclado pulem menus repetitivos diretamente para o conteúdo",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#bypass-blocks" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.4.1 - Bypass Blocks</a>',
+    },
+    {
+      id: "devweb-a6",
+      label:
+        "O sistema precisa avisar onde está o erro e como corrigi-lo textualmente",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#error-identification" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.3.1 - Error Identification</a>',
+    },
+    {
+      id: "devweb-a7",
+      label:
+        "Todo elemento de input precisa de um rótulo associado de forma programática",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#labels-or-instructions" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.3.2 - Labels or Instructions</a>',
+    },
+    {
+      id: "devweb-a8",
+      label:
+        "Informações já preenchidas pelo usuário no mesmo fluxo devem ser auto-preenchidas ou selecionáveis",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#redundant-entry" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.3.7 - Redundant Entry</a>',
+    },
+    {
+      id: "devweb-a9",
+      label:
+        "Componentes customizados Javascript precisam expor seus estados para as tecnologias assistivas",
+      level: "A",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#name-role-value" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 4.1.2 - Name, Role, Value</a>',
+    },
+    {
+      id: "devweb-aa1",
+      label:
+        "O usuário que navega por teclado precisa saber onde o cursor está posicionado",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#focus-visible" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.4.7 - Focus Visible</a>',
+    },
+    {
+      id: "devweb-aa2",
+      label:
+        "Os mecanismos de navegação que são repetidos em várias páginas devem aparecer na mesma ordem relativa sempre que forem repetidos",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#consistent-navigation" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.2.3 - Consistent Navigation</a>',
+    },
+    {
+      id: "devweb-aa3",
+      label:
+        "Os componentes de interface que possuem a mesma funcionalidade dentro de um conjunto de páginas devem ser identificados de forma consistente",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#consistent-identification" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.2.4 - Consistent Identification</a>',
+    },
+    {
+      id: "devweb-aa4",
+      label:
+        "Notificações na tela que aparecem sem recarregar a página devem ser anunciadas",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#status-messages" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 4.1.3 - Status Messages</a>',
+    },
+    {
+      id: "devweb-aaa1",
+      label:
+        "Toda as funcionalidades devem ser operáveis através de uma interface de teclado sem exigir o pressionamento de teclas em tempos específicos",
+      level: "AAA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#keyboard-no-exception" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.1.3 - Keyboard (No Exception)</a>',
+    },
+    {
+      id: "devweb-aaa2",
+      label:
+        "Permitir que o propósito de cada link possa ser identificado apenas a partir do texto do link",
+      level: "AAA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#link-purpose-link-only" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 2.4.9 - Link Purpose (Link Only)</a>',
+    },
+    {
+      id: "devweb-aaa3",
+      label:
+        "Deve estar disponível ajuda ao contexto para todos os campos e fluxos que exigem entrada de dados do usuário",
+      level: "AAA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#help" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.3.5 - Help</a>',
+    },
+  ]}
 />
 
 ---
@@ -274,7 +284,7 @@ Se ignorado, há risco de:
 
 [1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
 
-[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.\*\*Disponível em: https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
 
 [3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
 

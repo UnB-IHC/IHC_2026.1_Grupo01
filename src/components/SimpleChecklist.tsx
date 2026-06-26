@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import "../css/simple-checklist.css";
 
 interface ChecklistItem {
@@ -11,13 +11,9 @@ interface ChecklistItem {
 
 interface SimpleChecklistProps {
   items: ChecklistItem[];
-  title?: string;
 }
 
-export default function SimpleChecklist({
-  items,
-  title = "Checklist",
-}: SimpleChecklistProps) {
+export default function SimpleChecklist({ items }: SimpleChecklistProps) {
   const [checked, setChecked] = useState<Set<string>>(
     new Set(items.filter((item) => item.checked).map((item) => item.id)),
   );
@@ -45,12 +41,9 @@ export default function SimpleChecklist({
 
   return (
     <div className="simple-checklist">
-      <h2>{title}</h2>
-
-      {/* Gráfico Principal */}
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={280}>
-          <PieChart>
+          <PieChart aria-hidden="true" style={{ pointerEvents: "none" }}>
             <Pie
               data={chartData}
               cx="50%"
@@ -61,22 +54,30 @@ export default function SimpleChecklist({
               paddingAngle={2}
               dataKey="value"
               animationDuration={300}
+              focusable="false"
             >
               {chartData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index]}
+                  focusable="false"
+                />
               ))}
             </Pie>
-            <Tooltip formatter={(value) => `${value}`} />
           </PieChart>
         </ResponsiveContainer>
-        <div className="chart-stats">
+
+        <div
+          className="chart-stats"
+          role="img"
+          aria-label={`Progresso: ${checkedCount} de ${total} itens concluídos (${Math.round(percentage)}%)`}
+        >
           <div className="stat-number">{checkedCount}</div>
           <div className="stat-label">de {total}</div>
           <div className="stat-percentage">{Math.round(percentage)}%</div>
         </div>
       </div>
 
-      {/* Lista de Critérios */}
       <div className="checklist-items">
         {items.map((item) => (
           <div
