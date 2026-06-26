@@ -11,42 +11,6 @@ Este guia estabelece os parâmetros de governança necessários para garantir a 
 
 Estes são alguns dos tópicos centrais da **Gestão de Projetos** de aplicações acessíveis, conforme o visto no Guia de Boas Práticas para Acessibilidade Digital Reino Unido-Brasil de 2023:
 
-{/*
----
-
-## 📋 Como documentamos aqui (instruções internas)
-
-> 🗑️ **[REMOVER NA VERSÃO FINAL - SEÇÃO INTEIRA]** Delete quando terminar.
-
-### O que vocês devem fazer nessa página
-
-Aqui você deve documentar **critérios de governança focados em gestão e planejamento do projeto**. Isso inclui:
-
-- Atribuição de responsabilidades
-- Alocação de recursos e tempo
-- Envolvimento de pessoas com deficiência
-- Testes híbridos (automáticos + manuais + reais)
-- Conformidade com níveis de acessibilidade
-
-Os items [EXEMPLO] no checklist **devem ser trocados** por critérios reais que você vai validar na gestão do seu projeto.
-
-### Como customizar
-
-Remova cada `[EXEMPLO]` e substitua por um critério real do **WCAG 2.2, NBR 17225 ou Guia UK-BR** que seja relevante para a gestão do seu projeto:
-
-❌ Errado: `[EXEMPLO] Personas de acessibilidade foram mapeadas e documentadas` (isto é apenas exemplo)
-
-✅ Certo (exemplo de como fica):
-
-- `Testes incluíram pessoas com deficiência reais`
-- `Conformidade com nível AA da WCAG 2.2 alcançada`
-- `Documentação de requisitos de acessibilidade mantida`
-
-**Lembrete**: Os nomes dos critérios devem vir exatamente de WCAG 2.2, NBR 17225 ou Guia UK-BR, não inventados.
-
----
-  */}
-
 ## Atribuição de responsabilidades
 
 Na seção 5, de **Gestão de Projetos**, do **Guia UK-BR** (Página 19), espera-se que o planejamento de um projeto acessível produza um plano de ação atribuindo e distribuindo membros às suas várias responsabilidades, envolvendo, por exemplo, a boa delineação de atividades, o emprego de cronogramas, a definição de equipes profissionais e o agendamento das reuniões de lançamento e acompanhamento.
@@ -55,269 +19,209 @@ Na seção 5, de **Gestão de Projetos**, do **Guia UK-BR** (Página 19), espera
 
 O Guia UK-BR também prevê que, para um projeto poder apoiar efetivamente um grande número de usuários, a acessibilidade digital deve ser pensada já na sua concepção inicial, dado que é mais eficiente e, especialmente, vantajoso já tratar a acessibilidade como uma diretriz a seguir fielmente desde o começo do que como uma correção posterior a uma aplicação pré-existente, já para ser finalizada. E, mais do que isso, a aplicação também deve seguir o conceito do chamado **Desenho Universal**: a concepção de um produto para ser usado por todas as pessoas, inclusive de todas as deficiências – ao invés de só uma ou algumas –.
 
-Cabe à gestão de projetos **planejar, determinar e preparar os recursos necessários para ocorrer a materialização dos testes** de acessibilidade relevantes pelos desenvolvedores no geral, como informações sobre acessibilidade (ex. cursos, guias/diretrizes de boas práticas etc.) e o ferramental de *software* e/ou *hardware*, além, claro, da **alocação do próprio tempo** em cronograma (rever *Atribuição de responsabilidades* acima) **em que executá-los**.
-
-{/* Não sei se ainda dá tempo para dar um jeito de encaixar esta parte, em particular */}
-{/*## Envolvimento de pessoas com deficiência*/}
+Cabe à gestão de projetos **planejar, determinar e preparar os recursos necessários para ocorrer a materialização dos testes** de acessibilidade relevantes pelos desenvolvedores no geral, como informações sobre acessibilidade (ex. cursos, guias/diretrizes de boas práticas etc.) e o ferramental de _software_ e/ou _hardware_, além, claro, da **alocação do próprio tempo** em cronograma (rever _Atribuição de responsabilidades_ acima) **em que executá-los**.
 
 ## Testes híbridos (automáticos + manuais + reais)
 
-Em desenvolvimento de *software* no geral, a automatização de testes é bem aceita por permitir a agilização de processos de validação complexos, por sua vez ajudando os desenvolvedores a melhorarem suas taxas de cobertura mais eficientemente, além de servir de guia para o encontro das áreas que precisam de atenção ou correção mais rapidamente.
+Em desenvolvimento de _software_ no geral, a automatização de testes é bem aceita por permitir a agilização de processos de validação complexos, por sua vez ajudando os desenvolvedores a melhorarem suas taxas de cobertura mais eficientemente, além de servir de guia para o encontro das áreas que precisam de atenção ou correção mais rapidamente.
 
 No entanto, vários erros e nuances nem sempre podem ser assim detectados confiavelmente, se é que o podem; e nos testes de acessibilidade, que tendem a envolver substancialmente mais do que só validações de lógica em prol das de elementos multimídia como textos renderizados, imagens (elementos gráficos) e/ou sons, a ineficácia dos testes automáticos em asserções detalhadas tende a ficar ainda mais óbvia. Por exemplo, um teste automatizado de contraste entre elementos gráficos, que costuma envolver comparações de luminância média – por simplicidade –, pode ser perfeitamente eficaz com imagens ou fundos com preenchimentos sólidos ou suaves, mas perder a confiabilidade com conteúdos detalhados.
 
-Isso torna uma presença um tanto maior de **testes manuais** preferível para validações de acessibilidade, justamente cobrindo as lacunas que os **testes automáticos** (geralmente) não conseguem cobrir aceitavelmente, bem como indica o próprio Guia UK-BR (Seção 6, tópico *Testes Manuais e Automáticos* – páginas 23-24). Mas mesmo os testes manuais podem não refletir fielmente a realidade dos usuários, especialmente os deficientes, quando são feitos só pelos desenvolvedores, cuja equipe nem sempre contém as *personas* deficientes que se planeja apoiar. Por isso, está definido aqui que a composição ideal dos **testes híbridos** de acessibilidade abrange, simultaneamente, os **testes automáticos, manuais e com pessoas usuárias reais**, inclusive cabendo à gestão do projeto se responsabilizar por garanti-los ao longo de todo o processo de desenvolvimento.
+Isso torna uma presença um tanto maior de **testes manuais** preferível para validações de acessibilidade, justamente cobrindo as lacunas que os **testes automáticos** (geralmente) não conseguem cobrir aceitavelmente, bem como indica o próprio Guia UK-BR (Seção 6, tópico _Testes Manuais e Automáticos_ – páginas 23-24). Mas mesmo os testes manuais podem não refletir fielmente a realidade dos usuários, especialmente os deficientes, quando são feitos só pelos desenvolvedores, cuja equipe nem sempre contém as _personas_ deficientes que se planeja apoiar. Por isso, está definido aqui que a composição ideal dos **testes híbridos** de acessibilidade abrange, simultaneamente, os **testes automáticos, manuais e com pessoas usuárias reais**, inclusive cabendo à gestão do projeto se responsabilizar por garanti-los ao longo de todo o processo de desenvolvimento.
 
 ## Conformidade com níveis de acessibilidade
 
-Os guias neste *pocket* no geral já se baseiam no guia **WCAG 2.2** do W3C, e é fundamental que a gestão de projeto **preveja condições e estrutura para que as demais etapas tenham condições de fazer cumprir as suas diretrizes** de acessibilidade.
+Os guias neste _pocket_ no geral já se baseiam no guia **WCAG 2.2** do W3C, e é fundamental que a gestão de projeto **preveja condições e estrutura para que as demais etapas tenham condições de fazer cumprir as suas diretrizes** de acessibilidade.
 
-Por exemplo, testar as diretrizes de navegação de uma página com leitor de telas pode não ser tão **trivial** quanto com um teclado (Guia UK-BR, seção 6, página 24; WCAG 2.2: 2. Operável), além de muitos testes automáticos de código, porque geralmente precisam da instalação e/ou configuração de um *software*, *plugin* ou extensão para tal função. Portanto, é importante que o planejamento do projeto já controle e resolva essas dependências para a operação fluida e ótima das outras etapas **antes** que elas possam enfrentar algum obstáculo desse tipo quando já em execução.
+Por exemplo, testar as diretrizes de navegação de uma página com leitor de telas pode não ser tão **trivial** quanto com um teclado (Guia UK-BR, seção 6, página 24; WCAG 2.2: 2. Operável), além de muitos testes automáticos de código, porque geralmente precisam da instalação e/ou configuração de um _software_, _plugin_ ou extensão para tal função. Portanto, é importante que o planejamento do projeto já controle e resolva essas dependências para a operação fluida e ótima das outras etapas **antes** que elas possam enfrentar algum obstáculo desse tipo quando já em execução.
 
-Além disso, embora a global WCAG 2.2 indique que o seu requisito mínimo e mandatório seja o nível de acessibilidade A, o mais básico, certas normas locais, como a **NBR 17225: Acessibilidade para conteúdo web** da própria ABNT brasileira, mesmo fundamentadas na própria WCAG, têm seus próprios requisitos mínimos mais exigentes: esta própria norma brasileira tem ambos os níveis A e AA das diretrizes do W3C como o seu próprio tipo básico, de **conformidade regular**, e apenas o nível AAA é opcional em vez disso, no tipo de **conformidade plena** (Seção 9, páginas 9-10). A gestão tem que prever amplamente a estratégia de acessibilidade do projeto com base nessas demandas adicionais caso os desenvolvedores não fossem estar inicialmente vindo a tentar cumprir níveis superiores *voluntariamente*.
+Além disso, embora a global WCAG 2.2 indique que o seu requisito mínimo e mandatório seja o nível de acessibilidade A, o mais básico, certas normas locais, como a **NBR 17225: Acessibilidade para conteúdo web** da própria ABNT brasileira, mesmo fundamentadas na própria WCAG, têm seus próprios requisitos mínimos mais exigentes: esta própria norma brasileira tem ambos os níveis A e AA das diretrizes do W3C como o seu próprio tipo básico, de **conformidade regular**, e apenas o nível AAA é opcional em vez disso, no tipo de **conformidade plena** (Seção 9, páginas 9-10). A gestão tem que prever amplamente a estratégia de acessibilidade do projeto com base nessas demandas adicionais caso os desenvolvedores não fossem estar inicialmente vindo a tentar cumprir níveis superiores _voluntariamente_.
 
 ## ✅ Checklist Interativo - Gestão do Projeto
 
-{/*
 <SimpleChecklist
   items={[
     {
       id: "gestao-1",
       label:
-        "[EXEMPLO] Personas de acessibilidade foram mapeadas e documentadas",
-      description: "Guia UK-BR | Definir públicos com deficiência considerados",
-    },
-    {
-      id: "gestao-2",
-      label:
-        "[EXEMPLO] Acessibilidade foi considerada desde o planejamento inicial",
+        "Acessibilidade digital pensada e integrada desde a concepção do projeto",
       description:
-        "NBR 17225 | Não deixar para o final, integrar desde o início",
-    },
-    {
-      id: "gestao-3",
-      label: "[EXEMPLO] Responsável pela acessibilidade foi designado",
-      description:
-        "NBR Seção 6 | Alguém accountable pelos requisitos de acessibilidade",
-    },
-    {
-      id: "gestao-4",
-      label: "[EXEMPLO] Tempo e recursos foram alocados para acessibilidade",
-      description: "Planejamento | Ferramentas, horas, treinamento, testes",
-    },
-    {
-      id: "gestao-5",
-      label: "[EXEMPLO] Treinamento básico do time sobre WCAG e acessibilidade",
-      description:
-        "ABNT NBR 17225 | Todos entendem o básico sobre acessibilidade",
-    },
-    {
-      id: "gestao-6",
-      label: "[EXEMPLO] Testes incluíram pessoas com deficiência reais",
-      description:
-        "Guia UK-BR | Não só checklist automático, envolver usuários",
-    },
-    {
-      id: "gestao-7",
-      label:
-        "[EXEMPLO] Testes foram híbridos (automatizados + manuais + usuários)",
-      description:
-        "NBR 17225 | Combinar validação automática com testes humanos",
-    },
-    {
-      id: "gestao-8",
-      label: "[EXEMPLO] Documentação de requisitos de acessibilidade mantida",
-      description: "NBR Seção 5 | Rastrear critérios, decisões, mudanças",
-    },
-    {
-      id: "gestao-9",
-      label: "[EXEMPLO] Conformidade com nível AA da WCAG 2.2 alcançada",
-      description: "NBR 4 Conformidade | Mínimo recomendado pela norma",
-    },
-    {
-      id: "gestao-10",
-      label: "[EXEMPLO] Declaração de Acessibilidade foi publicada",
-      description:
-        "NBR Seção 7 | Comunicar publicamente o nível de conformidade",
-    },
-    {
-      id: "gestao-11",
-      label: "[EXEMPLO] Conformidade com nível AAA da WCAG 2.2 alcançada",
-      description: "WCAG 2.2 | Excelência em acessibilidade, além do mínimo",
-    },
-    {
-      id: "gestao-12",
-      label: "[EXEMPLO] Auditoria externa de acessibilidade foi realizada",
-      description:
-        "Validação | Envolver especialista independente para validar",
-    },
-    {
-      id: "gestao-13",
-      label: "[EXEMPLO] Feedback de pessoas com deficiência foi documentado",
-      description:
-        "Participação contínua | Colocar voz de PcDs no centro das decisões",
-    },
-  ]}
-  title="Gestão do Projeto - Critérios de Exemplo"
-/>
-  */}
-
-<SimpleChecklist
-  items = {[
-    {
-      id: "gestao-1",
-      label: "Acessibilidade digital pensada e integrada desde a concepção do projeto",
-      description: "Guia UK-BR, seção 5, página 14: Iniciação [da gestão do projeto]"
+        "Guia UK-BR, seção 5, página 14: Iniciação [da gestão do projeto]",
     },
     {
       id: "gestao-2",
       label: "Acessibilidade foi validada no ambiente local antes de commits",
-      description: "Guia UK-BR, seção 5, página 14: Iniciação [da gestão do projeto]"
+      description:
+        "Guia UK-BR, seção 5, página 14: Iniciação [da gestão do projeto]",
     },
     {
       id: "gestao-3",
-      label: "Definir vários perfis de usuários com deficiência a atender e apoiar",
-      description: "Guia UK-BR, seção 5, página 14: Concepção e teste pensando no uso por todas as pessoas, sem necessidade de adaptação específica (Desenho Universal)"
+      label:
+        "Definir vários perfis de usuários com deficiência a atender e apoiar",
+      description:
+        "Guia UK-BR, seção 5, página 14: Concepção e teste pensando no uso por todas as pessoas, sem necessidade de adaptação específica (Desenho Universal)",
     },
     {
       id: "gestao-4",
-      label: "Aprofundamento sobre as necessidades das *personas* deficientes e as suas barreiras de acesso, além das orientações típicas",
-      description: "Guia UK-BR, seção 5, página 18: Planejamento [do projeto]; Seção 5, página 20: Execução [do projeto]"
+      label:
+        "Aprofundamento sobre as necessidades das *personas* deficientes e as suas barreiras de acesso, além das orientações típicas",
+      description:
+        "Guia UK-BR, seção 5, página 18: Planejamento [do projeto]; Seção 5, página 20: Execução [do projeto]",
     },
     {
       id: "gestao-22",
-      label: "Plano de projeto está bem definido quanto a atividades, cronogramas e atribuições de responsabilidade",
-      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]"
+      label:
+        "Plano de projeto está bem definido quanto a atividades, cronogramas e atribuições de responsabilidade",
+      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]",
     },
     {
       id: "gestao-23",
-      label: "Definição de recursos abrange qual será a equipe do projeto funcional e os cursos e ferramentas necessárias para a execução das tarefas",
-      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]"
+      label:
+        "Definição de recursos abrange qual será a equipe do projeto funcional e os cursos e ferramentas necessárias para a execução das tarefas",
+      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]",
     },
     {
       id: "gestao-24",
-      label: "Equipe que fará parte do projeto funcional contém profissionais internos e externos",
-      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]"
+      label:
+        "Equipe que fará parte do projeto funcional contém profissionais internos e externos",
+      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]",
     },
     {
       id: "gestao-25",
-      label: "Planejamento produz calendário/cronograma de reuniões de lançamento do projeto e acompanhamento de sua evolução",
-      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]"
+      label:
+        "Planejamento produz calendário/cronograma de reuniões de lançamento do projeto e acompanhamento de sua evolução",
+      description: "Guia UK-BR, seção 5, página 19: Planejamento [do projeto]",
     },
     {
       id: "gestao-19",
-      label: "Manter tarefas do projeto em dia, gerenciando prazos e cronogramas",
-      description: "Guia UK-BR, seção 5, página 19: Execução [do projeto]"
+      label:
+        "Manter tarefas do projeto em dia, gerenciando prazos e cronogramas",
+      description: "Guia UK-BR, seção 5, página 19: Execução [do projeto]",
     },
     {
       id: "gestao-20",
       label: "Orientar e acompanhar de perto as equipes",
-      description: "Guia UK-BR, seção 5, página 19: Execução [do projeto]"
+      description: "Guia UK-BR, seção 5, página 19: Execução [do projeto]",
     },
     {
       id: "gestao-21",
-      label: "Garantir, dentro do possível, a fidelidade do trabalho ao plano original",
-      description: "Guia UK-BR, seção 5, página 19: Execução [do projeto]"
+      label:
+        "Garantir, dentro do possível, a fidelidade do trabalho ao plano original",
+      description: "Guia UK-BR, seção 5, página 19: Execução [do projeto]",
     },
     {
       id: "gestao-5",
       label: "Conhecer o WCAG e seguir as suas orientações no geral",
-      description: "Guia UK-BR, seção 5, página 20: Execução [do projeto]; Seção 6, página 21: Etapa essencial ao desenvolvimento do projeto"
+      description:
+        "Guia UK-BR, seção 5, página 20: Execução [do projeto]; Seção 6, página 21: Etapa essencial ao desenvolvimento do projeto",
     },
     {
       id: "gestao-22",
-      label: "Avaliar os artefatos que estão sendo produzidos e fazer as \"correções de rota\" se/quando devidas",
-      description: "Guia UK-BR, seção 5, página 21: Monitoramento e Controle"
+      label:
+        "Avaliar os artefatos que estão sendo produzidos e fazer as correções de rota se/quando devidas",
+      description: "Guia UK-BR, seção 5, página 21: Monitoramento e Controle",
     },
     {
       id: "gestao-101",
-      label: "Avaliar os sucessos e também as falhas na realização das entregas finais e mensuração dos resultados",
-      description: "Guia UK-BR, seção 5, página 21: Encerramento"
+      label:
+        "Avaliar os sucessos e também as falhas na realização das entregas finais e mensuração dos resultados",
+      description: "Guia UK-BR, seção 5, página 21: Encerramento",
     },
     {
       id: "gestao-6",
-      label: "Ouvir feedbacks de usuários, aprofundando-se na realidade dos deficientes",
-      description: "Guia UK-BR, seção 6, página 21: Melhorar e tornar mais acessível o processo de desenvolvimento"
+      label:
+        "Ouvir feedbacks de usuários, aprofundando-se na realidade dos deficientes",
+      description:
+        "Guia UK-BR, seção 6, página 21: Melhorar e tornar mais acessível o processo de desenvolvimento",
     },
     {
       id: "gestao-7",
       label: "Fazer protótipos de interface já com a acessibilidade em mente",
-      description: "Guia UK-BR, seção 6, página 21: Melhorar e tornar mais acessível o processo de desenvolvimento"
+      description:
+        "Guia UK-BR, seção 6, página 21: Melhorar e tornar mais acessível o processo de desenvolvimento",
     },
     {
       id: "gestao-8",
-      label: "Manter em mente usuários com qualquer nível de letramento e usabilidade digitais",
-      description: "Guia UK-BR, seção 6, página 22: Analfabetismo digital"
+      label:
+        "Manter em mente usuários com qualquer nível de letramento e usabilidade digitais",
+      description: "Guia UK-BR, seção 6, página 22: Analfabetismo digital",
     },
     {
       id: "gestao-9",
-      label: "Ter checklists para cada área conforme seu papel na acessibilidade do projeto",
-      description: "Guia UK-BR, seção 6, página 23: Checklists"
+      label:
+        "Ter checklists para cada área conforme seu papel na acessibilidade do projeto",
+      description: "Guia UK-BR, seção 6, página 23: Checklists",
     },
     {
       id: "gestao-10",
-      label: "Ter um grupo de usuários de teste, de preferência incluindo as pessoas com deficiência a serem apoiadas",
-      description: "Guia UK-BR, seção 6, página 23: Grupo de Teste"
+      label:
+        "Ter um grupo de usuários de teste, de preferência incluindo as pessoas com deficiência a serem apoiadas",
+      description: "Guia UK-BR, seção 6, página 23: Grupo de Teste",
     },
     {
       id: "gestao-11",
-      label: "Realizar testes híbridos: automáticos, manuais e com usuários reais",
-      description: "Guia UK-BR, seção 6, páginas 23-24: Grupo de Teste, Testes Manuais e Automáticos, conciliação dos pontos fortes e fracos de todos os tipos de teste de acessibilidade"
+      label:
+        "Realizar testes híbridos: automáticos, manuais e com usuários reais",
+      description:
+        "Guia UK-BR, seção 6, páginas 23-24: Grupo de Teste, Testes Manuais e Automáticos, conciliação dos pontos fortes e fracos de todos os tipos de teste de acessibilidade",
     },
     {
       id: "gestao-12",
       label: "Reforçar diretrizes da WCAG já na prototipação da página",
-      description: "Guia UK-BR, seção 5, página 14: Iniciação [da gestão do projeto]; Seção 6, página 21: Melhorar e tornar mais acessível o processo de desenvolvimento"
+      description:
+        "Guia UK-BR, seção 5, página 14: Iniciação [da gestão do projeto]; Seção 6, página 21: Melhorar e tornar mais acessível o processo de desenvolvimento",
     },
     {
       id: "gestao-13",
       label: "Prever navegação com leitor de telas",
-      description: "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos"
+      description:
+        "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos",
     },
     {
       id: "gestao-14",
-      label: "Avaliação geral na página com ferramentas de validação automática",
-      description: "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos; Seção 10, página 56: Ferramentas de Validação Automática"
+      label:
+        "Avaliação geral na página com ferramentas de validação automática",
+      description:
+        "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos; Seção 10, página 56: Ferramentas de Validação Automática",
     },
     {
       id: "gestao-15",
-      label: "Relatar barreiras encontradas com verificações de acessibilidade em uma tabela ou planilha",
-      description: "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos"
+      label:
+        "Relatar barreiras encontradas com verificações de acessibilidade em uma tabela ou planilha",
+      description:
+        "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos",
     },
     {
       id: "gestao-16",
-      label: "Prever navegação tanto em computadores pessoais como em dispositivos móveis (telefones celulares/smartphones, tablets), e possivelmente também em telas grandes (10-foot experience)",
-      description: "Guia UK-BR, seção 6, páginas 24-25: Navegação em Celular x Computador (conceito estendido); WCAG 2.2: Introdução"
+      label:
+        "Prever navegação tanto em computadores pessoais como em dispositivos móveis, e possivelmente também em telas grandes",
+      description:
+        "Guia UK-BR, seção 6, páginas 24-25: Navegação em Celular x Computador (conceito estendido); WCAG 2.2: Introdução",
     },
     {
       id: "gestao-17",
-      label: "Fazer um bom código semântico para o uso pelos desenvolvedores web/HTML",
-      description: "Guia UK-BR, seção 6, páginas 25-26: Semântica"
+      label:
+        "Fazer um bom código semântico para o uso pelos desenvolvedores web/HTML",
+      description: "Guia UK-BR, seção 6, páginas 25-26: Semântica",
     },
     {
       id: "gestao-98",
       label: "Alcançar no mínimo os níveis de conformidade A e AA do WCAG 2.2",
-      description: "NBR 17225:2025, seção 4, página 9: Conformidade regular"
+      description: "NBR 17225:2025, seção 4, página 9: Conformidade regular",
     },
     {
       id: "gestao-99",
       label: "Alcançar adicionalmente o nível de conformidade AAA do WCAG 2.2",
-      description: "NBR 17225:2025, seção 4, páginas 9-10: Conformidade plena"
-    }
+      description: "NBR 17225:2025, seção 4, páginas 9-10: Conformidade plena",
+    },
   ]}
-  title = "Gestão de Projeto - Critérios"
+  title="Gestão de Projeto - Critérios"
 />
 
 ---
 
 ## Referências Bibliográficas
 
-{/*### EXEMPLO DE PREENCHIMENTO DAS REFERENCIAS! TROQUEM OS LINKS E A INFORMAÇÃO QUE VOCÊ QUER.*/}
-
 [1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
 
-[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025. Disponível em:
-
-[3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2 – Candidata a Tradução Autorizada em Português do Brasil.** Disponível em: https://www.w3c.br/traducoes/wcag/wcag22-pt-BR/
-
-[4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025. Disponível em: https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
