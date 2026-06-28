@@ -9,6 +9,20 @@ const sidebars: SidebarsConfig = {
     "gestao-projeto",
     "ferramentas",
     "heuristicas",
+    {
+      type: "category",
+      label: "Conteúdos",
+      collapsible: true,
+      collapsed: true,
+      link: {
+        type: "generated-index",
+        title: "Conteúdos de IHC",
+        description:
+          "Explore nossos guias rápidos sobre Interação Humano-Computador, pesquisa com usuários e avaliação de interfaces.",
+        slug: "/conteudos",
+      },
+      items: ["conteudos/ux", "conteudos/personas"],
+    },
   ],
 };
 
