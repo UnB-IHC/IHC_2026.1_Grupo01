@@ -21,7 +21,13 @@ const sidebars: SidebarsConfig = {
           "Explore nossos guias rápidos sobre Interação Humano-Computador, pesquisa com usuários e avaliação de interfaces.",
         slug: "/conteudos",
       },
-      items: ["conteudos/ux", "conteudos/personas"],
+      items: [
+        "conteudos/ux",
+        "conteudos/personas",
+        "conteudos/blueprint",
+        "conteudos/design-empatico",
+        "conteudos/usabilidade-ihc-acessibilidade",
+      ],
     },
   ],
 };

@@ -1,0 +1,278 @@
+---
+title: Usabilidade, IHC e Acessibilidade Digital
+description: Um guia educativo sobre os fundamentos de usabilidade, Interação Humano-Computador e boas práticas de acessibilidade em documentos digitais
+sidebar_position: 2
+---
+
+# Usabilidade, IHC e Acessibilidade Digital
+
+> _"Quando uma interface funciona bem, ela se torna invisível. Só notamos a interface quando ela falha e nos impede de concluir uma tarefa."_
+
+Esses três temas — Usabilidade, IHC e Acessibilidade Digital — parecem separados à primeira vista, mas formam um sistema coerente. A IHC é a área de conhecimento que os estuda; a usabilidade é o critério que avalia a qualidade das interações; e a acessibilidade é o compromisso de garantir que essa qualidade chegue a todas as pessoas, sem exceção.
+
+---
+
+## Parte 1: O Triângulo Fundamental — Usabilidade, UX e IHC
+
+Esses três conceitos são frequentemente confundidos. Entendê-los separadamente é o primeiro passo para aplicá-los bem juntos.
+
+### Usabilidade
+
+Usabilidade é o atributo técnico de uma interface. Ela mede com que facilidade um usuário consegue realizar uma tarefa de forma:
+
+- **Eficaz** — o usuário consegue completar o que se propôs a fazer?
+- **Eficiente** — ele faz isso sem erros e sem gastar esforço desnecessário?
+- **Satisfatória** — a experiência ao longo do processo é agradável?
+
+> _Uma interface com boa usabilidade é aquela em que o usuário não precisa pensar sobre como usá-la — ela simplesmente funciona._
+
+### User Experience (UX)
+
+UX vai além da usabilidade. É a percepção total que uma pessoa tem ao interagir com um produto ou sistema — antes, durante e depois do uso. Ela envolve emoções, crenças, expectativas e memórias afetivas.
+
+A relação entre os dois é assim: **se a usabilidade garante que o usuário chega ao destino, a UX garante que ele aproveite a viagem.** Um sistema pode ser tecnicamente funcional e ainda assim ser frustrante, monótono ou alienante.
+
+| Dimensão         | Usabilidade                    | UX                         |
+| ---------------- | ------------------------------ | -------------------------- |
+| Foco             | Tarefa e eficiência            | Sentimento e significado   |
+| Pergunta central | "O usuário consegue terminar?" | "A jornada foi memorável?" |
+| Natureza         | Objetiva e mensurável          | Subjetiva e contextual     |
+
+### IHC — Interação Humano-Computador
+
+IHC é a área multidisciplinar que estuda a relação entre pessoas e sistemas computacionais. Ela envolve engenharia, psicologia cognitiva, design e ciências sociais, com um único objetivo: tornar a tecnologia mais humana e significativa.
+
+Na prática, IHC está presente em:
+
+- Levantamento de requisitos com foco no usuário real (personas, jornadas)
+- Design e prototipagem de interfaces
+- Avaliação de usabilidade ao longo do desenvolvimento
+- Garantia de que acessibilidade não seja um recurso extra, mas uma premissa
+
+A IHC não é uma etapa isolada — é um **ciclo contínuo** que deve estar presente do início ao fim do desenvolvimento de qualquer produto digital.
+
+---
+
+## Parte 2: Os Princípios do Design — O Legado de Don Norman
+
+No livro _The Design of Everyday Things_, Don Norman estabeleceu os princípios que definem se um sistema é intuitivo ou confuso. Eles continuam sendo a base do design de interação hoje.
+
+### Affordance e Signifiers
+
+**Affordance** é o potencial percebido de uso de um objeto — o que ele _sugere_ que pode ser feito com ele. Um botão com relevo sugere que pode ser pressionado. Uma alça sugere que pode ser puxada.
+
+**Signifiers** são os sinais explícitos que confirmam como usar algo. O ícone de lixeira numa interface não tem relevo, mas você sabe imediatamente que ele serve para apagar.
+
+> **O problema das "Portas de Norman":** Se uma porta simples precisa de uma etiqueta escrita "empurre" ou "puxe", o design falhou. A forma da porta deveria indicar isso sozinha.
+
+### Mapeamento e Feedback
+
+**Mapeamento** é a relação lógica entre um controle e seu efeito. Arrastar para a direita para avançar fotos, apertar para cima para aumentar o volume, rolar para baixo para descer a página — quando o mapeamento é natural, o usuário não precisa aprender nada.
+
+**Feedback** é a resposta imediata do sistema confirmando que uma ação foi executada. Um campo de CPF que fica verde ao ser validado, uma notificação "documento salvo com sucesso", o vibrar do celular ao receber uma mensagem — sem feedback, o usuário não sabe se sua ação funcionou e tende a repeti-la desnecessariamente.
+
+### Restrições e Consistência
+
+**Restrições** são mecanismos que tornam os erros difíceis ou impossíveis de cometer. Um botão de "próximo passo" que só se ativa quando todos os campos obrigatórios foram preenchidos, ou um encaixe físico de pilha que só permite a posição correta.
+
+**Consistência** cria padrões que facilitam o aprendizado. O menu sempre no mesmo lugar, o ícone de busca sempre sendo uma lupa, a navegação sempre no topo — padrões consistentes permitem que o usuário transfira conhecimento aprendido em uma parte do sistema para o restante.
+
+---
+
+## Parte 3: Quando o Design Falha — Casos Reais
+
+### O Sistema SEI (Sistema Eletrônico de Informações)
+
+Usado por mais de 400 órgãos públicos brasileiros para tramitar processos e assinar documentos, o SEI é um exemplo clássico de **funcionalidade sem usabilidade**.
+
+O próprio TRF-4, tribunal que criou o sistema, confirmou que nenhuma metodologia de usabilidade foi aplicada no desenvolvimento. Dois grupos de pesquisadores avaliaram o impacto:
+
+- A UnB avaliou 104 usuários e identificou **99 problemas de usabilidade**, sendo 2 considerados **catastróficos** (impedem a conclusão da tarefa). A nota no questionário SUS foi 59,78.
+- A UFC avaliou 3 participantes e obteve nota ainda menor: 41,68.
+
+A média mínima aceitável no SUS é 68. Os dois ficaram muito abaixo.
+
+Os problemas mais recorrentes encontrados foram:
+
+- **Telas sobrecarregadas** sem hierarquia visual — dezenas de funções jogadas na tela sem organização
+- **Documentação quebrada** — vídeos de ajuda em Flash, tecnologia descontinuada desde 2020
+- **Ausência de feedback** — o sistema não confirmava se uma ação foi concluída com sucesso ou se falhou
+
+O dado mais revelador: quanto menos tempo de uso com o SEI, pior a avaliação. Isso evidencia que o sistema exige que o usuário **decore caminhos** em vez de guiá-lo visualmente — uma violação direta do princípio de "reconhecimento sobre memorização".
+
+### A Migração de Canvas para Blackboard
+
+Um estudo de 2023 analisou a migração forçada de uma universidade do sistema Canvas para o Blackboard, motivada por questões de custo. O resultado foi uma queda significativa de produtividade.
+
+O Canvas tinha problemas identificados: ícones pouco intuitivos e interface sobrecarregada. O Blackboard, por sua vez, apresentava baixo contraste e dificuldades de navegação.
+
+A lição central: trocar um sistema ruim por outro sem metodologia de usabilidade não resolve — só muda o problema de lugar.
+
+### Atualizações que Excluem Usuários
+
+Um estudo analisou mais de 5.000 avaliações de aplicativos móveis feitas por usuários com deficiência visual. O resultado foi revelador: **92% das avaliações eram negativas** e se concentravam em problemas causados por _atualizações_ — não por falhas originais.
+
+As principais barreiras identificadas:
+
+- Botões que perdiam seus rótulos após uma atualização, tornando-se "mudos" para leitores de tela
+- Fontes com tamanho fixo que ignoravam a configuração de acessibilidade do sistema operacional
+- Remoção do modo escuro (dark mode), prejudicando usuários com sensibilidade à luz
+
+O padrão é sempre o mesmo: **as melhorias para a maioria se tornam a exclusão para a minoria.** Quando equipes desenvolvem focando no usuário típico e lançam atualizações sob pressão, quem paga o preço são os grupos minoritários — exatamente aqueles que mais dependem de que a interface funcione corretamente.
+
+---
+
+## Parte 4: Acessibilidade Digital — A Base da WCAG
+
+Acessibilidade digital é a garantia de que qualquer pessoa — independente de ter alguma deficiência — consiga acessar e usar conteúdo na internet. Para isso, existem tecnologias assistivas como leitores de tela, legendas automáticas, teclados adaptados e comandos de voz.
+
+O guia oficial que estrutura a acessibilidade digital é a **WCAG (Web Content Accessibility Guidelines)**, desenvolvida pelo W3C — a organização internacional responsável pelos padrões da web. A WCAG não é uma lei, mas serve de base para legislações em vários países e para as melhores práticas da área.
+
+### Os 4 Princípios da WCAG
+
+Todo conteúdo digital deve ser:
+
+- **Perceptível** — a informação deve poder ser captada pelos sentidos disponíveis do usuário (texto alternativo para imagens, legendas para vídeos)
+- **Operável** — o usuário deve conseguir navegar e interagir com o conteúdo (inclusive por teclado, sem mouse)
+- **Compreensível** — a linguagem e a interface devem ser claras e previsíveis
+- **Robusto** — o conteúdo deve funcionar bem em diferentes dispositivos, navegadores e tecnologias assistivas
+
+---
+
+## Parte 5: Criando Documentos Acessíveis (PDFs e Slides)
+
+A produção de PDFs e apresentações acessíveis aplica os princípios da WCAG a formatos que frequentemente ignoram a acessibilidade. Cada decisão de design comunica algo — ou exclui alguém.
+
+### Cores e Contraste
+
+A cor nunca deve ser o **único** meio de transmitir uma informação. Se um gráfico usa apenas vermelho e verde para diferenciar dados, um usuário daltônico não consegue distingui-los.
+
+**Recomendações:**
+
+- Contraste mínimo de **4,5:1** entre texto e fundo (exigência WCAG nível AA)
+- Contraste ideal de **7:1** (nível AAA, para maior acessibilidade)
+- Em gráficos, use padrões visuais além das cores: listras, pontilhados, tracejados, marcadores geométricos (círculos, triângulos, quadrados)
+- Ferramentas para verificar contraste: _Colour Contrast Checker_, _Colour Contrast Analyser_
+
+> **Por que isso importa:** Um slide com texto cinza sobre fundo branco pode parecer elegante — mas em um auditório ou para alguém com baixa visão, pode ser completamente ilegível.
+
+### Tipografia e Legibilidade
+
+- **Prefira fontes sem serifa** (como Arial) — fontes com serifa (como Times New Roman) podem borrar ao dar zoom e confundir letras em projeções distantes
+- **Tamanho mínimo recomendado:** 24pt para texto corrido e 32pt para títulos em apresentações
+- **Espaçamento entre linhas:** mínimo de 1,5 — facilita a leitura e reduz a fadiga visual
+- **Alinhamento:** prefira sempre o alinhamento à esquerda. O texto justificado cria espaços irregulares entre palavras que prejudicam especialmente leitores com dislexia
+
+### Organização do Conteúdo
+
+- **Menos é mais:** slides com excesso de texto sobrecarregam o público. Se o texto não cabe no slide com os tamanhos mínimos recomendados, é sinal de que precisa ser dividido em mais slides
+- **Hierarquia visual:** use tamanhos, pesos e cores para indicar o que é título, subtítulo e texto de apoio
+- **Lembre-se:** o slide não é roteiro — é guia. O que está no slide deve complementar o que é dito, não repeti-lo
+
+### Imagens e Elementos Visuais
+
+- **Texto alternativo (alt-text):** toda imagem que transmite informação precisa de descrição textual. A descrição deve ser objetiva — descreva _o que está na imagem_, não o que você interpreta. "Pessoa sorrindo segurando um livro" é correto; "pessoa feliz com conhecimento" é subjetivo e impreciso
+- **Qualidade:** imagens devem manter nitidez até **400% de ampliação** — usuários com baixa visão dependem de zoom para enxergar detalhes
+- **Gráficos e tabelas:** sempre ofereça uma versão textual ou descrição dos dados, pois elementos visuais podem não ser lidos por tecnologias assistivas
+
+### Tabelas Simples
+
+Tabelas complexas "quebram" leitores de tela. Para garantir acessibilidade:
+
+- Mantenha a estrutura simples: um único nível de cabeçalho
+- Evite células mescladas
+- Nunca deixe células vazias sem justificativa
+- Identifique claramente a linha de cabeçalho nas configurações do documento
+
+### Linguagem Simples
+
+Jargões técnicos excluem quem não é da área. A regra é usar a linguagem mais simples possível, mesmo em documentos especializados.
+
+> Em vez de: _"o código está com bugs"_
+> Prefira: _"o código está com erros"_
+
+Essa prática não é apenas uma questão de estilo — é acessibilidade cognitiva.
+
+---
+
+## Parte 6: Estrutura Técnica — O "Coração" da Acessibilidade
+
+Documentos visualmente bonitos podem ser completamente inacessíveis para tecnologias assistivas se não tiverem a estrutura técnica correta.
+
+### Use Recursos Nativos dos Editores
+
+Um dos erros mais comuns é **simular** formatação em vez de aplicá-la corretamente:
+
+| Prática Errada                                    | Prática Correta                                                         |
+| ------------------------------------------------- | ----------------------------------------------------------------------- |
+| Aumentar a fonte + negrito para parecer um título | Usar os **Estilos de Título** nativos do editor (Título 1, Título 2...) |
+| Digitar tracinhos manualmente para criar listas   | Usar o **botão de lista** do editor                                     |
+| Criar tabelas com espaços ou tabulações           | Usar a ferramenta de **inserir tabela** do editor                       |
+
+Quando você usa os recursos nativos, o software gera uma estrutura semântica que leitores de tela conseguem interpretar. A simulação visual não cria essa estrutura — o título parece um título, mas para o leitor de tela é apenas texto maior.
+
+### Ordem de Leitura no PowerPoint
+
+Leitores de tela leem os elementos de um slide na **ordem em que foram criados** (ordem das camadas), não na ordem que eles aparecem visualmente. Isso significa que se você inseriu a imagem antes do título, o leitor lerá a imagem primeiro.
+
+Para corrigir: no PowerPoint, acesse o **Painel de Seleção** e reorganize manualmente a ordem dos elementos — título primeiro, depois o texto, depois as imagens.
+
+### Coluna Única
+
+Leitores de tela fazem leitura linear. Duas colunas podem confundir a ordem cronológica do conteúdo se não forem configuradas com as ferramentas nativas do editor.
+
+Se precisar de duas colunas, use as ferramentas que o próprio software oferece (Word, Google Docs, PowerPoint têm suporte nativo) — elas geram a estrutura correta para que o leitor de tela siga a sequência certa.
+
+### Cabeçalhos e Rodapés
+
+Muitas tecnologias assistivas pulam cabeçalhos e rodapés durante a leitura. Evite colocar informações vitais ou conceitos nesses espaços — eles podem simplesmente não ser lidos.
+
+---
+
+## Parte 7: Formato e Publicação
+
+### PDF não é automaticamente acessível
+
+Um PDF só é acessível se for **corretamente etiquetado** com tags semânticas (estrutura de títulos, alt-text nas imagens, ordem de leitura definida). Muitos PDFs gerados são apenas imagens digitalizadas — impossíveis de serem lidos por tecnologias assistivas.
+
+Se for obrigatório usar PDF:
+
+- Exporte diretamente do editor (não digitalize)
+- Certifique-se de que a opção de **marcadores e estrutura de tags** está ativada na exportação
+- Valide o arquivo com ferramentas como **Adobe Acrobat** (verificador de acessibilidade integrado) ou **PAC (PDF Accessibility Checker)**
+
+### Prefira HTML quando possível
+
+HTML e XHTML são, por natureza, formatos mais flexíveis para acessibilidade. Eles permitem redimensionamento de texto sem perda de qualidade, integração direta com tecnologias assistivas e responsividade para diferentes dispositivos.
+
+Sempre que possível, disponibilize o conteúdo também em formato HTML — ou como primeira opção.
+
+---
+
+## Conclusão
+
+Usabilidade, IHC e acessibilidade não são três temas separados — são três perspectivas do mesmo compromisso: **garantir que a tecnologia funcione para quem realmente importa, que são as pessoas.**
+
+A usabilidade assegura que as interfaces sejam fáceis de usar. A IHC oferece o método para projetar e avaliar essas interfaces com rigor. E a acessibilidade garante que nenhuma pessoa seja deixada de fora por uma decisão de design que poderia facilmente ter sido diferente.
+
+Como mostram os casos do SEI e dos aplicativos móveis, ignorar esses princípios tem um custo real: profissionais que perdem horas tentando navegar em sistemas mal projetados, usuários com deficiência que ficam excluídos após uma simples atualização, e organizações que gastam mais corrigindo problemas que poderiam ter sido evitados desde o início.
+
+Acessibilidade não é um recurso adicional. É uma responsabilidade.
+
+---
+
+## Referências
+
+[1] NORMAN, Don. **The Design of Everyday Things**. Basic Books, 1988. Ed. revisada, 2013.
+
+[2] WORLD WIDE WEB CONSORTIUM (W3C). **Web Content Accessibility Guidelines (WCAG) 2.1**. Disponível em: https://www.w3.org/TR/WCAG21/. Acesso em: 29 jun. 2026.
+
+[3] SUAREZ et al. **Estudo Comparativo de Usabilidade entre Canvas e Blackboard**. 2023.
+
+[4] INTERNATIONAL ORGANIZATION FOR STANDARDIZATION (ISO). **ISO 9241-11: Ergonomics of Human-System Interaction — Usability: Definitions and Concepts**. 2018.
+
+[5] SOCIEDADE BRASILEIRA DE COMPUTAÇÃO (SBC). **Templates e Diretrizes para Publicação Acessível**.
+
+[6] UNIVERSIDADE DE BRASÍLIA (UnB); UNIVERSIDADE FEDERAL DO CEARÁ (UFC). **Estudos de Usabilidade do SEI**. Material referenciado na apresentação do Grupo 11 da disciplina de Interação Humano-Computador, 2024.
+
+[7] GRUPO 10 — INTERAÇÃO HUMANO-COMPUTADOR. **Criação de PDFs e PPTs Acessíveis**. Seminário apresentado na disciplina de Interação Humano-Computador, 2024.
