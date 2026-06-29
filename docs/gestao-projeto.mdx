@@ -7,7 +7,7 @@ import SimpleChecklist from "@site/src/components/SimpleChecklist";
 
 # 📊 Gestão de Projetos
 
-Este guia estabelece os parâmetros de governança necessários para garantir a conformidade do projeto com as normas de acessibilidade vigentes. Ele orienta a validação estratégica através de testes híbridos e da inclusão de pessoas com deficiência, assegurando que o produto final atenda aos requisitos legais e de qualidade da ABNT NBR 17225 e WCAG 2.2.
+Este guia estabelece os parâmetros de governança necessários para garantir a conformidade do projeto com as normas de acessibilidade vigentes. Ele orienta a validação estratégica através de testes híbridos e da inclusão de pessoas com deficiência, e apresenta ferramentas de IHC — personas, Service Blueprint, mapas de UX e frameworks de avaliação — e métricas de usabilidade para mensurar objetivamente a qualidade da experiência, assegurando que o produto final atenda aos requisitos legais e de qualidade da ABNT NBR 17225 e WCAG 2.2.
 
 Estes são alguns dos tópicos centrais da **Gestão de Projetos** de aplicações acessíveis, conforme o visto no Guia de Boas Práticas para Acessibilidade Digital Reino Unido-Brasil de 2023:
 
@@ -37,6 +37,96 @@ Por exemplo, testar as diretrizes de navegação de uma página com leitor de te
 
 Além disso, embora a global WCAG 2.2 indique que o seu requisito mínimo e mandatório seja o nível de acessibilidade A, o mais básico, certas normas locais, como a **NBR 17225: Acessibilidade para conteúdo web** da própria ABNT brasileira, mesmo fundamentadas na própria WCAG, têm seus próprios requisitos mínimos mais exigentes: esta própria norma brasileira tem ambos os níveis A e AA das diretrizes do W3C como o seu próprio tipo básico, de **conformidade regular**, e apenas o nível AAA é opcional em vez disso, no tipo de **conformidade plena** (Seção 9, páginas 9-10). A gestão tem que prever amplamente a estratégia de acessibilidade do projeto com base nessas demandas adicionais caso os desenvolvedores não fossem estar inicialmente vindo a tentar cumprir níveis superiores _voluntariamente_.
 
+## Ferramentas de IHC na Gestão do Projeto
+
+A gestão de projetos de aplicações digitais inclusivas não se resume a garantir a conformidade com normas de acessibilidade. Ela deve também orquestrar um conjunto de **ferramentas e artefatos de Interação Humano-Computador (IHC)** que permitem compreender profundamente quem são os usuários, como eles interagem com o sistema e onde estão os principais pontos de atrito — ampliando a qualidade da experiência entregue para todos os perfis de uso.
+
+### _Personas_
+
+Uma **_persona_** é um personagem fictício baseado em dados reais de pesquisa com usuários, criada para representar um grupo específico de pessoas que utilizarão o produto. Para a gestão do projeto, as _personas_ cumprem um papel central de alinhamento: elas orientam toda a equipe a tomar decisões centradas em seres humanos concretos, e não em usuários abstratos ou em suposições da própria equipe.
+
+Cabe à gestão garantir que as _personas_ sejam **construídas com base em dados coletados eticamente**, que **incluam perfis de usuários com deficiência** (articulando com os critérios de acessibilidade já tratados nas seções anteriores), e que sejam **revisadas periodicamente** ao longo do projeto conforme o produto e o público evoluem. Para um guia completo — incluindo anti-_personas_, _personas_ ecossistêmicas e técnicas de coleta de dados —, consulte a seção de [_Personas_](./conteudos/personas) deste guia.
+
+### _Service Blueprint_ (Mapa de Serviço)
+
+O **_Service Blueprint_** é uma ferramenta de design de serviços que representa visualmente todos os processos envolvidos na entrega de uma experiência ao usuário. Ele organiza o serviço em camadas:
+
+- **Evidências físicas** — o que o usuário percebe ao interagir com o serviço (interfaces, e-mails, notificações);
+- **_Frontstage_** — as ações do usuário e os pontos de contato direto com o sistema;
+- **Linha de visibilidade** — a fronteira entre o que o usuário vê e o que acontece nos bastidores;
+- **Backstage** — os processos internos, sistemas e equipes de suporte que sustentam o serviço.
+
+Para a gestão, o _Blueprint_ é especialmente valioso na fase de planejamento: ele permite **identificar antecipadamente dependências** entre equipes, gargalos de processo e pontos onde uma falha interna — sistema lento, fluxo de aprovação travado, banco de dados desatualizado — vai prejudicar diretamente a experiência do usuário na interface, **antes** que o código seja escrito.
+
+### Mapas de UX
+
+Artefatos como o **Mapa de Empatia**, o **Mapa de Jornada do Cliente** e o **Mapa de Ecossistema** são entregáveis de UX (Experiência de Usuário) que a gestão deve prever no cronograma do projeto:
+
+- O **Mapa de Empatia** organiza o que o usuário diz, pensa, sente e faz, revelando contradições entre o que ele declara e o que realmente faz — informação essencial para evitar designs baseados em suposições da equipe;
+- O **Mapa de Jornada** representa cronologicamente a trajetória do usuário desde o primeiro contato com o serviço até o pós-uso, identificando pontos de dor e os chamados "momentos da verdade" — interações que definem a percepção geral do serviço;
+- O **Mapa de Ecossistema** vai além das pessoas e mapeia também máquinas, dispositivos e sistemas de _back-end_ envolvidos na experiência, ajudando a prever impactos de novas implementações e prevenindo a criação de "ilhas tecnológicas" que geram retrabalho.
+
+Para um aprofundamento nesses artefatos e nos métodos de avaliação de UX associados, consulte a seção de [UX e Avaliação](./conteudos/ux) deste guia.
+
+### _Frameworks_ de Avaliação de IHC
+
+A gestão deve definir, no planejamento do projeto, quais **_frameworks_ de avaliação de IHC** serão aplicados e em que momentos do ciclo de desenvolvimento. Os principais são:
+
+- **Avaliação Heurística de Nielsen** — especialistas avaliam a interface com base nas 10 heurísticas de usabilidade, identificando problemas sem depender de usuários reais. É eficiente, econômica e pode ser aplicada desde os protótipos iniciais. Detalhada na seção de [Heurísticas de Nielsen](./heuristicas) deste guia;
+- **Testes de usabilidade com usuários reais** — sessões em que usuários executam tarefas enquanto são observados, revelando dificuldades que avaliações analíticas não capturam;
+- **AttrakDiff** — avalia não só a qualidade pragmática (funcional) do produto, mas também a sua qualidade hedônica: se o produto é prazeroso, estimulante e gera uma identidade positiva para o usuário;
+- **SERVQUAL / e-SQUUX** — métodos para medir a percepção de qualidade de serviços digitais, combinando dimensões de usabilidade, confiabilidade e satisfação do usuário de forma integrada.
+
+---
+
+## Métricas de Testes de Usabilidade
+
+Além dos testes qualitativos, a gestão deve planejar a coleta sistemática de **métricas quantitativas de usabilidade** que permitam mensurar objetivamente a qualidade da experiência — e comparar resultados entre ciclos de melhoria. São elas que respondem perguntas como: _Quanto tempo um usuário leva para completar uma tarefa? Qual é a taxa de erros em determinado fluxo? O produto ficou mais fácil de usar após a última iteração?_
+
+### Métricas de Interação
+
+As métricas de interação medem o que o usuário **realmente faz** durante o uso do sistema. Elas são coletadas durante sessões de teste com usuários reais, por observação direta, gravação de tela ou ferramentas de rastreamento:
+
+| Métrica                                                  | O que mede                                                                         | Como coletar                                                   |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **Tempo na tarefa** (_Time on Task_)                     | Quanto tempo o usuário leva para completar uma tarefa específica, do início ao fim | Cronometragem manual ou automática durante as sessões de teste |
+| **Taxa de conclusão de tarefa** (_Task Completion Rate_) | Percentual de usuários que concluem uma tarefa sem abandoná-la                     | Observação direta ou análise de logs de navegação              |
+| **Taxa de erros** (_Error Rate_)                         | Frequência e tipo de erros cometidos durante a execução de uma tarefa              | Registro durante as sessões ou análise de gravações            |
+| **Número de cliques/passos**                             | Quantidade de ações necessárias para atingir um objetivo                           | Gravação de sessão ou rastreamento de cliques (ex.: Hotjar)    |
+| **Taxa de abandono**                                     | Percentual de usuários que desistem antes de concluir                              | Análise de funil em ferramentas como Google Analytics          |
+
+> **Sobre o tempo na tarefa:** recomenda-se definir, ainda no planejamento, um **tempo-alvo** para cada tarefa crítica do sistema — o tempo que se espera que um usuário típico leve para completá-la com sucesso. Esse valor serve de linha de base para avaliar, a cada ciclo de testes, se o produto está evoluindo ou regredindo em eficiência. Uma tarefa que deveria levar 30 segundos e está levando 3 minutos é um sinal inequívoco de problema de usabilidade — e esse dado, por si só, já justifica uma revisão de _design_.
+
+### Métricas de Satisfação
+
+Além do comportamento observado, é fundamental medir como o usuário **percebe e avalia** o produto:
+
+- **SUS (_System Usability Scale_)** — questionário padronizado de 10 itens que gera uma pontuação de 0 a 100 refletindo a usabilidade percebida. Uma pontuação acima de 68 é considerada acima da média do mercado; acima de 80,3 indica excelência. Por ser amplamente adotado, permite comparação com benchmarks externos;
+- **CSAT (_Customer Satisfaction Score_)** — mede a satisfação imediata após uma interação específica, por meio de uma escala simples ("Como você avalia sua experiência nesta tarefa?");
+- **NPS (_Net Promoter Score_)** — mede a probabilidade de o usuário recomendar o produto a outra pessoa, em uma escala de 0 a 10, classificando respondentes em detratores, neutros e promotores.
+
+### Métricas de Problemas
+
+Especialmente relevantes no contexto deste guia, as métricas de problemas permitem mapear e priorizar as correções necessárias:
+
+- **Número de problemas identificados por severidade** — problemas classificados como críticos (impedem o uso), sérios (prejudicam significativamente o fluxo) ou cosméticos (não afetam a execução da tarefa principal);
+- **Cobertura de critérios WCAG** — percentual de critérios WCAG 2.2 (níveis A e AA) verificados e em conformidade;
+- **Número de barreiras por tipo de deficiência** — mapeia quais perfis de usuários são mais afetados por problemas ainda existentes, orientando a priorização das correções.
+
+### Planejamento e Registro das Métricas
+
+Cabe à gestão do projeto **definir previamente**, antes de cada rodada de testes, quais métricas serão coletadas, com quais ferramentas e em que formato os dados serão consolidados. Uma boa prática é manter uma planilha ou tabela de registro atualizada a cada ciclo, com colunas para:
+
+- Tarefa avaliada e tempo-alvo definido no planejamento;
+- Tempo médio observado nos testes e desvio em relação ao alvo;
+- Taxa de conclusão e taxa de erros por tarefa;
+- Pontuação SUS, CSAT ou NPS da rodada;
+- Barreiras identificadas — tipo, severidade e critério WCAG afetado.
+
+Dessa forma, os resultados podem ser comparados entre ciclos de desenvolvimento, evidenciando o progresso das melhorias e apoiando decisões de priorização embasadas em dados — e não em percepções subjetivas da equipe.
+
+---
+
 ## ✅ Checklist Interativo - Gestão do Projeto
 
 <SimpleChecklist
@@ -64,7 +154,7 @@ Além disso, embora a global WCAG 2.2 indique que o seu requisito mínimo e mand
     {
       id: "gestao-4",
       label:
-        "Aprofundamento sobre as necessidades das *personas* deficientes e as suas barreiras de acesso, além das orientações típicas",
+        "Aprofundamento sobre as necessidades das personas deficientes e as suas barreiras de acesso, além das orientações típicas",
       description:
         "Guia UK-BR, seção 5, página 18: Planejamento [do projeto]; Seção 5, página 20: Execução [do projeto]",
     },
@@ -214,6 +304,76 @@ Além disso, embora a global WCAG 2.2 indique que o seu requisito mínimo e mand
       label: "Alcançar adicionalmente o nível de conformidade AAA do WCAG 2.2",
       description: "NBR 17225:2025, seção 4, páginas 9-10: Conformidade plena",
     },
+    {
+      id: "gestao-50",
+      label:
+        "Personas construídas com base em dados reais de pesquisa com usuários, incluindo perfis de usuários com deficiência",
+      description:
+        "Barbosa & Silva, IHC e Experiência do Usuário, 2021; Cooper et al., About Face, 2014: Personas baseadas em dados evitam decisões de design baseadas em suposições da equipe",
+    },
+    {
+      id: "gestao-51",
+      label:
+        "Personas revisadas periodicamente ao longo do ciclo de vida do projeto, conforme o produto e o público evoluem",
+      description:
+        "Pruitt & Adlin, The Persona Lifecycle, 2006: Personas envelhecem — revisitar a cada 12 meses ou a cada mudança significativa de produto ou público",
+    },
+    {
+      id: "gestao-52",
+      label:
+        "Service Blueprint elaborado para mapear o frontstage (experiência do usuário) e o backstage (processos e sistemas internos) do serviço",
+      description:
+        "Stickdorn et al., Isto é Design de Serviço na Prática, 2019: Permite identificar antecipadamente dependências entre equipes e pontos onde falhas internas afetarão a experiência do usuário",
+    },
+    {
+      id: "gestao-53",
+      label:
+        "Mapas de UX (Empatia, Jornada do Cliente, Ecossistema) previstos como entregáveis e incluídos no cronograma do projeto",
+      description:
+        "Barbosa & Silva, IHC e Experiência do Usuário, 2021; Norman, The Design of Everyday Things, 1988: Artefatos que revelam como o usuário pensa, sente e se comporta — base para decisões de design centradas em dados",
+    },
+    {
+      id: "gestao-54",
+      label:
+        "Framework(s) de avaliação de IHC definido(s) no planejamento do projeto (ex.: Avaliação Heurística, Testes de Usabilidade, AttrakDiff) e agendado(s) no cronograma",
+      description:
+        "Nielsen, Usability Engineering, 1993; Maia & Ramos, Avaliação da Experiência do Usuário, 2025: A escolha do framework deve ser feita antes da execução, para que recursos e tempo sejam alocados adequadamente",
+    },
+    {
+      id: "gestao-60",
+      label:
+        "Métricas de interação definidas para as tarefas críticas do sistema (tempo na tarefa, taxa de conclusão, taxa de erros, número de passos)",
+      description:
+        "Nielsen, Usability Engineering, 1993; Barbosa & Silva, IHC e Experiência do Usuário, 2021: Métricas de interação medem o comportamento real do usuário — não sua percepção — e devem ser planejadas antes de cada rodada de testes",
+    },
+    {
+      id: "gestao-61",
+      label:
+        "Tempo-alvo definido para cada tarefa crítica antes do início dos testes, servindo de linha de base para comparação entre ciclos",
+      description:
+        "Nielsen, Usability Engineering, 1993: O tempo-alvo por tarefa é um benchmarking interno — permite identificar se uma tarefa está tomando mais tempo do que o esperado e evidenciar melhorias (ou regressões) de ciclo em ciclo",
+    },
+    {
+      id: "gestao-62",
+      label:
+        "Métricas de satisfação coletadas após cada ciclo de testes (SUS, CSAT ou NPS)",
+      description:
+        "Brooke, SUS: A quick and dirty usability scale, 1996: O SUS (System Usability Scale) é o instrumento mais amplamente adotado para medir usabilidade percebida — pontuações acima de 68 indicam desempenho acima da média; acima de 80,3, excelência",
+    },
+    {
+      id: "gestao-63",
+      label:
+        "Problemas identificados catalogados por severidade (crítico, sério, cosmético) e por tipo de deficiência afetada",
+      description:
+        "Nielsen & Molich, Heuristic Evaluation, 1990; WCAG 2.2 – W3C, 2023: A classificação por severidade orienta a priorização das correções; o mapeamento por tipo de deficiência garante que nenhum grupo seja sistematicamente ignorado",
+    },
+    {
+      id: "gestao-64",
+      label:
+        "Tabela de registro de métricas mantida e comparada entre ciclos de desenvolvimento para evidenciar progresso e apoiar decisões de priorização",
+      description:
+        "Guia UK-BR, seção 6, página 24: Testes Manuais e Automáticos; Barbosa & Silva, IHC e Experiência do Usuário, 2021: O registro sistemático permite transformar resultados de testes em evidências comparáveis e acionáveis para a equipe de gestão",
+    },
   ]}
   title="Gestão de Projeto - Critérios"
 />
@@ -225,3 +385,15 @@ Além disso, embora a global WCAG 2.2 indique que o seu requisito mínimo e mand
 [1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
 
 [2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025. Disponível em: https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
+
+[3] BARBOSA, Simone; SILVA, Bruno. **Interação Humano-Computador e Experiência de Usuário.** Elsevier, 2021.
+
+[4] COOPER, Alan; REIMANN, Robert; CRONIN, David; NOESSEL, Christopher. **About Face: The Essentials of Interaction Design.** 4. ed. Wiley, 2014.
+
+[5] STICKDORN, Marc et al. **Isto é Design de Serviço na Prática.** Bookman, 2019.
+
+[6] PRUITT, John; ADLIN, Tamara. **The Persona Lifecycle: Keeping People in Mind Throughout Product Design.** Morgan Kaufmann, 2006.
+
+[7] NIELSEN, Jakob. **Usability Engineering.** Academic Press, 1993.
+
+[8] BROOKE, John. **SUS: A quick and dirty usability scale.** In: JORDAN, P. W. et al. (Eds.) Usability Evaluation in Industry. Taylor & Francis, 1996.
