@@ -66,6 +66,8 @@ _Fonte: Elaborado pelo autor (2026)._
 
 </details>
 
+---
+
 ## Verificadores Visuais e Contrast Checkers
 
 ### Color Oracle
@@ -103,6 +105,8 @@ _Fonte: Elaborado pelo autor (2026)._
 
 </details>
 
+---
+
 ## Ferramentas de Análise de Conteúdo e Navegação
 
 ### Accessibility Insights (Microsoft)
@@ -121,6 +125,202 @@ _Fonte: Elaborado pelo autor (2026)._
 
 </details>
 
+---
+
+## Ferramentas de Pesquisa com Usuários e Construção de Personas
+
+As ferramentas desta seção apoiam a etapa de pesquisa com usuários e a construção de **personas** — artefatos centrais de IHC que fundamentam decisões de design e desenvolvimento acessível. Conforme discutido nas seções de **Gestão do Projeto** e **Design**, personas construídas com base em dados reais — e que incluem perfis de usuários com deficiência — evitam que a equipe tome decisões baseadas em suposições sobre quem vai usar o produto.
+
+### Google Forms
+
+<details>
+<summary>Google Forms</summary>
+
+O Google Forms é uma ferramenta gratuita para criação de questionários e formulários online, amplamente utilizada na etapa de pesquisa quantitativa com usuários. No contexto de IHC e acessibilidade, ele é especialmente útil para:
+
+- Coletar dados demográficos e de contexto de uso que alimentam a construção de personas (faixa etária, dispositivos utilizados, condições de acesso, presença de deficiências);
+- Aplicar questionários padronizados de avaliação de usabilidade, como o **SUS (System Usability Scale)** — os 10 itens do SUS podem ser configurados diretamente como uma escala Likert de 5 pontos, com exportação automática para planilha para cálculo da pontuação;
+- Coletar o **CSAT (Customer Satisfaction Score)** após sessões de teste, com uma única pergunta de avaliação da experiência;
+- Distribuir formulários de recrutamento para grupos de teste, filtrando participantes por perfil — incluindo usuários com deficiência para compor o grupo de testes híbridos previsto na **Gestão do Projeto**.
+
+Os resultados são exportados automaticamente para o Google Sheets, facilitando a análise e o registro nas planilhas de acompanhamento de métricas recomendadas neste guia.
+
+**Acesso:** [forms.google.com](https://forms.google.com)
+
+</details>
+
+### Maze
+
+<details>
+<summary>Maze</summary>
+
+O Maze é uma plataforma de pesquisa com usuários voltada para testes de usabilidade em protótipos e interfaces reais. Ele permite conduzir testes remotos não moderados — o usuário executa as tarefas de forma independente, sem a presença do pesquisador —, o que facilita o recrutamento de participantes com deficiência que não poderiam comparecer a sessões presenciais.
+
+Suas principais funcionalidades no contexto deste guia incluem:
+
+- **Testes de tarefa com rastreamento de cliques e caminhos percorridos**: coleta automaticamente o número de cliques, o tempo na tarefa (_Time on Task_) e a taxa de conclusão (_Task Completion Rate_) — métricas de interação centrais para a avaliação de usabilidade discutidas na seção de **Gestão do Projeto**;
+- **Mapas de calor (_heatmaps_)**: revelam onde os usuários clicam com mais frequência, identificando elementos que atraem atenção indevida ou alvos de toque que estão sendo errados com frequência — diretamente relacionado à seção de **Alvos de Toque** do **Desenvolvimento Web**;
+- **Integração com Figma**: permite testar protótipos navegáveis diretamente, antes que o código seja escrito, validando decisões de design acessível ainda na fase de prototipação;
+- **Questionários pós-tarefa**: permite inserir perguntas de satisfação (CSAT, NPS ou itens do SUS) ao final de cada tarefa, combinando métricas de interação e de satisfação em uma única sessão.
+
+**Acesso:** [maze.co](https://maze.co)
+
+</details>
+
+---
+
+## Ferramentas de Mapeamento de UX e Service Blueprint
+
+As ferramentas desta seção apoiam a criação dos principais artefatos de UX discutidos na seção de **Gestão do Projeto**: **Mapas de Empatia**, **Mapas de Jornada do Cliente**, **Mapas de Ecossistema** e **Service Blueprint**. Esses artefatos são insumos diretos para decisões de desenvolvimento e design acessível — a hierarquia HTML deve refletir a jornada mapeada, o dimensionamento de alvos deve responder ao ecossistema de dispositivos identificado, e a consistência visual deve ser verificada contra o Service Blueprint.
+
+### Miro
+
+<details>
+<summary>Miro</summary>
+
+O Miro é uma plataforma de quadro branco colaborativo online, amplamente utilizada por equipes de UX e produto para criação de artefatos de mapeamento. No contexto deste guia, ele oferece **templates prontos** para todos os principais artefatos discutidos:
+
+- **Mapa de Empatia**: template estruturado nas quatro dimensões (diz, pensa, faz, sente) com área para dores e ganhos, permitindo que a equipe preencha colaborativamente com dados coletados em pesquisas com usuários — incluindo usuários com deficiência;
+- **Mapa de Jornada do Cliente**: template com etapas cronológicas, ações do usuário, pontos de contato, emoções e "momentos da verdade" — útil para identificar onde falhas de acessibilidade geram abandono ou frustração ao longo do fluxo;
+- **Service Blueprint**: template com as quatro camadas (evidências físicas, frontstage, linha de visibilidade e backstage), permitindo mapear dependências entre equipes e identificar onde processos internos impactam a experiência do usuário na interface;
+- **Mapa de Ecossistema**: template para mapear pessoas, dispositivos, sistemas e contextos de acesso envolvidos na experiência — fundamental para calibrar responsividade e alvos de toque além dos dispositivos convencionais.
+
+O Miro permite edição simultânea por múltiplos membros da equipe, facilitando workshops remotos de construção colaborativa de personas e artefatos de jornada.
+
+**Acesso:** [miro.com](https://miro.com) — plano gratuito disponível com até 3 quadros.
+
+</details>
+
+### FigJam
+
+<details>
+<summary>FigJam</summary>
+
+O FigJam é a ferramenta de quadro branco colaborativo do Figma, integrada ao mesmo ecossistema de design. Para equipes que já utilizam o Figma para prototipação e design de interface, o FigJam oferece a vantagem de manter personas, mapas de jornada e blueprints no mesmo ambiente que os protótipos e componentes do Design System — facilitando a rastreabilidade entre as decisões de pesquisa e as decisões de design.
+
+Recursos relevantes para o contexto deste guia:
+
+- **Templates de Mapa de Empatia e Jornada do Cliente** disponíveis na biblioteca de templates da comunidade Figma;
+- **Conexão direta com protótipos do Figma**: permite referenciar telas específicas do protótipo diretamente no mapa de jornada, documentando em qual tela ocorre cada "momento da verdade" ou barreira de acessibilidade identificada;
+- **Votação e priorização**: funcionalidade de votação com adesivos permite que a equipe priorize colaborativamente quais barreiras de acessibilidade identificadas nos mapas de jornada têm maior impacto sobre as personas.
+
+**Acesso:** [figjam.com](https://www.figma.com/figjam/) — incluído em todas as contas do Figma, com plano gratuito disponível.
+
+</details>
+
+---
+
+## Ferramentas de Avaliação Heurística e Testes de Usabilidade
+
+As ferramentas desta seção apoiam a aplicação dos **frameworks de avaliação de IHC** definidos na seção de **Gestão do Projeto** — em especial a **Avaliação Heurística de Nielsen** e os **testes de usabilidade com usuários reais**. Esses métodos cobrem as lacunas que as ferramentas automatizadas de acessibilidade não conseguem detectar: problemas de fluxo, carga cognitiva, modelo mental e satisfação percebida.
+
+### Notion
+
+<details>
+<summary>Notion – Registro de Avaliação Heurística</summary>
+
+O Notion é uma plataforma de documentação e organização de informações que, no contexto de IHC, funciona como o principal ambiente de **registro e acompanhamento de avaliações heurísticas**. A Avaliação Heurística de Nielsen — em que especialistas analisam a interface com base nas 10 heurísticas de usabilidade — produz uma lista de problemas que precisam ser classificados por severidade, heurística violada e persona impactada. O Notion oferece o ambiente ideal para esse registro por meio de:
+
+- **Banco de dados com filtros e visualizações**: permite criar uma tabela de problemas heurísticos com colunas para heurística violada (das 10 de Nielsen), severidade (0 a 4), tela ou componente afetado, persona impactada e status de correção — exatamente a estrutura de registro recomendada nas seções de **Gestão do Projeto** e **Design**;
+- **Visualização Kanban**: permite acompanhar o ciclo de vida de cada problema heurístico — de "identificado" a "em correção" e "resolvido" — integrado ao fluxo de trabalho da equipe;
+- **Templates de avaliação heurística**: a comunidade do Notion disponibiliza templates prontos para registro de avaliações heurísticas, com as 10 heurísticas de Nielsen já listadas como categorias;
+- **Integração com outras ferramentas**: conecta-se ao Figma (para referenciar telas) e ao GitHub (para vincular problemas heurísticos a issues de código).
+
+**Acesso:** [notion.so](https://www.notion.so) — plano gratuito disponível para uso individual e pequenas equipes.
+
+</details>
+
+### Lookback
+
+<details>
+<summary>Lookback</summary>
+
+O Lookback é uma plataforma especializada em condução e gravação de **sessões de teste de usabilidade com usuários reais** — o componente de testes com usuários reais dos testes híbridos (automáticos + manuais + reais) previstos na seção de **Gestão do Projeto**. Ele suporta tanto sessões moderadas (com um facilitador conduzindo a sessão em tempo real) quanto sessões não moderadas (o usuário executa as tarefas de forma autônoma e a sessão é gravada para análise posterior).
+
+Recursos relevantes para o contexto de acessibilidade:
+
+- **Gravação de tela, câmera e áudio simultaneamente**: permite capturar não apenas onde o usuário clica, mas também suas expressões faciais e verbalizações — fundamental para identificar momentos de confusão, frustração ou desorientação que não aparecem nos logs de clique;
+- **Suporte a sessões remotas**: facilita o recrutamento e a condução de testes com usuários com deficiência que não poderiam comparecer presencialmente, ampliando a diversidade do grupo de teste;
+- **Anotações em tempo real**: o facilitador pode marcar momentos relevantes durante a sessão (ex.: "usuário não percebeu o indicador de erro", "usuário perdeu o foco de teclado neste componente") para análise posterior;
+- **Cálculo de métricas de interação**: exporta automaticamente dados de tempo na tarefa e taxa de conclusão por participante, alimentando a planilha de registro de métricas recomendada neste guia.
+
+**Acesso:** [lookback.com](https://lookback.com) — plano pago, com período de avaliação gratuita.
+
+</details>
+
+---
+
+## Ferramentas de Métricas de Satisfação (SUS, CSAT e NPS)
+
+As ferramentas desta seção apoiam a coleta sistemática das **métricas de satisfação** discutidas nas seções de **Gestão do Projeto** e **Design**: o **SUS (System Usability Scale)**, o **CSAT (Customer Satisfaction Score)** e o **NPS (Net Promoter Score)**. Essas métricas complementam as métricas de interação (tempo na tarefa, taxa de conclusão) com a dimensão da percepção subjetiva do usuário sobre a qualidade da experiência.
+
+### Calculadora SUS (MeasuringU)
+
+<details>
+<summary>Calculadora SUS – MeasuringU</summary>
+
+O SUS (System Usability Scale) é o questionário padronizado de 10 itens mais amplamente utilizado para medir a usabilidade percebida de sistemas, conforme discutido na seção de **Gestão do Projeto**. O cálculo da pontuação SUS envolve uma fórmula específica (soma ponderada das respostas, multiplicada por 2,5) que pode ser fonte de erros quando feita manualmente.
+
+A MeasuringU — empresa especializada em métricas de UX — disponibiliza gratuitamente uma **calculadora online de SUS** que:
+
+- Recebe as 10 respostas de um participante (escala de 1 a 5) e calcula automaticamente a pontuação final (0 a 100);
+- Fornece a classificação qualitativa da pontuação (Inaceitável, Pobre, OK, Bom, Excelente, Melhor Imaginável) com base nos benchmarks consolidados da literatura — pontuações acima de 68 indicam desempenho acima da média; acima de 80,3, excelência;
+- Permite calcular a média de múltiplos participantes para obter a pontuação SUS da rodada de testes.
+
+Para aplicação do questionário com múltiplos participantes, recomenda-se configurar os 10 itens no **Google Forms** (veja a seção de Pesquisa com Usuários) e usar a calculadora da MeasuringU para processar os resultados exportados.
+
+**Acesso:** [measuringu.com/sus](https://measuringu.com/sus/)
+
+</details>
+
+### AttrakDiff
+
+<details>
+<summary>AttrakDiff</summary>
+
+O AttrakDiff é um framework e questionário de avaliação de experiência do usuário desenvolvido por Hassenzahl, Burmester e Koller que vai além da usabilidade funcional, medindo também a **qualidade hedônica** da interface — o quanto ela é percebida como prazerosa, estimulante e capaz de gerar uma identidade positiva para o usuário. Conforme discutido na seção de **Design**, ele é especialmente útil para calibrar o uso de animações e elementos visuais que afetam a percepção subjetiva da qualidade do produto.
+
+O questionário é composto por 28 pares de adjetivos opostos (ex.: "confuso / claro", "feio / atraente", "sem imaginação / criativo") organizados em quatro dimensões:
+
+- **QP (Qualidade Pragmática)**: percepção de utilidade e facilidade de uso — o quanto o produto ajuda o usuário a atingir seus objetivos;
+- **QH-I (Qualidade Hedônica – Identidade)**: o quanto o produto transmite uma identidade que o usuário deseja associar a si mesmo;
+- **QH-E (Qualidade Hedônica – Estimulação)**: o quanto o produto é percebido como novo, interessante e estimulante;
+- **Atratividade**: avaliação global e subjetiva da qualidade do produto.
+
+A ferramenta online do AttrakDiff gera automaticamente gráficos de portfólio e diagramas de média que permitem comparar versões do produto entre ciclos de desenvolvimento — evidenciando se melhorias de acessibilidade impactaram positiva ou negativamente a percepção hedônica da interface.
+
+**Acesso:** [attrakdiff.de](http://attrakdiff.de) — aplicação e análise gratuitas online.
+
+</details>
+
+---
+
+## Ferramentas de Simulação de Tecnologias Assistivas
+
+As ferramentas desta seção permitem simular como usuários com deficiência interagem com a interface, complementando os testes automáticos com uma perspectiva mais próxima da experiência real. Conforme discutido nas seções de **Desenvolvimento Web** e **Gestão do Projeto**, os testes automáticos de ARIA e acessibilidade têm limitações significativas — a validação com tecnologias assistivas reais (ou simuladas) é o que revela os problemas que os validadores não capturam.
+
+### NVDA – NonVisual Desktop Access
+
+<details>
+<summary>NVDA – NonVisual Desktop Access</summary>
+
+O NVDA é um leitor de tela gratuito e de código aberto para Windows, desenvolvido pela NV Access. É a tecnologia assistiva de referência para testes manuais de acessibilidade web no contexto de usuários cegos ou com baixa visão grave, sendo um dos leitores de tela mais utilizados no mundo.
+
+No contexto dos **testes híbridos** previstos na seção de **Gestão do Projeto**, o NVDA é a ferramenta que cobre a lacuna que os testes automáticos não conseguem preencher: validar se a implementação de WAI-ARIA, a ordem de leitura do HTML e os estados de componentes dinâmicos se comportam corretamente quando lidos por um leitor de tela real — e não apenas quando analisados por um validador sintático.
+
+Casos de uso diretos com os critérios deste guia:
+
+- Verificar se a hierarquia de cabeçalhos (`<h1>` a `<h6>`) permite navegação rápida por títulos — recurso central de navegação para usuários de leitores de tela;
+- Confirmar se `aria-live` e `role="status"` anunciam notificações assíncronas no momento correto e com o texto esperado;
+- Validar se modais com `role="dialog"` e `aria-modal="true"` recebem foco corretamente ao abrir e retornam o foco ao elemento de origem ao fechar;
+- Testar se rótulos de formulário (`<label>`, `aria-label`, `aria-describedby`) são lidos de forma clara e completa.
+
+**Acesso:** [nvaccess.org](https://www.nvaccess.org/download/) — gratuito para Windows.
+
+</details>
+
+---
+
 ## Referências Bibliográficas
 
 [1] WEBAIM. **WAVE Web Accessibility Evaluation Tool**. Disponível em: https://wave.webaim.org/. Acesso em: 24 jun. 2026.
@@ -132,3 +332,21 @@ _Fonte: Elaborado pelo autor (2026)._
 [4] ROMILLY COCKING. **WCAG Contrast Checker**. Disponível em: https://chromewebstore.google.com/detail/wcag-contrast-checker/moeekkcjabmojhnfljngmohaaigchpbf.
 
 [5] MICROSOFT. **Accessibility Insights for Web**. Disponível em: https://accessibilityinsights.io/downloads/.
+
+[6] GOOGLE. **Google Forms**. Disponível em: https://forms.google.com.
+
+[7] MAZE. **Maze – User Research Platform**. Disponível em: https://maze.co.
+
+[8] MIRO. **Miro – Online Collaborative Whiteboard**. Disponível em: https://miro.com.
+
+[9] FIGMA. **FigJam – Online Whiteboard for Teams**. Disponível em: https://www.figma.com/figjam/.
+
+[10] NOTION LABS. **Notion**. Disponível em: https://www.notion.so.
+
+[11] LOOKBACK. **Lookback – User Research Platform**. Disponível em: https://lookback.com.
+
+[12] MEASURINGU. **SUS Calculator**. Disponível em: https://measuringu.com/sus/.
+
+[13] HASSENZAHL, Marc; BURMESTER, Michael; KOLLER, Franz. **AttrakDiff: Ein Fragebogen zur Messung wahrgenommener hedonischer und pragmatischer Qualität.** Disponível em: http://attrakdiff.de.
+
+[14] NV ACCESS. **NVDA – NonVisual Desktop Access**. Disponível em: https://www.nvaccess.org/download/.

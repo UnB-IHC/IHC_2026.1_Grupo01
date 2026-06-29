@@ -13,6 +13,8 @@ Análise técnica dos critérios de acessibilidade relacionados ao código, **HT
 
 Construir essa infraestrutura acessível exige alinhar as práticas de codificação às principais diretrizes de referência: as normas internacionais da **WCAG 2.2**, a regulamentação técnica brasileira da **NBR 17225** e as orientações práticas do **Guia de Boas Práticas para Acessibilidade Digital** do Gov.br.
 
+Além disso, o desenvolvimento web acessível não pode ser pensado isoladamente das práticas de **Interação Humano-Computador (IHC)**: o código deve refletir decisões de design centradas no usuário, respeitar os modelos mentais identificados em pesquisas com personas e responder às barreiras mapeadas em testes híbridos — tal como previsto no processo de gestão do projeto acessível.
+
 ---
 
 ## 1. Semântica e Estrutura do HTML
@@ -39,6 +41,12 @@ Se ignorado, há risco de:
 - Perda da capacidade de navegação rápida por títulos;
 - Falha na interpretação de dados estruturados e tabelas por tecnologias assistivas.
 
+### Semântica e o Mapa de Jornada do Usuário
+
+A estrutura semântica do HTML não é apenas uma obrigação técnica — ela deve refletir a **jornada real do usuário** pela interface, tal como mapeada em artefatos de UX como o **Mapa de Jornada do Cliente**. Quando a equipe de desenvolvimento conhece os passos que o usuário percorre para concluir uma tarefa, pode garantir que a hierarquia de cabeçalhos e a ordem das regiões da página correspondam ao fluxo esperado — e não apenas à conveniência do layout visual.
+
+Por exemplo: se o Mapa de Jornada revela que o usuário navega diretamente para a seção de resultados antes de ler o cabeçalho de filtros, a estrutura HTML deve colocar essas regiões em uma ordem que faça sentido na navegação por teclado e leitor de tela, mesmo que o CSS as reposicione visualmente.
+
 ---
 
 ## 2. Operabilidade e Foco por Teclado
@@ -48,7 +56,7 @@ Todas as funcionalidades e elementos interativos da aplicação devem ser totalm
 Exemplos:
 
 - Links, botões e campos de formulário focáveis nativamente ou com `tabindex="0"`;
-- Indicador de foco (:focus-visible) claramente visível com alto contraste;
+- Indicador de foco (`:focus-visible`) claramente visível com alto contraste;
 - Link de salto ("Ir para o conteúdo principal") implementado no início do **HTML**;
 - Ordem de navegação pelo teclado (`Tab`) seguindo o fluxo visual lógico.
 
@@ -62,8 +70,18 @@ Pergunte-se:
 Se ignorado, há risco de:
 
 - Bloqueio completo da navegação para usuários de leitores de tela ou com limitações motoras;
-- Navegação "às cegas" pela interface devido à ocultação do indicador de foco no **CSS** (`outline: none)`;
+- Navegação "às cegas" pela interface devido à ocultação do indicador de foco no **CSS** (`outline: none`);
 - Abandono do site por frustração ou impossibilidade física de concluir tarefas.
+
+### Operabilidade e as Heurísticas de Nielsen
+
+A operabilidade por teclado dialoga diretamente com as **Heurísticas de Usabilidade de Nielsen**, especialmente com três delas:
+
+- **Controle e liberdade do usuário** — o usuário deve poder desfazer ações e sair de qualquer fluxo com facilidade. Armadilhas de foco e navegações sem saída violam esse princípio;
+- **Visibilidade do status do sistema** — o indicador de foco visível é exatamente a forma de o sistema comunicar ao usuário onde ele está. Ocultá-lo com `outline: none` é uma violação direta dessa heurística;
+- **Consistência e padrões** — a ordem de tabulação deve seguir convenções estabelecidas (esquerda para direita, cima para baixo), correspondendo ao modelo mental que o usuário traz de outras interfaces.
+
+Dessa forma, corrigir falhas de operabilidade por teclado não é apenas cumprir a WCAG 2.2 — é também aplicar os fundamentos de IHC que garantem uma experiência previsível e controlável.
 
 ---
 
@@ -73,7 +91,7 @@ Os campos de coleta de dados devem ser fáceis de compreender, identificar e pre
 
 Exemplos:
 
-- Uso obrigatório da tag `<label>` associada ao `<input>` via atributo for;
+- Uso obrigatório da tag `<label>` associada ao `<input>` via atributo `for`;
 - Mensagens de erro em formato de texto conectadas dinamicamente via `aria-describedby`;
 - Atributo `aria-invalid="true"` aplicado via **JavaScript** em campos com erro;
 - Prevenção de redundância (autopreenchimento ou seleção de dados já digitados no mesmo fluxo).
@@ -82,7 +100,7 @@ Pergunte-se:
 
 - Cada campo do formulário possui um rótulo de texto claro que o leitor de tela consiga ler?
 - O sistema avisa onde ocorreu o erro e instrui o usuário textualmente sobre como corrigi-lo?
-- O placeholder foi usado incorretamente como substituto do label (sumindo quando o usuário digita)?
+- O `placeholder` foi usado incorretamente como substituto do `label` (sumindo quando o usuário digita)?
 - O usuário é obrigado a redigitar dados que ele já forneceu minutos atrás no mesmo processo?
 
 Se ignorado, há risco de:
@@ -90,6 +108,14 @@ Se ignorado, há risco de:
 - Usuários cegos não saberem o que deve ser digitado em um campo de texto;
 - Formulários impossíveis de serem enviados por falhas recorrentes de validação não informadas;
 - Desistência em fluxos complexos (como checkouts de e-commerce) devido ao esforço repetitivo.
+
+### Formulários, Prevenção de Erros e IHC
+
+A acessibilidade em formulários vai além do código: ela é um reflexo direto de **boas práticas de IHC aplicadas à coleta de dados**. As heurísticas de Nielsen de **prevenção de erros** e **ajuda para reconhecer, diagnosticar e recuperar de erros** definem que o sistema deve, antes de tudo, evitar que o erro aconteça — e, quando ele ocorrer, guiar o usuário de forma clara para a correção.
+
+No contexto de **personas com deficiência**, isso ganha ainda mais peso: uma persona com baixa visão que depende de ampliação de tela pode não perceber uma mensagem de erro que aparece fora da área visível; uma persona com dificuldade cognitiva pode se perder em mensagens genéricas como "campo inválido". O desenvolvedor que conhece essas personas pelo trabalho de pesquisa da equipe de UX pode antecipar e corrigir essas falhas antes dos testes.
+
+Além disso, o critério **3.3.7 - Redundant Entry** da WCAG 2.2 — que exige que dados já fornecidos sejam reutilizados automaticamente — tem raiz direta no princípio de IHC de **minimizar a carga de memória do usuário**: o sistema não deve exigir que o usuário lembre e redigite o que já informou.
 
 ---
 
@@ -99,7 +125,7 @@ Componentes interativos avançados atualizados via JavaScript devem comunicar se
 
 Exemplos:
 
-- Menus e sanfonas (accordions) alternando dinamicamente `aria-expanded="true"` e `false`;
+- Menus e sanfonas (_accordions_) alternando dinamicamente `aria-expanded="true"` e `false`;
 - Janelas modais recebendo `role="dialog"` e `aria-modal="true"` ao serem abertas;
 - Alertas e notificações assíncronas injetadas na tela usando `aria-live="polite"` ou `role="status"`;
 - Botões customizados (como botões de ícone) possuindo um rótulo textual via `aria-label`.
@@ -107,7 +133,7 @@ Exemplos:
 Pergunte-se:
 
 - Quando um menu abre via clique em **JavaScript**, um usuário cego é avisado programaticamente dessa mudança?
-- O leitor de tela lê o conteúdo de um pop-up ou modal assim que ele surge na tela?
+- O leitor de tela lê o conteúdo de um _pop-up_ ou modal assim que ele surge na tela?
 - Notificações de sucesso ou erro que aparecem sem recarregar a página são anunciadas para quem não enxerga a tela?
 - Os botões que usam apenas ícones (como o "X" de fechar) possuem um nome acessível por trás do código?
 
@@ -116,6 +142,12 @@ Se ignorado, há risco de:
 - Elementos invisíveis ou inacessíveis para tecnologias assistivas, apesar de estarem na tela;
 - Confusão do usuário por falta de feedback sobre interações dinâmicas e assíncronas;
 - Quebra na integridade da interface com elementos flutuantes bloqueando a navegação.
+
+### WAI-ARIA, Visibilidade do Sistema e Testes com Usuários Reais
+
+O uso correto de **WAI-ARIA** é, em essência, uma implementação técnica do princípio de IHC de **visibilidade do status do sistema**: o sistema deve sempre manter o usuário informado sobre o que está acontecendo — e, para usuários de leitores de tela, isso só é possível por meio de marcações semânticas e ARIA corretas.
+
+No entanto, assim como os testes automáticos não cobrem todas as nuances de acessibilidade (conforme discutido na seção de **Gestão do Projeto**), os testes puramente técnicos de ARIA também têm limitações. Um atributo `aria-live` sintaticamente correto pode, na prática, ser ignorado por um leitor de tela específico em determinado contexto — algo que **só um teste com usuário real** consegue revelar. Por isso, a implementação de componentes dinâmicos deve ser validada obrigatoriamente em sessões com usuários que utilizam tecnologias assistivas, complementando a validação automatizada.
 
 ---
 
@@ -127,7 +159,7 @@ Exemplos:
 
 - Botões e links com área mínima de clique de 24x24 pixels (ou 48x48 pixels para alvos isolados);
 - Uso de `padding` no **CSS** para expandir a área clicável de ícones pequenos;
-- Alternativas por clique simples/toque para funções que exigem arrastar elementos (`drag-and-drop`);
+- Alternativas por clique simples/toque para funções que exigem arrastar elementos (_drag-and-drop_);
 - Layouts responsivos que não limitam a orientação da tela (funcionam em retrato e paisagem).
 
 Pergunte-se:
@@ -142,6 +174,42 @@ Se ignorado, há risco de:
 - Cliques errados frequentes, gerando estresse e acionamentos indesejados;
 - Exclusão de usuários com tremores nas mãos ou limitações de coordenação motora fina;
 - Incompatibilidade da aplicação com diferentes tamanhos de tela e contextos de mobilidade.
+
+### Alvos de Toque e o Contexto das Personas
+
+O dimensionamento adequado de alvos interativos só faz sentido pleno quando a equipe conhece **quem vai usar a interface e em qual contexto**. É aqui que as **personas** construídas pela equipe de UX se tornam ferramentas diretamente úteis para o desenvolvedor:
+
+- Uma persona com tremor essencial que usa o celular com uma mão enquanto se locomove exige alvos maiores e espaçamentos mais generosos do que os mínimos da WCAG;
+- Uma persona que usa o dispositivo acoplado a uma cadeira de rodas em modo paisagem pode ser completamente impedida de usar a aplicação se o layout bloquear a rotação da tela;
+- Uma persona que usa caneta stylus em tablet tem um modelo de precisão diferente do toque com o dedo polegar.
+
+O **Mapa de Ecossistema** — artefato de UX que mapeia dispositivos, sistemas e contextos de uso — é especialmente útil aqui: ele permite ao desenvolvedor antecipar em quais ambientes físicos e tecnológicos os alvos interativos serão acionados, indo além dos testes em desktop e simuladores de dispositivo móvel.
+
+---
+
+## 6. Métricas de Acessibilidade no Desenvolvimento
+
+Assim como a gestão do projeto define métricas de usabilidade para mensurar a qualidade da experiência entre ciclos, o desenvolvimento web também deve operar com **indicadores objetivos de acessibilidade** que permitam comparar versões e priorizar correções. Essas métricas complementam as ferramentas de validação automática e os testes manuais.
+
+### Métricas de Conformidade Técnica
+
+| Métrica                                     | O que mede                                                                                                              | Como coletar                                                                    |
+| ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **Cobertura de critérios WCAG verificados** | Percentual de critérios WCAG 2.2 (níveis A e AA) verificados e em conformidade na página ou componente                  | Ferramentas automáticas (axe, Lighthouse) + checklist manual                    |
+| **Número de violações por severidade**      | Erros classificados como críticos (bloqueiam o uso), sérios (prejudicam o fluxo) ou cosméticos                          | Relatório de ferramentas automáticas + testes com leitor de tela                |
+| **Proporção de contraste**                  | Razão entre a luminância do texto e do plano de fundo, com mínimo de 4,5:1 para texto normal                            | Ferramentas de inspeção de contraste (ex.: Color Contrast Analyzer, Lighthouse) |
+| **Taxa de elementos com nome acessível**    | Percentual de elementos interativos (botões, links, inputs) com rótulo textual identificável por tecnologias assistivas | Auditoria automática com axe ou ferramentas equivalentes                        |
+| **Número de armadilhas de foco**            | Quantidade de pontos na interface onde o foco de teclado fica preso sem possibilidade de saída                          | Teste manual de navegação por teclado em todos os componentes interativos       |
+
+### Métricas de Impacto por Perfil de Usuário
+
+Além das métricas técnicas, é fundamental mapear quais perfis de usuário são mais afetados pelos problemas encontrados — conectando os resultados de acessibilidade às **personas** definidas pela equipe:
+
+- **Barreiras por tipo de deficiência afetada** — quantos e quais problemas impactam usuários de leitores de tela, usuários de teclado, usuários com baixa visão, usuários com deficiência cognitiva, etc.;
+- **Criticidade por persona** — para cada persona mapeada, quais critérios WCAG, se violados, tornam a interface completamente inutilizável (bloqueio total) versus apenas mais difícil de usar (fricção);
+- **Progresso entre ciclos** — comparação do número de barreiras identificadas entre iterações de desenvolvimento, evidenciando se as correções estão de fato reduzindo o impacto para os grupos prioritários.
+
+> **Boa prática:** manter uma planilha de registro de acessibilidade atualizada a cada _sprint_ ou ciclo de testes, com colunas para o critério WCAG afetado, a severidade, a persona impactada, o componente onde a falha foi encontrada e o status de correção. Isso transforma os resultados de auditoria em evidências acionáveis para priorização — e não em relatórios que ficam arquivados.
 
 ---
 
@@ -315,6 +383,62 @@ Se ignorado, há risco de:
       description:
         '<a href="https://www.w3.org/TR/WCAG22/#reading-level" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 3.1.5 - Reading Level</a>',
     },
+    {
+      id: "devweb-ihc1",
+      label:
+        "A hierarquia de cabeçalhos e a ordem das regiões da página refletem a jornada real do usuário, conforme o Mapa de Jornada do Cliente",
+      level: "A",
+      description:
+        "Barbosa & Silva, IHC e Experiência do Usuário, 2021: A estrutura semântica deve corresponder ao fluxo real de uso mapeado em artefatos de UX — não apenas ao layout visual",
+    },
+    {
+      id: "devweb-ihc2",
+      label:
+        "A ordem de tabulação segue o fluxo lógico e as convenções de interface já conhecidas pelo usuário (modelo mental consistente)",
+      level: "AA",
+      description:
+        "Nielsen, Usability Engineering, 1993 — Heurística de Consistência e Padrões: a ordem de tabulação deve corresponder ao modelo mental do usuário, evitando saltos inesperados",
+    },
+    {
+      id: "devweb-ihc3",
+      label:
+        "Mensagens de erro são específicas, orientadas à correção e compatíveis com o nível de letramento digital das personas definidas pelo projeto",
+      level: "A",
+      description:
+        "Nielsen, Usability Engineering, 1993 — Heurística de Ajuda para Reconhecer, Diagnosticar e Recuperar de Erros; Barbosa & Silva, IHC, 2021: mensagens devem ser compreensíveis para todos os perfis de usuário mapeados",
+    },
+    {
+      id: "devweb-ihc4",
+      label:
+        "Componentes ARIA dinâmicos foram validados com testes reais em leitores de tela, não apenas com validação automática",
+      level: "AA",
+      description:
+        "Guia UK-BR, seção 6, páginas 23-24: Testes Manuais e Automáticos — testes automáticos não cobrem todas as nuances de comportamento de tecnologias assistivas; é necessária validação com usuários reais",
+    },
+    {
+      id: "devweb-ihc5",
+      label:
+        "O dimensionamento de alvos de toque considera os contextos de uso e os perfis de dispositivo mapeados no Mapa de Ecossistema das personas",
+      level: "AA",
+      description:
+        "Barbosa & Silva, IHC e Experiência do Usuário, 2021: O Mapa de Ecossistema mapeia dispositivos e contextos de uso reais — o tamanho dos alvos deve ser calibrado para esses cenários, não apenas para os mínimos da WCAG",
+    },
+    {
+      id: "devweb-ihc6",
+      label:
+        "Há uma planilha ou tabela de registro de acessibilidade mantida a cada ciclo, com violações catalogadas por severidade, critério WCAG e persona impactada",
+      level: "AA",
+      description:
+        "Guia UK-BR, seção 6, página 24; Barbosa & Silva, IHC, 2021: O registro sistemático por persona permite priorizar correções com base em impacto real sobre os grupos de usuários mais afetados",
+    },
+    {
+      id: "devweb-ihc7",
+      label:
+        "A proporção de contraste foi verificada com ferramenta específica e está em conformidade para todos os estados dos componentes (padrão, hover, foco, desabilitado)",
+      level: "AA",
+      description:
+        '<a href="https://www.w3.org/TR/WCAG22/#contrast-minimum" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.3 - Contrast (Minimum)</a>',
+    },
   ]}
 />
 
@@ -324,8 +448,12 @@ Se ignorado, há risco de:
 
 [1] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R. **Guia de Boas Práticas para Acessibilidade Digital.** Programa de Cooperação entre Reino Unido e Brasil em Acesso Digital, 2023. Disponível em: https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-digital/guiaboaspraaticasparaacessibilidadedigital.pdf
 
-[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.\*\*Disponível em: https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
+[2] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225: Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025. Disponível em: https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
 
 [3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
 
 [4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.
+
+[5] BARBOSA, Simone; SILVA, Bruno. **Interação Humano-Computador e Experiência de Usuário.** Elsevier, 2021.
+
+[6] COOPER, Alan; REIMANN, Robert; CRONIN, David; NOESSEL, Christopher. **About Face: The Essentials of Interaction Design.** 4. ed. Wiley, 2014.

@@ -15,6 +15,10 @@ Essa avaliação é baseada em diretrizes internacionais de acessibilidade, como
 
 ## Seu propósito é identificar barreiras que dificultem a percepção, compreensão e interação com o sistema.
 
+O design acessível não começa na escolha das cores nem no ajuste de contrastes — ele começa na **compreensão de quem vai usar a interface**. Artefatos de IHC como **personas**, **Mapas de Empatia** e **Mapas de Jornada** são insumos diretos para decisões de design: a escolha tipográfica, o dimensionamento de componentes, o uso de animações e a estrutura visual de formulários devem todas responder às necessidades reais dos perfis de usuário mapeados pela equipe, e não apenas aos mínimos normativos.
+
+---
+
 ## 1. Contraste e Legibilidade
 
 O conteúdo deve ser facilmente percebido e lido por pessoas com diferentes condições visuais.
@@ -38,6 +42,14 @@ Se ignorado, há risco de:
 - Dificuldade de leitura;
 - Cansaço visual;
 - Exclusão de pessoas com baixa visão ou daltonismo.
+
+### Contraste e o Mapa de Empatia
+
+A escolha de contrastes adequados ganha profundidade quando a equipe conhece os **contextos reais de uso** revelados pelo **Mapa de Empatia** das personas. Uma persona que acessa o sistema em ambientes externos com alta luminosidade ambiente exige contrastes consideravelmente maiores que os mínimos da WCAG 2.2 (4,5:1 para texto normal) para que o conteúdo permaneça legível — o que o Mapa de Empatia registra na dimensão do que o usuário _vê_ e _sente_ durante o uso.
+
+Da mesma forma, a **Avaliação Heurística de Nielsen** enquadra legibilidade sob a heurística de **reconhecimento em vez de memorização**: o usuário não deve ter que se esforçar para distinguir elementos — a hierarquia visual deve ser imediatamente perceptível. Quando o contraste é insuficiente, o usuário é forçado a compensar cognitivamente a dificuldade de percepção, aumentando a carga mental desnecessariamente.
+
+> **Boa prática:** verificar o contraste não apenas no estado padrão dos componentes, mas também nos estados de _hover_, foco, desabilitado e erro — cada um desses estados tem sua própria relação de luminância com o fundo.
 
 ---
 
@@ -65,6 +77,16 @@ Se ignorado, risco de:
 - Navegação difícil em dispositivos móveis;
 - Barreiras para pessoas que utilizam ampliação de tela.
 
+### Responsividade e o Mapa de Ecossistema
+
+A responsividade não é apenas uma questão de _breakpoints_ de CSS — ela é uma resposta direta ao **ecossistema de dispositivos** que as personas reais utilizam. O **Mapa de Ecossistema**, artefato de IHC que mapeia dispositivos, sistemas e contextos de acesso, é a ferramenta que permite ao designer antecipar cenários que vão além do desktop e do smartphone padrão:
+
+- Uma persona que usa o celular acoplado a uma cadeira de rodas em modo paisagem permanente;
+- Uma persona que acessa via tablet com zoom fixado em 150% por configuração do sistema operacional;
+- Uma persona que usa uma tela grande de TV conectada ao computador com resolução não convencional.
+
+Esses cenários raramente aparecem nos testes de responsividade convencionais — mas são exatamente os que o Mapa de Ecossistema ajuda a prever. O design responsivo acessível, portanto, deve ser calibrado para o ecossistema real das personas, e não apenas para os dispositivos mais comuns da equipe de desenvolvimento.
+
 ---
 
 ## 3. Feedback Visual e Estados dos Componentes
@@ -73,7 +95,7 @@ O sistema deve comunicar claramente o estado atual dos elementos interativos.
 
 Exemplos:
 
-- Botões com estados de foco, hover e seleção;
+- Botões com estados de foco, _hover_ e seleção;
 - Campos inválidos são destacados visualmente;
 - Indicadores de carregamento;
 - Mensagens de confirmação após ações importantes.
@@ -90,6 +112,17 @@ Se ignorado, risco de:
 - Perda de contexto durante a navegação;
 - Erros de interação;
 - Dificuldade para usuários que dependem de navegação por teclado.
+
+### Feedback Visual e as Heurísticas de Nielsen
+
+O feedback visual de estados é a materialização visual da heurística de Nielsen de **visibilidade do status do sistema**: o sistema deve sempre informar ao usuário o que está acontecendo, em tempo razoável e de forma perceptível. Cada estado de componente — foco, _hover_, carregamento, erro, sucesso — é uma resposta do sistema a uma ação do usuário, e a ausência de qualquer um desses sinais cria desorientação.
+
+Duas outras heurísticas são igualmente relevantes aqui:
+
+- **Controle e liberdade do usuário** — indicadores de progresso e carregamento permitem ao usuário saber se pode agir ou deve aguardar, preservando sua sensação de controle sobre o fluxo;
+- **Prevenção de erros** — estados visuais de validação em tempo real (campo com erro antes do envio do formulário) evitam que o usuário descubra a falha apenas após uma ação irreversível.
+
+No contexto das **personas com deficiência cognitiva**, o feedback visual ganha ainda mais peso: a incerteza sobre o estado atual do sistema é uma fonte significativa de ansiedade e abandono de fluxos, especialmente em personas com dificuldade de reter o contexto da interação entre passos de um formulário ou processo.
 
 ---
 
@@ -115,6 +148,12 @@ Se ignorado, risco de:
 - Perda de informações importantes;
 - Dificuldade de interpretação;
 - Exclusão de usuários com deficiência visual relacionada à percepção de cores (como daltonismo).
+
+### Cores, Personas e o Design Empático
+
+O critério WCAG 2.2 1.4.1 — que proíbe o uso exclusivo de cor para transmitir informação — tem raiz direta em um princípio de **Design Empático**: projetar para a diversidade perceptual humana, e não para o usuário médio hipotético. Cerca de 8% dos homens têm alguma forma de daltonismo, e esse número sobe consideravelmente quando se consideram outras condições visuais como baixa visão e sensibilidade ao contraste.
+
+A construção de **personas que incluam perfis com daltonismo e baixa visão** — e a utilização do **Mapa de Empatia** para compreender o que essas personas _veem_ (ou deixam de ver) na interface — transforma o critério de "não usar só cor" de uma obrigação técnica em uma decisão de design fundamentada em empatia real. A distinção entre campos obrigatórios e opcionais por textura, ícone e texto — e não apenas por cor vermelha — passa a ser uma escolha natural quando a equipe visualiza concretamente uma persona que não distingue vermelho de cinza.
 
 ---
 
@@ -142,6 +181,14 @@ Se ignorado, risco de:
 - Náusea ou desconforto;
 - Dificuldade de concentração e navegação.
 
+### Animações, Carga Cognitiva e o AttrakDiff
+
+O uso de animações toca em uma tensão clássica de design: animações bem executadas aumentam a **qualidade hedônica** da interface — o quanto ela é percebida como prazerosa, moderna e estimulante —, mas animações excessivas ou mal calibradas aumentam a **carga cognitiva** e podem causar dano real a usuários com epilepsia fotossensível, distúrbios vestibulares ou TDAH.
+
+O **AttrakDiff**, framework de avaliação de IHC que mede tanto a qualidade pragmática quanto a hedônica de um produto, é um instrumento útil para calibrar esse equilíbrio: ele permite identificar se o uso de animações está contribuindo para uma percepção de produto estimulante e com identidade positiva — ou se está gerando ruído que prejudica a usabilidade percebida.
+
+Do ponto de vista das heurísticas de Nielsen, animações que não podem ser pausadas ou desativadas violam o princípio de **controle e liberdade do usuário**. Já o critério WCAG 2.2 2.3.3 (_Animation from Interactions_) e a propriedade CSS `prefers-reduced-motion` oferecem o mecanismo técnico para respeitar as preferências do sistema operacional do usuário — o que deve ser implementado como padrão, e não como recurso opcional.
+
 ---
 
 ## 6. Consistência Visual e Navegação
@@ -165,6 +212,40 @@ Se ignorado, risco de:
 - Confusão durante a navegação;
 - Curva de aprendizado desnecessária;
 - Insatisfação do usuário com a experiência geral do site.
+
+### Consistência Visual, Modelos Mentais e o Service Blueprint
+
+A consistência visual é, em sua essência, o respeito ao **modelo mental** do usuário: a expectativa que ele traz de outras interfaces sobre como elementos de mesma aparência se comportam de forma semelhante. A heurística de Nielsen de **consistência e padrões** é direta: o usuário não deve ter que se perguntar se palavras, situações ou ações diferentes significam a mesma coisa.
+
+No contexto de sistemas com múltiplas telas e fluxos — como portais de serviços públicos ou sistemas de saúde —, o **Service Blueprint** é a ferramenta que garante consistência não apenas visual, mas também de experiência: ele mapeia todos os pontos de contato do usuário com o serviço, permitindo identificar onde o _frontstage_ (o que o usuário vê) apresenta inconsistências entre telas ou módulos desenvolvidos por equipes diferentes.
+
+Um botão de "Confirmar" que aparece à esquerda em um fluxo e à direita em outro; um ícone de "salvar" que usa um disquete em algumas telas e uma nuvem em outras; uma paleta de cores que muda entre seções — são todas violações de consistência que o Service Blueprint, cruzado com o checklist de design, ajuda a detectar e corrigir antes que o usuário as encontre.
+
+---
+
+## 7. Métricas de Qualidade Visual e de Interação
+
+Assim como a gestão do projeto define métricas para mensurar a qualidade da experiência entre ciclos, o design acessível também deve operar com **indicadores objetivos** que permitam comparar versões, priorizar correções e evidenciar progresso — conectando as decisões visuais aos dados de usabilidade coletados em testes.
+
+### Métricas de Design Acessível
+
+| Métrica                                          | O que mede                                                                                                                      | Como coletar                                                                             |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| **Taxa de conformidade de contraste**            | Percentual de combinações texto/fundo que atingem a razão mínima de 4,5:1 (texto normal) ou 3:1 (texto grande e componentes)    | Ferramentas como Color Contrast Analyzer, Lighthouse ou plugins de design (Figma, Stark) |
+| **Cobertura de estados de componente**           | Percentual de componentes interativos com todos os estados visuais definidos (padrão, _hover_, foco, ativo, desabilitado, erro) | Revisão manual do Design System ou protótipo                                             |
+| **Taxa de informação exclusivamente por cor**    | Número de instâncias em que cor é o único meio de transmitir informação crítica                                                 | Auditoria manual com simulação de daltonismo (ex.: extensão Colorblindly, NoCoffee)      |
+| **Compatibilidade com `prefers-reduced-motion`** | Percentual de animações que respeitam a preferência do sistema operacional do usuário                                           | Teste manual com a preferência ativada no SO + inspeção de CSS                           |
+| **Pontuação AttrakDiff**                         | Avaliação da qualidade hedônica e pragmática percebida pelo usuário, medida em escala de 7 pontos em pares semânticos           | Aplicação do questionário AttrakDiff com amostra representativa de usuários              |
+
+### Métricas de Impacto por Persona
+
+Além das métricas técnicas de design, é fundamental avaliar como as decisões visuais impactam cada perfil de usuário mapeado:
+
+- **Barreiras visuais por persona** — para cada persona com deficiência visual (baixa visão, daltonismo, sensibilidade à luz), quantos elementos da interface apresentam problemas de percepção;
+- **Taxa de abandono por fluxo** — cruzar dados de analytics (taxa de abandono em etapas específicas) com os "momentos de dor" identificados no **Mapa de Jornada** para identificar onde falhas de design visual geram desistência;
+- **SUS por perfil de usuário** — aplicar o _System Usability Scale_ segmentado por persona, identificando se grupos específicos (ex.: usuários de baixa visão, usuários idosos) percebem a usabilidade de forma sistematicamente inferior à média.
+
+> **Boa prática:** ao registrar problemas de design em planilha de acompanhamento, incluir sempre a coluna "persona impactada" — isso evita que correções sejam priorizadas apenas pela facilidade técnica de implementação, e não pelo impacto real sobre os grupos de usuários mais afetados.
 
 ---
 
@@ -333,6 +414,62 @@ Se ignorado, risco de:
       description:
         '<a href="https://www.w3.org/TR/WCAG22/#images-of-text-no-exception" target="_blank" rel="noopener noreferrer">WCAG 2.2 - C.S. 1.4.9 | Images of Text (No Exception)</a>',
     },
+    {
+      id: "design-ihc1",
+      label:
+        "O contraste foi verificado em todos os estados dos componentes (padrão, hover, foco, desabilitado, erro) — não apenas no estado padrão",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 1.4.3 & 1.4.11: cada estado visual de um componente tem sua própria relação de contraste com o fundo — a conformidade no estado padrão não garante conformidade nos demais estados",
+    },
+    {
+      id: "design-ihc2",
+      label:
+        "O layout responsivo foi testado nos dispositivos e contextos de uso mapeados no Mapa de Ecossistema das personas, além dos breakpoints convencionais",
+      level: "AA",
+      description:
+        "Barbosa & Silva, IHC e Experiência do Usuário, 2021: o Mapa de Ecossistema revela dispositivos e contextos de uso reais que os testes em desktop e simuladores de mobile não cobrem",
+    },
+    {
+      id: "design-ihc3",
+      label:
+        "Os estados de feedback visual (carregamento, sucesso, erro) foram validados com personas de deficiência cognitiva, verificando clareza e ausência de ambiguidade",
+      level: "A",
+      description:
+        "Nielsen, Usability Engineering, 1993 — Heurística de Visibilidade do Status do Sistema: personas com deficiência cognitiva são especialmente vulneráveis à ausência ou ambiguidade de feedback visual de estado",
+    },
+    {
+      id: "design-ihc4",
+      label:
+        "A interface foi testada com simulação de daltonismo (dicromacia e tricromacia anômala) para verificar que nenhuma informação crítica se perde",
+      level: "A",
+      description:
+        "WCAG 2.2 - C.S. 1.4.1 | Use of Color; Design Empático: ferramentas como Colorblindly ou NoCoffee permitem simular como personas com daltonismo percebem a interface antes dos testes com usuários reais",
+    },
+    {
+      id: "design-ihc5",
+      label:
+        "Animações e transições respeitam a preferência `prefers-reduced-motion` do sistema operacional do usuário",
+      level: "AA",
+      description:
+        "WCAG 2.2 - C.S. 2.3.3 | Animation from Interactions: a preferência de redução de movimento é uma configuração de acessibilidade do SO que deve ser detectada e respeitada via CSS media query — não como recurso opcional do produto",
+    },
+    {
+      id: "design-ihc6",
+      label:
+        "A consistência visual entre telas e módulos foi verificada contra o Service Blueprint, garantindo que o frontstage não apresente inconsistências entre fluxos desenvolvidos por equipes diferentes",
+      level: "AA",
+      description:
+        "Stickdorn et al., Isto é Design de Serviço na Prática, 2019; Nielsen, Heurística de Consistência e Padrões: o Service Blueprint é a ferramenta que permite identificar inconsistências visuais que ocorrem nas fronteiras entre módulos ou equipes",
+    },
+    {
+      id: "design-ihc7",
+      label:
+        "Métricas de qualidade visual são coletadas e registradas a cada ciclo, incluindo taxa de conformidade de contraste, cobertura de estados de componente e pontuação SUS segmentada por persona",
+      level: "AA",
+      description:
+        "Brooke, SUS: A quick and dirty usability scale, 1996; Barbosa & Silva, IHC, 2021: o registro sistemático de métricas de design por persona permite evidenciar progresso entre ciclos e priorizar correções pelo impacto real sobre grupos de usuários",
+    },
   ]}
   title="Design System - Critérios de Exemplo"
 />
@@ -348,3 +485,9 @@ Se ignorado, risco de:
 [3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.** Disponível em: https://www.w3.org/TR/WCAG22/
 
 [4] NIELSEN, Jakob. **Usability Engineering.** Boston: Academic Press, 1994.
+
+[5] BARBOSA, Simone; SILVA, Bruno. **Interação Humano-Computador e Experiência de Usuário.** Elsevier, 2021.
+
+[6] STICKDORN, Marc et al. **Isto é Design de Serviço na Prática.** Bookman, 2019.
+
+[7] BROOKE, John. **SUS: A quick and dirty usability scale.** In: JORDAN, P. W. et al. (Eds.) Usability Evaluation in Industry. Taylor & Francis, 1996.

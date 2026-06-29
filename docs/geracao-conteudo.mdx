@@ -9,6 +9,8 @@ import SimpleChecklist from "@site/src/components/SimpleChecklist";
 
 Análise dos critérios de acessibilidade relacionados a conteúdo. Esta seção documenta como validar se textos, imagens, vídeos e áudio do site atendem aos requisitos da WCAG, NBR 17225 e diretrizes.
 
+A geração de conteúdo acessível não é apenas uma questão técnica de marcação e formatação — ela começa na compreensão de **para quem o conteúdo está sendo escrito**. Personas com diferentes níveis de letramento digital, diferentes condições cognitivas e diferentes tecnologias assistivas consomem o mesmo conteúdo de formas radicalmente distintas. Artefatos de IHC como o **Mapa de Empatia** — que registra o que o usuário lê, ouve e sente — e as **personas** com deficiência construídas pela equipe são os insumos que transformam a produção de conteúdo de uma obrigação normativa em uma prática genuinamente centrada no usuário.
+
 ---
 
 ## Textos
@@ -44,6 +46,14 @@ Os blocos de texto não devem ultrapassar 80 caracteres de largura ou deve exist
 ### Redimensionamento
 
 Deve ser possível que o texto seja redimensionado em até 200% sem que haja perda de conteúdo e que o usuário não precise rolar horizontalmente para ler uma linha de texto em uma janela de tela inteira.
+
+### Texto, Personas e Carga Cognitiva
+
+As decisões de redação — vocabulário, comprimento de parágrafos, uso de jargões, estrutura das orações — têm impacto direto e diferenciado sobre cada persona mapeada pelo projeto. A heurística de Nielsen de **reconhecimento em vez de memorização** se aplica ao conteúdo textual tanto quanto à interface: o usuário não deve ter que reler um parágrafo várias vezes para compreender o que deve fazer a seguir.
+
+O **Mapa de Empatia** é especialmente útil aqui: ao registrar o que a persona _pensa_ e _sente_ ao interagir com o serviço, ele frequentemente revela que o vocabulário técnico ou institucional usado pelo produtor de conteúdo não corresponde ao repertório linguístico real do usuário. Personas com deficiência intelectual, baixo letramento ou que acessam o conteúdo em segunda língua são as mais afetadas por textos densos, frases na voz passiva e parágrafos longos — e são exatamente as que menos aparecem nos testes convencionais de legibilidade.
+
+> **Boa prática:** ao revisar textos para acessibilidade, percorra o conteúdo com a persona de menor letramento mapeada pelo projeto em mente — não com o usuário médio hipotético. Se essa persona não consegue compreender o texto sem ajuda, o critério WCAG 2.2 3.1.5 (_Reading Level_) [[7]](#ref-7) não está sendo cumprido.
 
 ---
 
@@ -89,6 +99,18 @@ Fonte: W3C (2019).
 
 Imagens que representam textos não são capazes de serem lidas por leitores de tela e não são acessíveis. Dado esse fato, não deve haver imagens de texto. Caso a imagem com texto seja essencial, o texto alternativo deve possuir o mesmo conteúdo representado na imagem.
 
+### Textos Alternativos e o Ponto de Vista das Personas
+
+Escrever um texto alternativo eficaz exige ir além da descrição técnica da imagem — exige **compreender o contexto em que a persona vai ouvir esse texto**. Um usuário cego que navega com leitor de tela não está "vendo" a imagem de uma forma alternativa: ele está construindo um modelo mental da página inteiramente a partir do áudio. O texto alternativo é, para essa persona, o único acesso àquele conteúdo.
+
+O **Mapa de Jornada do Cliente** ajuda a identificar em que momento da jornada cada imagem aparece e qual é o seu papel naquele contexto — o que orienta diretamente a redação do texto alternativo:
+
+- Uma imagem de gráfico que aparece no "momento da verdade" em que o usuário decide se vai prosseguir com uma ação exige uma descrição que transmita a conclusão do dado, não apenas os eixos do gráfico;
+- Um ícone funcional em um passo crítico de um formulário exige um texto alternativo que comunique a ação com precisão, não a aparência do ícone;
+- Uma imagem decorativa em uma tela de carregamento não deve interromper o fluxo de leitura do leitor de tela com descrições desnecessárias.
+
+Essa perspectiva — de quem ouve, não de quem vê — é o que diferencia textos alternativos que cumprem a norma daqueles que genuinamente comunicam.
+
 ---
 
 ## Vídeos
@@ -105,6 +127,14 @@ Todos os vídeos pré-gravados têm audiodescrição para todo o conteúdo visua
 
 Existe uma janela de Libras disponível em todo o conteúdo de vídeo com áudio.
 
+### Vídeos, Múltiplos Canais Sensoriais e o Design Empático
+
+O conjunto de requisitos de acessibilidade para vídeos — legendas, audiodescrição e janela de Libras — é a materialização técnica de um princípio central do **Design Empático**: conteúdo que depende de um único canal sensorial (apenas visual ou apenas auditivo) exclui sistematicamente personas cujo acesso a esse canal é limitado ou inexistente.
+
+O **Mapa de Empatia** torna isso concreto: ao preencher a dimensão do que a persona _ouve_ e _vê_, a equipe percebe que uma persona surda e uma persona cega estão em posições diametralmente opostas diante do mesmo vídeo — a primeira precisa de legendas e Libras para acessar o áudio; a segunda precisa de audiodescrição para acessar o visual. Um vídeo verdadeiramente acessível atende às duas simultaneamente.
+
+Além disso, o **Mapa de Jornada** permite identificar em quais momentos do fluxo vídeos são apresentados ao usuário e qual é o impacto de uma barreira naquele ponto específico. Um vídeo sem legenda em uma etapa de onboarding obrigatório, por exemplo, é uma barreira de entrada que impede completamente a persona surda de avançar no serviço — o que o mapa torna visível antes dos testes com usuários.
+
 ---
 
 ## Áudio
@@ -117,6 +147,14 @@ Para todo áudio pré-gravado, deve haver um texto como alternativa que transcre
 
 Nenhum áudio que toca automaticamente dura mais de 3 segundos. Caso contrário, existe um mecanismo para pausar, silenciar ou ajustar o volume sem afetar o volume do sistema.
 
+### Áudio Automático, Controle e as Heurísticas de Nielsen
+
+O critério que proíbe áudios que tocam automaticamente por mais de 3 segundos sem controle é um dos mais diretamente alinhados às heurísticas de usabilidade de Nielsen — especificamente à heurística de **controle e liberdade do usuário**: o sistema não deve tomar decisões pelo usuário sobre o que ele vai ouvir e quando, especialmente em um ambiente onde outros sons (outros programas, leitores de tela, ambientes barulhentos) já disputam sua atenção auditiva.
+
+Para personas que usam leitores de tela, um áudio que inicia automaticamente é particularmente disruptivo: ele se sobrepõe à voz do leitor de tela, tornando impossível ouvir o conteúdo da página que o usuário estava tentando acessar. O dano não é apenas de preferência — é uma barreira funcional completa que só aparece nos testes quando a persona correta está presente na sessão.
+
+Essa é mais uma razão pela qual os **testes híbridos com usuários reais** — incluindo usuários de tecnologias assistivas — são insubstituíveis para validar conteúdo de áudio, complementando a verificação técnica do critério WCAG 2.2 1.4.2 (_Audio Control_) [[8]](#ref-8).
+
 ---
 
 ## ✅ Checklist Interativo - Geração de Conteúdo
@@ -127,130 +165,167 @@ Nenhum áudio que toca automaticamente dura mais de 3 segundos. Caso contrário,
       id: "content-1",
       label: "Blocos de texto alinhados à esquerda",
       description:
-        "NBR 17225 - 5.12.5 | Exceto para idiomas RTL ou quando o alinhamento for essencial para compreensão do conteúdo",
+        "NBR 17225 - 5.12.5 [1] | Exceto para idiomas RTL ou quando o alinhamento for essencial para compreensão do conteúdo. WCAG 2.2 - C.S. 1.4.8 - Visual Presentation [9]",
     },
     {
       id: "content-2",
       label:
         "Espaçamento entre linhas de pelo menos 1,5 vez o tamanho da fonte",
       description:
-        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
+        "NBR 17225 - 5.12.6 [1] | WCAG 2.2 - C.S. 1.4.12 - Text Spacing [10] | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-3",
       label:
         "Espaçamento entre parágrafos de pelo menos 2 vezes o tamanho da fonte",
       description:
-        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
+        "NBR 17225 - 5.12.6 [1] | WCAG 2.2 - C.S. 1.4.12 - Text Spacing [10] | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-4",
       label:
         "Espaçamento entre letras de pelo menos 0,12 vez o tamanho da fonte",
       description:
-        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
+        "NBR 17225 - 5.12.6 [1] | WCAG 2.2 - C.S. 1.4.12 - Text Spacing [10] | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-5",
       label:
         "Espaçamento entre palavras de pelo menos 0,16 vez o tamanho da fonte",
       description:
-        "NBR 17225 - 5.12.6 | Verificar também existência de mecanismo de ajuste",
+        "NBR 17225 - 5.12.6 [1] | WCAG 2.2 - C.S. 1.4.12 - Text Spacing [10] | Verificar também existência de mecanismo de ajuste",
     },
     {
       id: "content-6",
       label: "Texto escrito em linguagem simples e clara",
       description:
-        "NBR 17225 - 5.2.1 | Ou existência de conteúdo suplementar para auxiliar a compreensão",
+        "NBR 17225 - 5.2.1 [1] | WCAG 2.2 - C.S. 3.1.5 - Reading Level [7] | Ou existência de conteúdo suplementar para auxiliar a compreensão",
     },
     {
       id: "content-7",
       label: "Blocos de texto com largura máxima de 80 caracteres",
       description:
-        "NBR 17225 - 5.12.7 | Ou existência de mecanismo para ajuste da largura",
+        "NBR 17225 - 5.12.7 [1] | WCAG 2.2 - C.S. 1.4.8 - Visual Presentation [9] | Ou existência de mecanismo para ajuste da largura",
     },
     {
       id: "content-8",
       label: "Texto pode ser redimensionado em até 200%",
       description:
-        "NBR 17225 - 5.12.1 | Sem perda de conteúdo ou funcionalidade",
+        "NBR 17225 - 5.12.1 [1] | WCAG 2.2 - C.S. 1.4.4 - Resize Text [11] | Sem perda de conteúdo ou funcionalidade",
     },
     {
       id: "content-9",
       label: "Texto continua legível sem rolagem horizontal",
-      description: "NBR 17225 - 5.12.2 | Considerando uma janela em tela cheia",
+      description:
+        "NBR 17225 - 5.12.2 [1] | WCAG 2.2 - C.S. 1.4.10 - Reflow [12] | Considerando uma janela em tela cheia",
     },
     {
       id: "content-10",
       label: "Imagens informativas possuem texto alternativo equivalente",
       description:
-        "NBR 17225 - 5.2.2 | O texto alternativo transmite o mesmo conteúdo da imagem",
+        "NBR 17225 - 5.2.2 [1] | WCAG 2.2 - C.S. 1.1.1 - Non-text Content [13] | O texto alternativo transmite o mesmo conteúdo da imagem",
     },
     {
       id: "content-11",
       label:
         "Imagens funcionais possuem texto alternativo que descreve sua função",
-      description: "NBR 17225 - 5.2.2 | Não descrever a aparência da imagem",
+      description:
+        "NBR 17225 - 5.2.2 [1] | WCAG 2.2 - C.S. 1.1.1 - Non-text Content [13] | Não descrever a aparência da imagem",
     },
     {
       id: "content-12",
       label: "Imagens complexas possuem descrição detalhada",
       description:
-        "NBR 17225 - 5.2.2 | Descrição próxima à imagem ou em página associada",
+        "NBR 17225 - 5.2.2 [1] | WCAG 2.2 - C.S. 1.1.1 - Non-text Content [13] | Descrição próxima à imagem ou em página associada",
     },
     {
       id: "content-13",
       label: "Imagens decorativas são ignoradas por tecnologias assistivas",
       description:
-        "NBR 17225 - 5.2.2 | Não transmitem conteúdo nem funcionalidade",
+        "NBR 17225 - 5.2.2 [1] | WCAG 2.2 - C.S. 1.1.1 - Non-text Content [13] | Não transmitem conteúdo nem funcionalidade",
     },
     {
       id: "content-14",
       label: "Imagens de texto são evitadas",
       description:
-        "NBR 17225 - 5.2.2 | Quando essenciais, possuem alternativa textual equivalente",
+        "NBR 17225 - 5.2.2 [1] | WCAG 2.2 - C.S. 1.4.5 - Images of Text [14] | Quando essenciais, possuem alternativa textual equivalente",
     },
     {
       id: "content-15",
       label: "Vídeos pré-gravados possuem legendas descritivas equivalentes",
       description:
-        "NBR 17225 - 5.14.2 | Incluindo informações sonoras relevantes",
+        "NBR 17225 - 5.14.2 [1] | WCAG 2.2 - C.S. 1.2.2 - Captions (Prerecorded) [15] | Incluindo informações sonoras relevantes",
     },
     {
       id: "content-16",
       label: "Vídeos pré-gravados possuem audiodescrição quando necessária",
       description:
-        "NBR 17225 - 5.14.4 | Para informações visuais não transmitidas pelo áudio",
+        "NBR 17225 - 5.14.4 [1] | WCAG 2.2 - C.S. 1.2.5 - Audio Description (Prerecorded) [16] | Para informações visuais não transmitidas pelo áudio",
     },
     {
       id: "content-17",
       label: "Conteúdo de áudio em mídia sincronizada possui janela de Libras",
       description:
-        "NBR 17225 - 5.14.6 | Aplicável a vídeos com conteúdo sonoro sincronizado",
+        "NBR 17225 - 5.14.6 [1] | Aplicável a vídeos com conteúdo sonoro sincronizado",
     },
     {
       id: "content-18",
       label: "Áudios pré-gravados possuem transcrição textual equivalente",
       description:
-        "NBR 17225 - 5.14.1 | A transcrição reproduz o conteúdo do áudio",
+        "NBR 17225 - 5.14.1 [1] | WCAG 2.2 - C.S. 1.2.1 - Audio-only and Video-only (Prerecorded) [17] | A transcrição reproduz o conteúdo do áudio",
     },
     {
       id: "content-19",
       label: "Conteúdos alternativos estão claramente identificados",
       description:
-        "NBR 17225 - 5.2.1 | Quando áudio ou vídeo são alternativas a outro conteúdo",
+        "NBR 17225 - 5.2.1 [1] | WCAG 2.2 - C.S. 1.2.1 - Audio-only and Video-only (Prerecorded) [17] | Quando áudio ou vídeo são alternativas a outro conteúdo",
     },
     {
       id: "content-20",
       label: "Áudios reproduzidos automaticamente possuem controle",
       description:
-        "NBR 17225 - 5.14.7 | Pausar, silenciar ou ajustar volume quando excedem 3 segundos",
+        "NBR 17225 - 5.14.7 [1] | WCAG 2.2 - C.S. 1.4.2 - Audio Control [8] | Pausar, silenciar ou ajustar volume quando excedem 3 segundos",
     },
     {
       id: "content-24",
       label: "Arquivos PDF possuem marcação (tags) de acessibilidade",
       description:
         "ISO 14289 (PDF/UA) | O documento deve preservar sua estrutura semântica para tecnologias assistivas e não ser apenas uma digitalização",
+    },
+    {
+      id: "content-ihc1",
+      label:
+        "O conteúdo textual foi revisado com a persona de menor letramento mapeada pelo projeto em mente, verificando compreensão sem necessidade de releitura",
+      description:
+        "WCAG 2.2 - C.S. 3.1.5 - Reading Level [7] | Barbosa & Silva, IHC, 2021 [5]: a linguagem do conteúdo deve ser calibrada para o perfil de usuário com menor letramento mapeado nas personas — não para o usuário médio hipotético",
+    },
+    {
+      id: "content-ihc2",
+      label:
+        "Os textos alternativos de imagens críticas foram redigidos considerando o contexto da jornada do usuário — comunicando a conclusão ou a ação relevante, não apenas descrevendo a aparência da imagem",
+      description:
+        "WCAG 2.2 - C.S. 1.1.1 - Non-text Content [13] | Barbosa & Silva, IHC, 2021 [5] — Mapa de Jornada do Cliente: o texto alternativo deve ser calibrado para o momento da jornada em que a imagem aparece e para o que a persona precisa compreender naquele ponto específico",
+    },
+    {
+      id: "content-ihc3",
+      label:
+        "Vídeos com legendas, audiodescrição e Libras foram validados com personas surdas e personas cegas separadamente, verificando que cada grupo acessa o conteúdo de forma completa e independente",
+      description:
+        "WCAG 2.2 - C.S. 1.2.2 - Captions [15] | WCAG 2.2 - C.S. 1.2.5 - Audio Description [16] | Guia UK-BR, seção 6, página 23 [2] — Grupo de Teste: personas surdas e cegas têm necessidades opostas diante do mesmo vídeo — a validação deve ser feita com representantes de ambos os grupos",
+    },
+    {
+      id: "content-ihc4",
+      label:
+        "O comportamento de áudios automáticos foi testado com leitor de tela ativo, verificando que o áudio da página não se sobrepõe à voz do leitor de tela",
+      description:
+        "WCAG 2.2 - C.S. 1.4.2 - Audio Control [8] | Nielsen, Heurística de Controle e Liberdade do Usuário [6]: para personas que usam leitores de tela, áudio automático é uma barreira funcional — só detectável em testes com a tecnologia assistiva real ativa",
+    },
+    {
+      id: "content-ihc5",
+      label:
+        "O Mapa de Empatia das personas foi consultado na produção do conteúdo, verificando se o vocabulário, o tom e o nível de detalhe correspondem ao que o usuário real lê, ouve e sente durante o uso",
+      description:
+        "Barbosa & Silva, IHC, 2021 [5] — Mapa de Empatia: a dimensão do que o usuário lê e ouve no Mapa de Empatia é o insumo direto para decisões de vocabulário, extensão e estrutura do conteúdo produzido",
     },
   ]}
   title="Geração de Conteúdo - Checklist de Acessibilidade"
@@ -261,7 +336,7 @@ Nenhum áudio que toca automaticamente dura mais de 3 segundos. Caso contrário,
 ## Referências Bibliográficas
 
 <a id="ref-1"></a> [1] ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 17225:
-Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025.Disponível em:
+Acessibilidade para conteúdo web.** Rio de Janeiro: ABNT, 2025. Disponível em:
 https://www2.camara.leg.br/a-camara/estruturaadm/gestao-na-camara-dos-deputados/responsabilidade-social-e-ambiental/acessibilidade/pdfs/ABNTNBR17225AcessibilidadeDigitalparaWeb.pdf
 
 <a id="ref-2"></a> [2] DINIZ, V.; FERRAZ, R.; NASCIMENTO, C. M.; CREDIDIO, R.
@@ -272,5 +347,47 @@ https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/acessibilidade-
 <a id="ref-3"></a> [3] W3C. **Web Content Accessibility Guidelines (WCAG) 2.2.**
 Disponível em: https://www.w3.org/TR/WCAG22/
 
-<a id="ref-4"></a>[4] W3C. **Informative Images** disponível em:
+<a id="ref-4"></a> [4] W3C. **Informative Images.** Disponível em:
 https://www.w3.org/WAI/tutorials/images/informative/
+
+<a id="ref-5"></a> [5] BARBOSA, Simone; SILVA, Bruno. **Interação
+Humano-Computador e Experiência de Usuário.** Elsevier, 2021.
+
+<a id="ref-6"></a> [6] NIELSEN, Jakob. **Usability Engineering.** Boston:
+Academic Press, 1994.
+
+<a id="ref-7"></a> [7] W3C. **WCAG 2.2 - Critério de Sucesso 3.1.5 - Reading
+Level.** Disponível em: https://www.w3.org/TR/WCAG22/#reading-level
+
+<a id="ref-8"></a> [8] W3C. **WCAG 2.2 - Critério de Sucesso 1.4.2 - Audio
+Control.** Disponível em: https://www.w3.org/TR/WCAG22/#audio-control
+
+<a id="ref-9"></a> [9] W3C. **WCAG 2.2 - Critério de Sucesso 1.4.8 - Visual
+Presentation.** Disponível em: https://www.w3.org/TR/WCAG22/#visual-presentation
+
+<a id="ref-10"></a> [10] W3C. **WCAG 2.2 - Critério de Sucesso 1.4.12 - Text
+Spacing.** Disponível em: https://www.w3.org/TR/WCAG22/#text-spacing
+
+<a id="ref-11"></a> [11] W3C. **WCAG 2.2 - Critério de Sucesso 1.4.4 - Resize
+Text.** Disponível em: https://www.w3.org/TR/WCAG22/#resize-text
+
+<a id="ref-12"></a> [12] W3C. **WCAG 2.2 - Critério de Sucesso 1.4.10 -
+Reflow.** Disponível em: https://www.w3.org/TR/WCAG22/#reflow
+
+<a id="ref-13"></a> [13] W3C. **WCAG 2.2 - Critério de Sucesso 1.1.1 - Non-text
+Content.** Disponível em: https://www.w3.org/TR/WCAG22/#non-text-content
+
+<a id="ref-14"></a> [14] W3C. **WCAG 2.2 - Critério de Sucesso 1.4.5 - Images of
+Text.** Disponível em: https://www.w3.org/TR/WCAG22/#images-of-text
+
+<a id="ref-15"></a> [15] W3C. **WCAG 2.2 - Critério de Sucesso 1.2.2 - Captions
+(Prerecorded).** Disponível em:
+https://www.w3.org/TR/WCAG22/#captions-prerecorded
+
+<a id="ref-16"></a> [16] W3C. **WCAG 2.2 - Critério de Sucesso 1.2.5 - Audio
+Description (Prerecorded).** Disponível em:
+https://www.w3.org/TR/WCAG22/#audio-description-prerecorded
+
+<a id="ref-17"></a> [17] W3C. **WCAG 2.2 - Critério de Sucesso 1.2.1 -
+Audio-only and Video-only (Prerecorded).** Disponível em:
+https://www.w3.org/TR/WCAG22/#audio-only-and-video-only-prerecorded
