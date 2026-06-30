@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
+import React, { useState, useEffect } from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import "../css/wcag-checklist.css";
 
 interface ChecklistItem {
@@ -7,39 +7,64 @@ interface ChecklistItem {
   label: string;
   level: "A" | "AA" | "AAA";
   description: string;
-  checked?: boolean;
 }
 
 interface WCAGChecklistProps {
   items: ChecklistItem[];
+  checklistId: string;
 }
 
-export default function WCAGChecklist({ items }: WCAGChecklistProps) {
-  const [checked, setChecked] = useState<Set<string>>(
-    new Set(items.filter((item) => item.checked).map((item) => item.id)),
-  );
+export default function WCAGChecklist({
+  items,
+  checklistId,
+}: WCAGChecklistProps) {
+  const [checked, setChecked] = useState<Set<string>>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(`checklist-${checklistId}`);
+      if (saved) return new Set(JSON.parse(saved));
+    }
+    return new Set();
+  });
+
+  useEffect(() => {
+    localStorage.setItem(
+      `checklist-${checklistId}`,
+      JSON.stringify(Array.from(checked)),
+    );
+  }, [checked, checklistId]);
 
   const toggleItem = (id: string) => {
     const newChecked = new Set(checked);
-    if (newChecked.has(id)) {
-      newChecked.delete(id);
-    } else {
-      newChecked.add(id);
-    }
+    newChecked.has(id) ? newChecked.delete(id) : newChecked.add(id);
     setChecked(newChecked);
   };
 
+  const resetChecklist = () => {
+    if (
+      window.confirm(
+        "Tem certeza que deseja limpar todo o progresso desta página?",
+      )
+    ) {
+      localStorage.removeItem(`checklist-${checklistId}`);
+      setChecked(new Set());
+    }
+  };
+
+  const scrollToSection = (level: string) => {
+    document
+      .getElementById(`section-${level}`)
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const itemsByLevel = {
-    A: items.filter((item) => item.level === "A"),
-    AA: items.filter((item) => item.level === "AA"),
-    AAA: items.filter((item) => item.level === "AAA"),
+    A: items.filter((i) => i.level === "A"),
+    AA: items.filter((i) => i.level === "AA"),
+    AAA: items.filter((i) => i.level === "AAA"),
   };
 
   const getProgress = (level: "A" | "AA" | "AAA") => {
     const levelItems = itemsByLevel[level];
-    const checkedCount = levelItems.filter((item) =>
-      checked.has(item.id),
-    ).length;
+    const checkedCount = levelItems.filter((i) => checked.has(i.id)).length;
     return {
       total: levelItems.length,
       checked: checkedCount,
@@ -67,86 +92,32 @@ export default function WCAGChecklist({ items }: WCAGChecklistProps) {
     AAA: ["#1f3a93", "#d4d9e8"],
   };
 
-  const renderChart = (
-    prog: { total: number; checked: number; percentage: number },
-    colors: string[],
-  ) => (
+  const renderChart = (prog: any, colors: string[]) => (
     <div className="chart-wrapper">
       <ResponsiveContainer width="100%" height={250}>
-        <PieChart aria-hidden="true" style={{ pointerEvents: "none" }}>
+        <PieChart>
           <Pie
             data={[
-              { name: "Concluído", value: prog.checked },
-              { name: "Pendente", value: prog.total - prog.checked },
+              { value: prog.checked },
+              { value: prog.total - prog.checked },
             ]}
-            cx="50%"
-            cy="50%"
             innerRadius={60}
             outerRadius={100}
-            paddingAngle={2}
             dataKey="value"
-            animationDuration={300}
           >
             {[
-              { name: "Concluído", value: prog.checked },
-              { name: "Pendente", value: prog.total - prog.checked },
-            ].map((_, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={colors[index]}
-                focusable="false"
-              />
+              { value: prog.checked },
+              { value: prog.total - prog.checked },
+            ].map((_, i) => (
+              <Cell key={`cell-${i}`} fill={colors[i]} />
             ))}
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-
-      <div
-        className="chart-stats"
-        role="img"
-        aria-label={`Progresso: ${prog.checked} de ${prog.total} itens concluídos (${Math.round(prog.percentage)}%)`}
-      >
+      <div className="chart-stats">
         <div className="stat-number">{prog.checked}</div>
         <div className="stat-label">de {prog.total}</div>
         <div className="stat-percentage">{Math.round(prog.percentage)}%</div>
-      </div>
-    </div>
-  );
-
-  const renderSection = (level: "A" | "AA" | "AAA") => (
-    <div key={level} className="checklist-section">
-      <h3>
-        <span className={`criteria-badge level-${level.toLowerCase()}`}>
-          {levelLabels[level]}
-        </span>
-        {levelDescriptions[level]}
-      </h3>
-      <div className="section-content">
-        <div className="checklist-items">
-          {itemsByLevel[level].map((item) => (
-            <div
-              key={item.id}
-              className={`checklist-item ${checked.has(item.id) ? "checked" : ""}`}
-            >
-              <input
-                type="checkbox"
-                id={item.id}
-                checked={checked.has(item.id)}
-                onChange={() => toggleItem(item.id)}
-              />
-              <label htmlFor={item.id}>
-                <strong>{item.label}</strong>
-                <p
-                  className="item-description"
-                  dangerouslySetInnerHTML={{ __html: item.description }}
-                />
-              </label>
-            </div>
-          ))}
-        </div>
-        <div className="chart-container">
-          {renderChart(progress[level], COLORS[level])}
-        </div>
       </div>
     </div>
   );
@@ -156,22 +127,68 @@ export default function WCAGChecklist({ items }: WCAGChecklistProps) {
       <div className="checklist-header">
         <div className="progress-summary">
           {(["A", "AA", "AAA"] as const).map((lvl) => (
-            <div key={lvl} className="summary-item">
-              <span className={`summary-badge level-${lvl.toLowerCase()}`}>
-                {levelLabels[lvl]}
-              </span>
-              <span className="summary-text">
+            <button
+              key={lvl}
+              className="summary-item"
+              onClick={() => scrollToSection(lvl)}
+            >
+              <span>{levelLabels[lvl]}</span>
+              <span>
                 {progress[lvl].checked}/{progress[lvl].total} (
                 {Math.round(progress[lvl].percentage)}%)
               </span>
-            </div>
+            </button>
           ))}
         </div>
+        <div className="actions-bar">
+          <button
+            onClick={resetChecklist}
+            className="reset-button"
+            disabled={checked.size === 0}
+          >
+            Resetar todas as marcações
+          </button>
+        </div>
       </div>
+
       <div className="checklist-content">
-        {renderSection("A")}
-        {renderSection("AA")}
-        {renderSection("AAA")}
+        {(["A", "AA", "AAA"] as const).map((lvl) => (
+          <div key={lvl} id={`section-${lvl}`} className="checklist-section">
+            <h3>
+              <span className={`criteria-badge level-${lvl.toLowerCase()}`}>
+                {levelLabels[lvl]}
+              </span>
+              {levelDescriptions[lvl]}
+            </h3>
+            <div className="section-content">
+              <div className="checklist-items">
+                {itemsByLevel[lvl].map((item) => (
+                  <div
+                    key={item.id}
+                    className={`checklist-item ${checked.has(item.id) ? "checked" : ""}`}
+                  >
+                    <input
+                      type="checkbox"
+                      id={item.id}
+                      checked={checked.has(item.id)}
+                      onChange={() => toggleItem(item.id)}
+                    />
+                    <label htmlFor={item.id}>
+                      <strong>{item.label}</strong>
+                      <p
+                        className="item-description"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      />
+                    </label>
+                  </div>
+                ))}
+              </div>
+              <div className="chart-container">
+                {renderChart(progress[lvl], COLORS[lvl])}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

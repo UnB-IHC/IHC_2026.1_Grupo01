@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import "../css/simple-checklist.css";
 
@@ -11,12 +11,30 @@ interface ChecklistItem {
 
 interface SimpleChecklistProps {
   items: ChecklistItem[];
+  title?: string;
+  checklistId?: string;
 }
 
-export default function SimpleChecklist({ items }: SimpleChecklistProps) {
-  const [checked, setChecked] = useState<Set<string>>(
-    new Set(items.filter((item) => item.checked).map((item) => item.id)),
-  );
+export default function SimpleChecklist({
+  items,
+  title = "Checklist",
+  checklistId = "default-checklist",
+}: SimpleChecklistProps) {
+  const storageKey = `checklist-${checklistId}`;
+
+  const [checked, setChecked] = useState<Set<string>>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        return new Set(JSON.parse(saved));
+      }
+    }
+    return new Set(items.filter((item) => item.checked).map((item) => item.id));
+  });
+
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(Array.from(checked)));
+  }, [checked, storageKey]);
 
   const toggleItem = (id: string) => {
     const newChecked = new Set(checked);
@@ -26,6 +44,17 @@ export default function SimpleChecklist({ items }: SimpleChecklistProps) {
       newChecked.add(id);
     }
     setChecked(newChecked);
+  };
+
+  const resetChecklist = () => {
+    if (
+      window.confirm(
+        "Tem certeza que deseja limpar todo o progresso desta página?",
+      )
+    ) {
+      localStorage.removeItem(`checklist-${checklistId}`);
+      setChecked(new Set());
+    }
   };
 
   const total = items.length;
@@ -41,6 +70,8 @@ export default function SimpleChecklist({ items }: SimpleChecklistProps) {
 
   return (
     <div className="simple-checklist">
+      {title && <h3>{title}</h3>}
+
       <div className="chart-container">
         <ResponsiveContainer width="100%" height={280}>
           <PieChart aria-hidden="true" style={{ pointerEvents: "none" }}>
@@ -50,18 +81,13 @@ export default function SimpleChecklist({ items }: SimpleChecklistProps) {
               cy="50%"
               innerRadius={70}
               outerRadius={110}
-              fill="#8884d8"
               paddingAngle={2}
               dataKey="value"
               animationDuration={300}
               focusable="false"
             >
-              {chartData.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={COLORS[index]}
-                  focusable="false"
-                />
+              {chartData.map((_, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index]} />
               ))}
             </Pie>
           </PieChart>
@@ -76,6 +102,13 @@ export default function SimpleChecklist({ items }: SimpleChecklistProps) {
           <div className="stat-label">de {total}</div>
           <div className="stat-percentage">{Math.round(percentage)}%</div>
         </div>
+        <button
+          onClick={resetChecklist}
+          className="reset-button"
+          disabled={checked.size === 0}
+        >
+          Resetar todas as marcações
+        </button>
       </div>
 
       <div className="checklist-items">
